@@ -26,6 +26,7 @@ p {
     height: 402px;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
 }
 .card {
