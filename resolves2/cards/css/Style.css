@@ -22,7 +22,7 @@ p {
 }
 
 .card_bord {
-    width: 940px;
+    max-width: 940px;
     height: 402px;
 
     display: flex;
