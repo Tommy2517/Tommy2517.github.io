@@ -23,7 +23,7 @@ p {
 
 .card_bord {
     max-width: 940px;
-    height: 402px;
+    min-height: 402px;
 
     display: flex;
     flex-wrap: wrap;
