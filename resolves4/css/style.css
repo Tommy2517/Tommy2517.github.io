@@ -1,0 +1,17 @@
+.top {
+    height: 60px;
+    background: silver;
+    display: flex;
+    position: relative;
+    
+}
+.box {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: #000;
+}
+.b1 {right: 0;}
+.b2 {left: 0;}
+.b3 {left: 25%;}
+.b4 {right: 25%;}
