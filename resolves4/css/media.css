@@ -1,0 +1,17 @@
+@media screen and (min-width: 0px ) and (max-width: 1125px) {
+    .block_bc {
+        display: block;
+
+    }
+    .block_a{
+
+    }
+    .block_b,
+    .block_c {
+        width: 100%;
+        height: 50%;
+    }
+    .main {
+
+    }
+}
