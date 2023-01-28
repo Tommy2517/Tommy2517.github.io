@@ -1,17 +1,43 @@
 @media screen and (min-width: 0px ) and (max-width: 1125px) {
     .block_bc {
-        display: block;
+        flex-direction: column;
 
     }
     .block_a{
-
+        width: 95%;
     }
     .block_b,
     .block_c {
-        width: 100%;
+        width: 95%;
         height: 50%;
     }
-    .main {
+    .main {}
+    .add{
+        box-sizing: border-box;
+        padding: 20px;
+        overflow: hidden;
+     }
+}
 
+@media screen and (min-width: 0px) and (max-width: 900px) {
+    .body {
+        position: absolute;
+        display: block;
+    }
+    .content {
+        width: 98%;
+        height: 100%;
+    }
+    .thead {
+        height: 48%;
+    }
+    .aside {
+        width: 98%;
+        height: 24%;
+        bottom: 0;
+        left: 0;
+    }
+    .item {
+        height: 44%;
     }
 }

@@ -25,3 +25,80 @@
     background: lightcoral;
     margin: 10px;
 }
+
+.add {
+    border-radius: 20px;
+}
+
+
+/*=============================================*/
+
+.section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+}
+header {
+    width: 96%;
+    height: 22%;
+    background: silver;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.body {
+    position: relative;
+    width: 96%;
+    height: 64%;
+
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.aside {
+    position: absolute;
+    border-radius: 20px;
+    right: 0;
+    width: 24%;
+    height: 100%;
+    background: silver;
+}
+.content {
+    position: absolute;
+    border-radius: 20px;
+    left: 0;
+    width: 74%;
+    height: 100%;
+}
+.thead {
+    position: absolute;
+    border-radius: 20px;
+    right: 0;
+    width: 100%;
+    height: 48%;
+    background: silver;
+}
+.items {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    border-radius: 20px;
+    bottom: 0;
+    width: 100%;
+    height: 48%;
+}
+.item {
+    border-radius: 20px;
+    right: 0;
+    width: 31.5%;
+    height: 100%;
+    background: silver;
+}
+
