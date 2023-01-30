@@ -107,3 +107,8 @@
     align-items: center;
     flex-direction: column;
 }
+i:hover {
+    font-size: 25px;
+    transition: .3s;
+    color: blue;
+}

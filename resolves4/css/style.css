@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .block_a {
-    width: 99%;
+    width: 96%;
     height: 25%;
     background: silver;
     overflow: hidden;
@@ -13,7 +13,7 @@
 .block_bc {
     display: flex;
     box-sizing: border-box;
-    width: 99%;
+    width: 96%;
     height: 75%;
 }
 .block_b {
