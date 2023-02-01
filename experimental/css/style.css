@@ -1,0 +1,117 @@
+.main, body {
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    width: 600px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 4%;
+    column-gap: 2%;
+    padding: 20px;
+
+}
+.box {
+    height: 50%;
+    border-radius: 30px;
+    background: silver;
+}
+.a {
+    width: 100%;
+}
+.b {
+    width: 69%;
+}
+.c {
+    width: 29%;
+
+
+
+}
+
+/*==========================Section===============================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav__menu {
+    width: 100%;
+    height: 50px;
+    background-color: silver;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+li {
+    width: 50px;
+    height: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: snow;
+}
+.mobile__button {
+    width: 30px;
+    height: 30px;
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 310px;
+}
+
+.mobile__button span {
+    width: 88%;
+    height: 4px;
+    background: cornflowerblue;
+    position: relative;
+    transition: background-color 300ms 100ms;
+}
+
+.mobile__button span::before,
+.mobile__button span::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: aqua;
+    transition-duration: 300ms, 300ms;
+    transition-delay: 300ms, 0ms;
+}
+.mobile__button span::before {
+    top: -10px;
+    transition-property: top, transform;
+}
+.mobile__button span::after {
+    top: -10px;
+    transition-property: bottom, transform;
+}
+.active .mobile__button span {
+    background-color: transparent;
+}
+.active .mobile__button span::before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+.active .mobile__button span::after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+.active .mobile__button span::after, .active .mobile__button span::before {
+    transition-duration: 300ms, 300ms;
+    transition-delay: 0ms, 300ms;
+}

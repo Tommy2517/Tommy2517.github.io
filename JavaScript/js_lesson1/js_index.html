@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--//=======================step_1=================//-->
+<div>
+<!--  <ul></ul>-->
+<!--  <script> //Для чего нужен JS:.../-->
+<!--    fetch('https://jsonplaceholder.typicode.com/users')-->  <!--//-->
+<!--      .then(response => response.json())-->
+<!--      .then(value => {-->
+<!--          let ul = document.getElementsByTagName('ul')[0];-->
+<!--        for (const item of value) {-->
+<!--          let li = document.createElement('li');-->
+<!--          li.innerText = item.address.city;-->
+<!--          ul.append(li)-->
+<!--        }-->
+<!--      })-->
+<!--  </script> &lt;!&ndash;C помощью этого скрипта из списка обьектов мы достали их имена&ndash;&gt;-->
+</div>
+<!--//=======================step_2=================//-->
+<script>
+// console.log(1324) //Выводит данные в консоль.
+// document.write('Hello') //Выводит текст в разметку страницы.
+//
+// let str = '213'; //Обьявление переменной.
+// var str2 = 213; //Обьявление переменной аналогично let но отличается тем что работает вне зоны видимости.(устарелый)
+// const Qwe = 'qwe'; //Обьявление константы.
+//
+// console.log(typeof str); //Показывает тип данных
+// console.log(str + str2); //Конкатинация (соединяет строки или прибавляет числа)
+// console.log(`${str} ${str2}`); //Интерполяция(соединяет данные и ставит пробелы)
+// console.log(str == str2); //Сравнение по значению
+// console.log(str !== str2); //Сравнение по типу потом по значению
+// (!= - не равно), (!== - не равно по типу потом по значению), ( && - И!), (|| - ИЛИ!)
+
+//Конвертация:
+//22+'' = string;   -'123' = number;
+//(parseInt(string '123wqe' = 123(num);
+//(parseFloat(string '123.22' = 123.22(float);
+
+//Objects:
+let arrQwerty = [12, 13, 14 ,25, 36, 47]; //Массив (содержит элементы у каждого из которых свой последовательный индекс. у первого элемента всегда индекс 0.
+
+let objPoiuyt = {
+    name: 'Tommy',
+    age: 40,
+    skills: 'sx machine',
+}  //Обьъект (содержит элементы-ключи у каждого из которых свое значение)
+objPoiuyt.age = arrQwerty[5] //Обращение к элементу объекта через ключ и присвоение ему нового значения взятого из массива по индексу 5.
+
+console.log(objPoiuyt)
+</script>
+
+</body>
+</html>
