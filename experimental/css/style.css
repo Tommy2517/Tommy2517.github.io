@@ -97,7 +97,7 @@ a {
     transition-property: top, transform;
 }
 .mobile__button span::after {
-    top: -10px;
+    bottom: -10px;
     transition-property: bottom, transform;
 }
 .active .mobile__button span {

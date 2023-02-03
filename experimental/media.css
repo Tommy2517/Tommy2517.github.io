@@ -18,15 +18,30 @@
     }
     .nav__list {
         position: absolute;
+        /*display: none;*/
         width: 100%;
         background-color: aqua;
         flex-direction: column;
-        height: 90vh;
-        left: -200%;
+        height: 0px;
+        /*left: -200%;*/
         top: 350px;
-        transition: left 1000ms;
+        transition: 1s;
+    }
+    a{
+        opacity: 0;
+        transition: 1s;
+        /*display: none;*/
+    }
+    .active a{
+        opacity: 100;
+        transition: 1s;
+        /*display: flex;*/
     }
     .active .nav__list {
-        left: 0;
+        height: 500px;
+        /*display: flex;*/
+
+        /*left: 0;*/
+
     }
 }
