@@ -1,3 +1,5 @@
+document.write(`<a class="button" href="../../index.html">Home</a>`)
+document.write(`<a class="button b2" href="https://github.com/Tommy2517/Tommy2517.github.io/blob/main/JavaScript/resolves_3/js/main.js">in GitHub</a>`)
 // - За допомогою циклу for і document.write() вивести 10 блоків div c довільним текстом всередині
 document.write(`<div>`)
 for (let i = 0; i < 10; i++){
@@ -34,13 +36,10 @@ while (i2 < 20){
 
 
 //===============================================================================================================
-//
 // - Використовуючи данні з масиву, за допомоги document.write та циклу
 // побудувати структуру по шаблону
 // Масив:
-//
-//     let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
-//
+
 // ШАБЛОН:
 //     <ul>
 //         <li>ITEM OF ARRAY</li>
@@ -52,10 +51,9 @@ while (i2 < 20){
 //         -->
 //     </ul>
 //
+
 // замість 'ITEM OF ARRAY' підставити елемент з масиву щоб получився цілий список з даними з масиву
-//
 // -----------------------------------------------
-//
 let listOfItems = ['html', 'css', 'javascript', 'mysql', 'mongodb', 'react', 'angular', 'node.js'];
 document.write(`<ul>`)
 for (let i = 0; i < listOfItems.length;i++){
@@ -111,11 +109,10 @@ document.write(`</div>`)
 
 
 //     є масив
-
 // за допомоги циклу вивести:
 //     - користувачів зі статусом true
-// - користувачів зі статусом false
-// - користувачів які старші за 30 років
+//     - користувачів зі статусом false
+//     - користувачів які старші за 30 років
 
 let users = [
     {name: 'vasil', age: 31, status: false},
