@@ -1,3 +1,5 @@
+document.write(`<a class="button" href="../../index.html">Home</a>`)
+document.write(`<a class="button b2" href="https://github.com/Tommy2517/Tommy2517.github.io/blob/main/JavaScript/resolves_4/js/main.js">in GitHub</a>`)
 document.write('<div class="main">')
 document.write('<div class="section">')
 

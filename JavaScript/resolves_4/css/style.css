@@ -21,3 +21,28 @@ body {
     align-items: center;
     background: cornflowerblue;
 }
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+
+    width: 75px;
+    height: 30px;
+    border-radius: 15px;
+
+    background: green;
+    color: white;
+    opacity: 75%;
+    text-decoration: none;
+}
+.button:hover{
+    opacity: 100;
+    color: yellow;
+
+}
+.b2{
+    top: 50px;
+}
