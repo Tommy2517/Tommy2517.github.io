@@ -86,14 +86,29 @@
 // }
 // console.log(calc(12,12))
 
-function calc(num1, num2) {
-    return num1 + num2;
-}
-let newVar = [calc(123,213),calc(213,33)]
-console.log(newVar)
-console.log(calc(12,12))
+// function calc(num1, num2) {
+//     return num1 + num2;
+// }
+// let newVar = [calc(123,213),calc(213,33)]
+// console.log(newVar)
+// console.log(calc(12,12))
+//
+// let foo = {
+//     age: calc(1,2)
+// }
+// console.log(foo)
 
-let foo = {
-    age: calc(1,2)
-}
-console.log(foo)
+// function superCalc(num1, num2) {
+//     let obj = {
+//         dif:num1-num2,
+//         add:num1+num2,}
+//     return obj;
+// }
+// let x = superCalc(11,222);
+// console.log(x);
+
+//{{{hoisting--- поднимает функциюв начало кода. тоесть - если функция будет вызвада перед ее
+// обьявлением она не будет проигнорирована, интерпретатор подождет пока будет найдено
+// обьявление её, тогда выведет результат этой функции. другими словани функцией можно
+// пользоваться до её обьявления}}}
+
