@@ -13,7 +13,7 @@ console.log('площа прямокутника: ', squareRectangle(3, 6));
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function squareCircle(r) {
-    return r * Math.PI
+    return (r**2) * Math.PI
 }
 
 console.log('площа кола: ', squareCircle(5));
@@ -21,7 +21,7 @@ console.log('площа кола: ', squareCircle(5));
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
 function squareCylinder(h, r) {
-    return r * Math.PI * h;
+    return (r**2) * Math.PI * h;
 }
 
 console.log(squareCylinder(4, 5));
