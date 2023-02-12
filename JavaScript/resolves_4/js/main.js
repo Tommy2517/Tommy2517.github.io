@@ -1,6 +1,6 @@
 document.write(`<a class="button" href="../../index.html">Home</a>`)
 document.write(`<a class="button b2" href="https://github.com/Tommy2517/Tommy2517.github.io/blob/main/JavaScript/resolves_4/js/main.js">in GitHub</a>`)
-document.write('<div class="main">')
+document.write('<div class="main c_yg">')
 document.write('<div class="section">')
 
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
@@ -40,14 +40,17 @@ looper(qwe);
 //================================================================================================================
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
+document.write(`<div class="border"><h4>результат завдання 5: </h4>`);
 function p(paragraph) {
     document.write(`<p class="c_yg">${paragraph}</p>`)
 }
 
-p('Hello Okten! =)')
+p('Hello Okten! =)');
+document.write(`</div>`);//border close
 //===============================================================================================================
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
+document.write(`<div class="border"><h4>результат завдання 6: </h4>`);
 function ulLi(li) {
     document.write(`<ul class="c_yg">
                         <li>${li}</li>
@@ -57,9 +60,12 @@ function ulLi(li) {
 }
 
 ulLi('kawabanga');
+document.write(`</div>`);//border close
 //================================================================================================================
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
+document.write(`<div class="border"><h4>результат завдання 7: </h4>`);
+
 function countLi(textLi, amountLi) {
     document.write(`<ul class="c_yg">`)
     for (let i = 0; i < amountLi; i++) {
@@ -69,9 +75,12 @@ function countLi(textLi, amountLi) {
 }
 
 countLi(`You`, 7)
+document.write(`</div>`);//border close
 //================================================================================================================
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
+document.write(`<div class="border"><h4>результат завдання 8: </h4>`);
+
 let qwas = [321, 'gfhd', !(2 > 7), 77, {lang: 'ua',}];
 
 function arrList(arr) {
@@ -83,11 +92,14 @@ function arrList(arr) {
 }
 
 arrList(qwas)
+document.write(`</div>`);//border close
+
 //================================================================================================================
-document.write('</div>')
+document.write('</div>')//section close
 document.write('<div class="section">')
 
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
+document.write(`<div class="border"><h4>результат завдання 9: </h4>`);
 let objArr = [
     {id: 1, name: 'a', age: 10,},
     {id: 2, name: 'b', age: 20,},
@@ -96,11 +108,16 @@ let objArr = [
 
 function objBlock(arr) {
     for (const arrElement of arr) {
-        document.write(`<div class="c_yg block">${arrElement}</div>`)
+        document.write(`<div class="c_yg block">`)
+        for (const arrElementKey in arrElement) {
+            document.write(`${arrElementKey} - ${arrElement[arrElementKey]}<br>`)
+        }
+        document.write(`</div>`)
     }
 }
-
 objBlock(objArr)
+document.write(`</div>`);//border close
+document.write('<h2>Решта вправ у консолi</h2>')
 //================================================================================================================
 
 // - створити функцію яка повертає найменьше число з масиву
@@ -165,6 +182,6 @@ console.log(exchange(10000, cV, 'USD'));
 //================================================================================================================
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250
 //================================================================================================================
-document.write('</div>')
+document.write('</div>')//section close
 
-document.write('</div>')
+document.write('</div>')//main close

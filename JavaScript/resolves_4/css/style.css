@@ -21,6 +21,19 @@ body {
     align-items: center;
     background: cornflowerblue;
 }
+.border {
+    border: solid 1px cornflowerblue;
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.border > h4,p{
+    margin: 10px;
+}
+
 
 .button{
     display: flex;
