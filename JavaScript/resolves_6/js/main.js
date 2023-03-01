@@ -16,7 +16,8 @@ console.log('task-3:', 'javascript is cool'.toLowerCase(), '-', 'lorem ipsum'.to
 
 
 // - Є "брудна" стрінга let str = ' dirty string   ' . Почистити її від зайвих пробілів.
-let str = '        dirty string   ';
+let str = '        dirty      string      ';
+
 console.log('task-5:', str);
 
 function sweeper(str) {
@@ -31,6 +32,9 @@ function sweeper(str) {
     for (const item of delimiter) {
         collector += item;
     }
+    while(collector.includes('  ')){
+    collector = collector.replaceAll('  ',' ')
+    }
     return collector; //тут я щось страшне намутив вибачте( аж голова закипiла
 }
 
@@ -38,6 +42,7 @@ str = sweeper(str)
 console.log('task-5:', str);
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //
 // - Напишіть функцію stringToarray(str), яка перетворює рядок на масив слів.
