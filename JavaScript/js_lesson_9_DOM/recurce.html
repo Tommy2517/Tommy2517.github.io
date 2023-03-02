@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Recurce</title>
+</head>
+<body>
+<ul id="xxx">
+    <li></li>
+    <li class="qweadsqfqw"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<div class="sdvargedq">
+    <ul>
+        <li id="yyy"></li>
+        <li class="djtygtyhd"></li>
+        <li></li>
+        <li class="uertydfg"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="lkdwsfn"></li>
+        <li>
+            <div class="qqqqqqqq">
+                <a href="#"></a>
+            </div>
+        </li>
+        <li>
+
+            <ul class="asd">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div></div>
+
+
+
+
+<script>
+    let selectors = {
+        ids:[],
+        classes:[]
+    }
+//рекурсия. данная функция выводит все элементы как бы глубоко они не были воложены друг в друга
+function explorer(htmlElement) {
+    console.log(htmlElement);//выводит элемент идет дальше
+    if (htmlElement.getAttribute('class')) {
+        let classAttr = htmlElement.getAttribute('class')
+        selectors.classes.push(classAttr);
+    }
+    if (htmlElement.getAttribute('id')) {
+        let idAttr = htmlElement.getAttribute('id')
+        selectors.ids.push(idAttr);
+    }
+
+    let children = htmlElement.children;//проветяет есть ли в элементе потомки
+    if (children.length !== 0) {//если количество элементов в потомке не 0
+        for (const child of children) {//тогда берем элемент потомка
+            explorer(child);//выполняя рекурсию проверяем все ещё раз
+        }
+    }
+}
+
+explorer(document.body);
+    console.log(selectors)
+
+
+
+</script>
+</body>
+</html>
