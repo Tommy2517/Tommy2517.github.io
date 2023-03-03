@@ -1,0 +1,76 @@
+body{
+    position: relative;
+}
+.card {
+    background: #9f9e9e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 600px;
+    margin: 1%;
+    border: solid 2px red;
+}
+.title {
+    border: solid 2px #16447a;
+    width: 90%;
+    text-align: center;
+}
+.time {
+    display: flex;
+    width: 90%;
+    column-gap: 2%;
+
+}
+.month {
+    padding-left: 15px;
+    border: solid 2px #16447a;
+    width: 24%;
+}
+.hour {
+    padding-left: 15px;
+    color: #6863e1;
+    width: 74%;
+    border: solid 2px #16447a;
+}
+.modules {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 70%;
+    border: solid 2px #16447a;
+}
+.module {
+    padding-left: 15px;
+    margin: 5px;
+    width: 90%;
+    border: solid 2px #16447a;
+
+}
+
+
+.text{
+    width: 60%;
+    height: 100px;
+    background: #000;
+}
+button{
+    width: 100px;
+    height: 30px;
+    background: orange;
+}
+
+.ageChecker {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    height: 300px;
+    background: silver;
+    left: 20%;
+    margin: 50px;
+}

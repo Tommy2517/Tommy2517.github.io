@@ -67,7 +67,7 @@ let ul1 = document.getElementById('list-2');
 console.log(ul1.children); //достает в массиве все дочерние элементы
 console.log(ul1.childNodes);//показывает все элементы внутри тега так же пробелы и переносы
 //и даже коментарии
-console.log(ul1.childNodes[0].nodeType);//возмращает тип. 3- текст. 1-тэг. 8-комментраий.
+console.log(ul1.childNodes[0].nodeType);//возвращает тип. 3- текст. 1-тэг. 8-комментраий.
 for (const item of ul1.childNodes) {
     if (item.nodeType ===1){
         console.log(item, 'tag')
