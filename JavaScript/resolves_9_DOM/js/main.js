@@ -313,12 +313,13 @@ btn.onclick = function (eo) {
 let ageChecker = document.createElement('div')
 let answer = document.createElement('h2')
 answer.innerText = ''
+
 let field = document.createElement('input',)
 field.placeholder = 'Введiть ваш вiк'
+
 let btn2 = btn.cloneNode(true)
 btn2.onclick = function (eo) {
-    let age = ageChecker.children[1].value
-    if (age >= 18){
+    if (ageChecker.children[1].value >= 18){
         answer.innerText = 'bolshe'
     }else{
         answer.innerText = 'menshe'
