@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--Что бы посмотреть все ивенты нужно внутри тэга начать писать on-->
+<h1>qwe</h1>
+<h1>qwe</h1>
+<h1>qwe</h1>
+<script>
+
+    //присваеваем ивент онклик - выполняется функция, когда нажимаем на объект.
+    document.body.children[0].onclick = function (eo) {
+        // document.body.children[0].innerText += 'e'
+        let q = 'q';
+        console.log(q)
+        console.log(eo)//показывает всю информацию о данном событии
+            //когда произошло, в каком месте и тд...
+    }//что бы добавить действи, такой же способ не подойдет.
+    //будет выполняться последнее описанное действие.
+    // присвоить еще события этому действию, можно следующим способом
+    document.body.children[0].addEventListener('click', function (eo){
+        console.log('ww')
+    });// получаем слушателя действия. если случился клик, выполняем функцию
+
+
+
+    //onmousemove - когда мышь двигается по пикселям внутри блока
+//onmouseower - когда мышь заходит на блок
+//onmouseleave - когда мышь выходит из блока
+
+
+</script><!--events-->
+
+
+<form>
+    <input type="text" name="username">
+    <button>save</button>
+</form>
+<!--<script>-->
+<!--    let form = document.forms[0];-->
+<!--    form.onsubmit = function (eo) {-->
+<!--        eo.preventDefault();-->
+<!--        console.log(form.username.value)-->
+<!--        document.body.append('qwe')-->
+<!--    }-->
+
+<!--    //валидация:-->
+<!--    let usernameInput = form.username;//берем имя инпута-->
+<!--    usernameInput-->
+<!--        .addEventListener(-->
+<!--            'input',-->
+<!--            function (eo) {-->
+<!--                console.log(this.value);-->
+<!--                document.body.append(this.value,document.createElement('br'))-->
+<!--                if (this.value.length > 3){-->
+<!--                    usernameInput.removeEventListener('input',)-->
+<!--                }-->
+<!--            }-->
+<!--    );//совмещаем его с действием-->
+
+
+<!--</script>-->
+
+<script>
+    let form = document.forms[0];
+    form.onsubmit = function (eo) {
+        eo.preventDefault();
+        console.log(form.username.value)
+        document.body.append('qwe')
+    }
+
+    //валидация:
+    let usernameInput = form.username;//берем имя инпута
+    let inputHandler = function (eo) {
+        console.log(this.value);
+        document.body.append(this.value,document.createElement('br'))
+        if (this.value.length > 3){
+            usernameInput.removeEventListener('input', inputHandler);
+        }
+    };
+    usernameInput.addEventListener('input', inputHandler);//совмещаем его с действием
+    //1час 1минута
+</script>
+</body>
+</html>

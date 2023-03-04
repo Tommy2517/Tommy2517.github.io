@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- enctype="multipart/form-data" позволяет с формой отправлять файл-->
+<form action="/someURL" name="f1" enctype="multipart/form-data">
+    <!--атрибут type текст значит что в поле вводится текст какие бы символы там не былию-->
+<!--     атрибут value изначальное содержимое поля. -->
+<!--    абритут placeholder подсказка внутри поля которая прячится при вводе-->
+    <input type="text" placeholder="enter text" name="userName" required>
+    <br>
+
+<!--&lt;!&ndash;    type password это тип формы содержание которого меняется на точки&ndash;&gt;-->
+<!--    <input type="password" name="password" placeholder="password">-->
+<!--    <br>-->
+<!--&lt;!&ndash;    type number разрешает вводить только числа но при отправке,-->
+<!--все равно будем получать стрингу. можно изменять число стрелками-->
+<!--min - max задает минимальное и максимальное допуустимое значение-->
+<!--step - задает каким будет шаг увеличения числа стрелками-->
+<!--recuired - атрибут обязательного заполения поля&ndash;&gt;-->
+
+<!--    <input-->
+<!--            type="number"-->
+<!--            name="age"-->
+<!--            placeholder="enter age"-->
+<!--            max="100"-->
+<!--            min="18"-->
+<!--            step="3"-->
+<!--            required-->
+<!--    >-->
+<!--    <br>-->
+<!--&lt;!&ndash; тип поля file что бы он работал нужно в теге form указать-->
+<!-- атрибут  enctype="multipart/form-data" &ndash;&gt;-->
+<!--    <input type="file" name="avatar">-->
+<!--    <br>-->
+<!--&lt;!&ndash;    этот тип даже без атрибута required не отправит форму-->
+<!--пока она не будет заполнени как email&ndash;&gt;-->
+<!--    <input type="email" name="email" id="email">-->
+<!--    <br>-->
+<!--&lt;!&ndash;что бы сделать поле в котором можно выбрать дату, нужно использовать тип date&ndash;&gt;-->
+<!--    <input type="date" name="date">-->
+<!--    <br>-->
+<!--&lt;!&ndash;поле выбора некольких вариантов checkbox&ndash;&gt;-->
+<!--    <input type="checkbox" name="checkbox">-->
+<!--    <br>-->
+<!--    &lt;!&ndash;поле выбора одного вариантов checkbox&ndash;&gt;-->
+<!--    <input type="radio" name="radio" id="radio">-->
+<!--    <br>-->
+<!--&lt;!&ndash;    label присваивает определенному полю название &ndash;&gt;-->
+<!--    <label for="radio">-->
+<!--        male-->
+<!--        <input type="radio" name="radio" value="male">-->
+<!--        female-->
+<!--        <input type="radio" name="radio" value="female">&lt;!&ndash;-->
+<!--         неважно каким будет название инпута он будет возвращать значение внутри value&ndash;&gt;-->
+<!--    </label>-->
+<!--    <br>-->
+<!--&lt;!&ndash;    Поле выбора что бы вибрать несколько элементов нужен multiple-->
+<!--&ndash;&gt;-->
+<!--    <select name="skills" multiple>-->
+<!--&lt;!&ndash;        атрибуд selected делает поле выбранным по умолчанию&ndash;&gt;-->
+<!--        <option value="js" selected>JavaScript</option>-->
+<!--        <option value="Java8">Java 8</option>-->
+<!--        <option value="Java9">Java 9</option>-->
+<!--        <option value="Html">Html</option>-->
+<!--    </select>-->
+<!--    <br>-->
+<!--   атрибут type="submit" значит что элемент будет кнопкой которая
+отправляет содержимое формы по адресу который находится в атрибуте action="url"
+в теге form -->
+    <input type="submit" name="send" value="send">
+
+
+</form>
+
+
+
+
+  <script >
+      document.forms.f1.send.disabled = true //присваивает disabled этой кнопке
+
+
+      //как добраться к чему не будь внутри формы
+      // можно с модощью document.getelementby...
+      // или document.queryselector
+      // но есть еще такой вариант
+      console.log(document.forms);
+      //возвращает массив HTMLCollection с объектами полями
+      //если форма будет иметь атрибут name этот элемент так же будет в массиве
+      console.log(document.forms[0]);//так можно достать форму
+      console.log(document.forms.f1.userName.value);//или так, и объект в форме и значение
+
+  </script>
+
+</body>
+</html>
+<!--
+данные которые получает строка ввода URL и сохраняет в определенном кармане
+http://localhost:63342/someURL?
+данные из каждой формы их имя-переменная со значением которое мы вводим
+userName=artem&
+password=asd213&
+age=24&
+avatar=&
+email=2507artem%40gmail.com&
+date=2015-01-01&
+radio=male&
+skills=Java8-->
