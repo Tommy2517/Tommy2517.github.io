@@ -68,11 +68,11 @@
 <!--</script>-->
 
 <script>
+
     let form = document.forms[0];
     form.onsubmit = function (eo) {
         eo.preventDefault();
         console.log(form.username.value)
-        document.body.append('qwe')
     }
 
     //валидация:
@@ -82,10 +82,11 @@
         document.body.append(this.value,document.createElement('br'))
         if (this.value.length > 3){
             usernameInput.removeEventListener('input', inputHandler);
-        }
+        }//совмещаем его с действием инпута и и при определенном условии удаляет действие
     };
-    usernameInput.addEventListener('input', inputHandler);//совмещаем его с действием
-    //1час 1минута
+    usernameInput.addEventListener('input', inputHandler);
+    //в первом аргументе добавляет действие ивент во втором аргументе дейсвие к ивенту(функцию)
+
 </script>
 </body>
 </html>

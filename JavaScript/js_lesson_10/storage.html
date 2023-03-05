@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<a href="cart.html">cart page</a>
+<script>
+    //localStorage это встроенная база данных.
+    console.log(localStorage);
+    //методы localStorage:
+    let obj = {
+        name: 'art',
+        age: 22
+    }
+    localStorage.setItem('key1', 'value1')
+    localStorage.setItem('key2', 'value2')//создает ключ и значение
+    localStorage.setItem('key3', 'value3')//создает ключ и значение
+    localStorage.setItem('key4', obj.name)//создает ключ и значение
+    console.log(localStorage.getItem('key1'));//возвращает значение ключа
+    // localStorage.setItem('user',{name: 'vasya'})//получаем каку.
+    //так получается потому что по умолчанию только консоль может
+    // отображать обьекты и их характеристики
+    //по факту у каждого объекта есть мнимый метод который называется toString>>
+    localStorage.setItem('user', {
+        name: 'vasya', toString() {
+            return "[object Object]"
+        }
+    });//он возвращает вот это. что бы он работал правильно, нужно переделать.
+    //но чтоб этим не заниматься можно переделать объект в строку.
+    localStorage.setItem('user', JSON.stringify({name: 'vasya'}))
+    //что бы достать этого юзера
+    let userJSON = localStorage.getItem('user')//ложем в переменную содержимое
+    let user = JSON.parse(userJSON);//создаем новую переменную ложем в нее измененное содержимое
+    console.log(user);//все
+
+</script>
+<script>
+    let products = [
+        {
+            title: 'milk',
+            price: 22,
+            image: 'https://www.mcqueensdairies.co.uk/wp-content/uploads/2019/02/Mcqueens_1litre_whole_organic-300x300-3.jpg'
+        },
+        {
+            title: 'juice',
+            price: 27,
+            image: 'https://images-na.ssl-images-amazon.com/images/I/61jL2GCuKLL._SX679_PIbundle-24,TopRight,0,0_AA679SH20_.jpg'
+        },
+        {
+            title: 'tomato',
+            price: 47,
+            image: 'https://dictionary.cambridge.org/ru/images/thumb/tomato_noun_001_17860.jpg?version=5.0.74'
+        },
+        {
+            title: 'tea',
+            price: 15,
+            image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
+        },
+    ];
+
+    for (const product of products) {
+        let productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+        let title = document.createElement('h2')
+        title.innerText = `${product.title} ${product.price}`
+
+        let img = document.createElement('img')
+        img.src = product.image;
+        img.style.width = '300px'
+
+        let btn = document.createElement('button');
+        btn.innerText = 'buy'
+        btn.onclick = function () {
+            // let cartStorage = JSON.parse(localStorage.getItem('cart'));
+            // if (cartStorage && cartStorage.length > 0){
+            //     localStorage.setItem('cart',[])
+            // }
+            let cartArray = JSON.parse(localStorage.getItem('cart')) || [];
+            cartArray.push(product);
+            localStorage.setItem('cart', JSON.stringify(cartArray));
+        }
+
+        let clear = document.createElement('button')
+        clear.innerText = 'Clear';
+        clear.onclick = function () {
+            // localStorage.clear()//удаляет все даные из localstorage
+            localStorage.removeItem('user') //удаляет объект из localstorage
+        }
+
+        productDiv.append(title, img, btn,clear)
+        document.body.append(productDiv)
+
+    }
+
+</script>
+
+</body>
+</html>
