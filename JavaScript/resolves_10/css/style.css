@@ -1,3 +1,6 @@
+body{
+    display: flex;
+}
 .form {
     display: flex;
     width: 300px;
@@ -7,4 +10,43 @@
     row-gap: 10px;
     align-items: center;
     background: #000;
+}
+.userCard {
+    height: 100px;
+    width: 300px;
+    background: cornflowerblue;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    align-items: center;
+}
+.digit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 250px;
+    background:green ;
+    color: coral;
+    font-size: 150px;
+}
+.link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 250px;
+    font-size: 30px;
+
+    background: darkorange;
+    color: white;
+
+}
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

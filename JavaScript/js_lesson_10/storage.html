@@ -72,7 +72,7 @@
 
         let img = document.createElement('img')
         img.src = product.image;
-        img.style.width = '300px'
+        img.style.width = '100px'
 
         let btn = document.createElement('button');
         btn.innerText = 'buy'
@@ -89,7 +89,7 @@
         let clear = document.createElement('button')
         clear.innerText = 'Clear';
         clear.onclick = function () {
-            // localStorage.clear()//удаляет все даные из localstorage
+            localStorage.clear()//удаляет все даные из localstorage
             localStorage.removeItem('user') //удаляет объект из localstorage
         }
 

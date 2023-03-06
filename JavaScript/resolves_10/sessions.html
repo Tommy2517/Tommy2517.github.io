@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    document.body.style.background = 'silver'
+    document.body.style.display = 'flex'
+    document.body.style.justifyContent = 'space-evenly'
+    document.body.style.flexWrap = 'wrap'
+    document.body.style.rowGap = '20px'
+    document.body.style.columnGap = '20px'
+
+
+
+    for (const item of JSON.parse(localStorage.getItem('sessions'))){
+        let infoDiv = document.createElement('div');
+            infoDiv.style.width = '200px';
+            infoDiv.style.height = '100px';
+            infoDiv.style.background = 'navy';
+            infoDiv.style.borderRadius = '10px';
+            infoDiv.style.border = 'solid 2px orange';
+            infoDiv.style.color = 'orange';
+        let date = document.createElement('h3');
+        let time = document.createElement('h3');
+        document.body.append(infoDiv);
+        infoDiv.append(date,time);
+
+        date.innerText = `${item.date}`;
+        time.innerText=`Година - ${item.time}`;
+    }
+
+</script>
+</body>
+</html>
