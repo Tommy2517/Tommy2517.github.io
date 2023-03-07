@@ -851,6 +851,9 @@ let head_4 = document.createElement('header');
     head_4.style.position = 'relative';
     head_4.style.background = 'pink';
     head_4.style.top = '5px';
+    head_4.innerText = 'task4'
+    head_4.style.textAlign = 'center'
+    head_4.style.fontSize = '29px'
 
 let section_4 = document.createElement('section');
 section_4.style.position = 'relative'
@@ -968,8 +971,75 @@ console.log(locations.length)
 
 
 
-
-
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+
+let task_5 = document.createElement('div');
+let head_5 = document.createElement('header');
+let section_5 = document.createElement('section');
+
+
+section_5.style.rowGap = '10px'
+section_5.style.display = 'flex'
+section_5.style.flexDirection = 'column'
+section_5.style.boxSizing = 'border-box'
+
+head_5.style.width = '100%'
+
+task_5.style.width = '90vw';
+task_5.style.height = '50vh';
+task_5.style.background = 'grey';
+task_5.style.position = 'relative';
+task_5.style.display = 'flex';
+task_5.style.flexDirection = 'column';
+task_5.style.alignItems = 'center';
+
+
+let form_2 = form.cloneNode(true);
+form_2.innerHTML= '';
+form_2.style.width = '100%'
+form_2.style.background = 'coral'
+form_2.setAttribute('name','form_2');
+
+let columns = document.createElement('input');
+columns.setAttribute('name','col');
+let rows = document.createElement('input');
+rows.setAttribute('name','row');
+let contents = document.createElement('input');
+contents.setAttribute('name','cont');
+let btn_5_1 = document.createElement('button');
+btn_5_1.innerText= 'Прибрати'
+btn_5_1.onclick = function (eo) {
+    eo.preventDefault();
+    section_5.innerHTML = ''
+}
+let btn_5 = document.createElement('button');
+btn_5.innerText = 'Створити'
+
+btn_5.onclick = function (eo) {
+    eo.preventDefault();
+
+    let col = document.forms.form_2.col.value;
+    let row = document.forms.form_2.row.value;
+    let cont = document.forms.form_2.cont.value;
+    for (let i =0;i<col;i++){
+        let column = document.createElement('div')
+        column.style.display = 'flex'
+        column.style.columnGap = '10px'
+        for (let i =0;i<row;i++){
+            let cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.innerText = cont;
+            column.append(cell)
+        }
+        section_5.append(column)
+    }
+}
+
+document.body.append(task_5);
+task_5.append(head_5);
+task_5.append(section_5);
+head_5.append(form_2);
+form_2.append(columns,rows,contents,btn_5,btn_5_1);
+
