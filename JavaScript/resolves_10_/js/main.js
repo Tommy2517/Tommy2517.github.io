@@ -73,7 +73,7 @@ document.getElementById('button_s_3').onclick = function (eo) {
     let year = moment.getFullYear()
     let date = `${day}.${month}.${year}`
 
-    let time = `${moment.getHours()}:${moment.getM inutes()}:${moment.getSeconds()}`
+    let time = `${moment.getHours()}:${moment.getMinutes()}:${moment.getSeconds()}`
 
     session.push(new Session(date,time))
     localStorage.setItem('sessions', JSON.stringify(session))
