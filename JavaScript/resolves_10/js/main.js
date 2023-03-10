@@ -31,13 +31,10 @@ let btn = document.createElement('button');
 btn.setAttribute('name', 'btn');
 btn.innerText = 'Send'
 btn.onclick = function (eo) {
+
     eo.preventDefault();
     let box = document.createElement('div');
     box.classList.add('userCard');
-
-    // let name = document.forms.form.name.value;
-    // let surname = document.forms.form.surname.value;
-    // let age = document.forms.form.age.value;
     let form1 = document.forms.form;
     for (const item of form1) {
         let str = document.createElement('div');
@@ -47,11 +44,16 @@ btn.onclick = function (eo) {
             console.log(label);
         }
         box.append(str);
+        item.value = '';
+
     }
+
 
     blockTask.append(box);
     // box.append(name,surname,age)
 }
+
+
 document.body.append(blockTask)
 blockTask.append(form)
 form.append(name, surname, age, btn)
@@ -98,34 +100,34 @@ pageSession.textContent = 'Session'
 pageSession.setAttribute('target', '_parent')
 document.body.append(pageSession)
 
-pageSession.onclick = function (eo) {
-    class Session {
-    constructor(date, time) {
-        this.date = date;
-        this.time = time;
-    }
-}
-    let session = JSON.parse(localStorage.getItem('sessions')) || [];
-    let moment = new Date
-
-    let day = ''+moment.getDate()
-    if (day.length < 2){
-        day = '0'+day
-    }
-
-    let months = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень',
-        'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
-    let month = months[new Date().getMonth()]
-
-    let year = moment.getFullYear()
-    let date = `${day}.${month}.${year}`
-
-    let time = `${moment.getHours()}:${moment.getMinutes()}`
-
-    session.push(new Session(date,time))
-    localStorage.setItem('sessions', JSON.stringify(session))
-
-}
+// pageSession.onclick = function (eo) {
+//     class Session {
+//     constructor(date, time) {
+//         this.date = date;
+//         this.time = time;
+//     }
+// }
+//     let session = JSON.parse(localStorage.getItem('sessions')) || [];
+//     let moment = new Date
+//
+//     let day = ''+moment.getDate()
+//     if (day.length < 2){
+//         day = '0'+day
+//     }
+//
+//     let months = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень',
+//         'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
+//     let month = months[new Date().getMonth()]
+//
+//     let year = moment.getFullYear()
+//     let date = `${day}.${month}.${year}`
+//
+//     let time = `${moment.getHours()}:${moment.getMinutes()}`
+//
+//     session.push(new Session(date,time))
+//     localStorage.setItem('sessions', JSON.stringify(session))
+//
+// }
 
 
 

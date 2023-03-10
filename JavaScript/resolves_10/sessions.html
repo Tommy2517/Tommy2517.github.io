@@ -14,19 +14,23 @@
     document.body.style.display = 'flex'
     document.body.style.justifyContent = 'space-evenly'
     document.body.style.flexWrap = 'wrap'
-    document.body.style.rowGap = '20px'
-    document.body.style.columnGap = '20px'
+    document.body.style.rowGap = '10px'
+    document.body.style.columnGap = '10px'
+    document.body.style.flexDirection = 'wrap'
+
+
 
 
 
     for (const item of JSON.parse(localStorage.getItem('sessions'))){
         let infoDiv = document.createElement('div');
-            infoDiv.style.width = '200px';
+            infoDiv.style.width = '150px';
             infoDiv.style.height = '100px';
-            infoDiv.style.background = 'navy';
+            infoDiv.style.background = '#505050';
             infoDiv.style.borderRadius = '10px';
-            infoDiv.style.border = 'solid 2px orange';
-            infoDiv.style.color = 'orange';
+            infoDiv.style.border = 'solid 2px gold';
+            infoDiv.style.color = 'gold';
+            infoDiv.style.padding = '0 0 0 10px';
         let date = document.createElement('h3');
         let time = document.createElement('h3');
         document.body.append(infoDiv);
