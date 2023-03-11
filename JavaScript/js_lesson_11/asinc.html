@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script !src="">
+    console.log('start')
+    let setTime = setTimeout(()=>{
+        console.log('async')
+        clearInterval(setInt)},5000);
+//это браузерная функция она работает только в брауерном JS
+//а это колбэк функция б это задержка. это асинхронная функция
+
+
+    let i =0;
+let setInt =  setInterval(function () {
+        console.log(i++)
+    },1000)
+
+    console.log('end')
+    //процесс выполнения синхронного кода
+    //1.имеем код;
+    //2.если код синхронный он попадает в CallStack;
+    //3.после чего выполняется;
+    //процесс выполнения асинхронного кода;
+    //1.имеем код;
+    //2.асинхронный код попадает в CallStack
+    //3.потом в WebAPI (формируется порядок)
+    //4.потом в callback Queue (очередь, таймер)
+    //5.потом отправляется в CallStack и выполняется
+</script>
+</body>
+</html>
