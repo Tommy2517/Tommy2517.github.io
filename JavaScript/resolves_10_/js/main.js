@@ -168,3 +168,31 @@ btn_next.onclick = function (eo) {
     }
 }
 
+//===================TASK_5=============================//
+let btn_s_5 = document.getElementById('btn_s_5');
+let cols = document.getElementById('col');
+let rows = document.getElementById('row');
+let text_5 = document.forms.form_2;
+let table_5 = document.getElementById('table');
+
+btn_s_5.onclick = function (eo) {
+    eo.preventDefault();
+    table_5.innerHTML = ''
+    for (let i = 0; i < cols.value; i++) {
+        let rows_1 = document.createElement('div');
+        rows_1.style.display = 'flex'
+        table_5.append(rows_1)
+        for (let i = 0; i < rows.value; i++) {
+            let cols_1 = document.createElement('div')
+            cols_1.classList.add('cols_1')
+            rows_1.append(cols_1)
+
+            cols_1.textContent = document.forms.form_2.cont_s_5.value
+        }
+    }
+    rows.value = '';
+    cols.value = '';
+    document.forms.form_2.cont_s_5.value=''
+}
+
+
