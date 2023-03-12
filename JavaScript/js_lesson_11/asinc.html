@@ -12,17 +12,18 @@
 
 <script !src="">
     console.log('start')
-    let setTime = setTimeout(()=>{
+    let setTime = setTimeout(() => {
         console.log('async')
-        clearInterval(setInt)},5000);
-//это браузерная функция она работает только в брауерном JS
-//а это колбэк функция б это задержка. это асинхронная функция
+        clearInterval(setInt)
+    }, 3000)
+    //это браузерная функция она работает только в брауерном JS
+    //а это колбэк функция б это задержка. это асинхронная функция
 
 
-    let i =0;
-let setInt =  setInterval(function () {
+    let i = 0;
+    let setInt = setInterval(function () {
         console.log(i++)
-    },1000)
+    }, 1000)
 
     console.log('end')
     //процесс выполнения синхронного кода
@@ -35,6 +36,105 @@ let setInt =  setInterval(function () {
     //3.потом в WebAPI (формируется порядок)
     //4.потом в callback Queue (очередь, таймер)
     //5.потом отправляется в CallStack и выполняется
+
+    //весь процесс называется Event Loop
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    //Promise// позволяет работать с асинхронностью
+    let promise1 =
+        new Promise((resolve) => {   //создали промис вписали resolve - аргумент который используется по надобности в следующих зенах
+            setTimeout(() => {  //внутри создали функцию таймер
+                console.log('st1')  //вывели строку в консоль
+                resolve();      //хранит аргумент и передает его ниже по зенам
+            }, 1000);   //спустя это время
+        }).then(() => {
+            return new Promise((resolve,reject) => {
+                setTimeout(() => {
+                    console.log('st2')
+                    resolve({});
+                    reject();
+                }, 3000)
+            })
+        }).then(() => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log('st3')
+                    resolve();
+                },1000)
+            }).then(() => {
+                setTimeout(() => {
+                    console.log('st4')
+                },1000)
+            })
+        })
+    ////////////////////////////////////////////////////////////////////
+    let promise2 = new Promise((resolve) => {
+        fetch('https://jsonplaceholder.typicode.com/users') //получили данные с сайта  в формате JSON
+            .then(response => response.json())//перезаписали его в переменную в формат js
+            .then(q => console.log(q))//вывели в консоль массив с объектами
+    });
+
+
+
+
+    function getUserData() {
+        return fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json());
+    }
+    //
+    // getUserData()
+    //     .then(userData => {
+    //         // выводим данные о пользователе
+    //         console.log(userData);
+    //     })
+    //     .catch(error => {
+    //         // обрабатываем ошибку
+    //         console.error(error);
+    //     });
+
+
+
+    const promise = new Promise((resolve, reject) => {
+        // Асинхронная операция загрузки данных с сервера
+        const data = getUserData();
+
+        if (data) {
+            resolve(data); // передача данных в следующую функцию в цепочке промисов
+        } else {
+            reject(new Error('Ошибка загрузки данных')); // передача ошибки в следующую функцию в цепочке промисов
+        }
+    });
+
+    promise.then((data) => {
+        // обработка успешного выполнения промиса
+        console.log(data);
+    }).catch((error) => {
+        // обработка ошибки выполнения промиса
+        console.error(error);
+    });
+    ///////////////////////////////////////////////
+    //достать данные с нескольких источников
+    let usersPromise = fetch('https://jsonplaceholder.typicode.com/users')//вытащили
+        .then(response => response.json())//обработали
+    let postsPromise = fetch('https://jsonplaceholder.typicode.com/posts')//вытащили
+        .then(value => value.json())//обработали
+    Promise.all([usersPromise, postsPromise])//когда выполнены оба аргумента тогда продолжается работа
+        .then(value => {//поместили обработаные функции в массив
+            console.log(value)//вывели укомплектованый массив в консоль
+        })
+    //Promise.any() выполняется как только хотя бы 1 из функций сработает
+    //Promise.race() выполнится та функция которая быстрее отработает
+
+        //////////////Еще один способ////////////////
+
+    async function requestFunction() {//эта функция выполнится до конца тогда - когда выполнится функция в которой await
+        let response = await fetch('https://jsonplaceholder.typicode.com/users').then(value => value.json())
+        //получили жанные форматировали и после этого код начнет заканчивать выполнение
+        //async - говорит что функция является асинхронной
+        //await - говорит что функция не должна завершаться пока данное действие не будет выполнено
+    }
+
+
 </script>
 </body>
 </html>
