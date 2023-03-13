@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="user-details">
+    <header><h2>User info</h2></header>
+    <div class="info" id="info"></div>
+    <div class="adress" id="adress">
+        <div class="geo" id="geo"></div>
+    </div>
+    <div class="company" id="company"></div>
+
+</div>
+
+
+
+<script>
+
+//зробити файл users.html
+// з ендпоінту http://jsonplaceholder.typicode.com/users отримати всіх користувачів
+//     вивести їх id + name списком та додати посилання з href = user-details.html?id=XXX (замість ХХХ - айді юзера)
+// при кліку на посилання перехід на відповідну сторінку, на якій буде вся інформація про користувача (всі 15 полів)
+// отримана через додатковий запит (https://jsonplaceholder.typicode.com/users/XXX   ХХХ - айді користувача)
+
+// let url=new URL(location.href)
+// let id = +url.search.replace(/\D+/g,"")
+//
+//
+// let user = new URL('https://jsonplaceholder.typicode.com/users/'+id)
+// fetch(user).then(value => value.json())
+//     .then(user => {
+//
+//
+//
+//         console.log(JSON.stringify(user))
+//         let sort = function (user) {
+//         let ul = document.createElement('ul')
+//             document.getElementById('info').append(ul)
+//         // document.body.append(ul)
+//
+//             for (const key in user) {
+//                   if (typeof user[key] !== "object"){
+//                     let li = document.createElement('li');
+//                     ul.append(li);
+//                     li.innerText = `${key} - ${user[key]}`;
+//
+//                     }
+//                       else if (typeof user[key] === "object"){
+//
+//                     }
+//             }
+//         }
+//         sort(user)
+//     })
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+let url=new URL(location.href)
+let id = +url.search.replace(/\D+/g,"")
+
+
+let user = new URL('https://jsonplaceholder.typicode.com/users/'+id)
+fetch(user).then(value => value.json())
+    .then(user => {
+            let arr = [];
+        function sort(user) {
+            for (const key in user) {
+                if(typeof user[key] === "object"){
+                    arr.push(sort(user[key]))
+
+                }
+                else if (typeof user[key] !== "object"){
+                    arr.push(`${key} - ${user[key]}`)
+                }
+            }
+            console.log(user.address)
+            return arr
+        }
+        console.log(sort(user));
+
+    })
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+</script>
+</body>
+</html>

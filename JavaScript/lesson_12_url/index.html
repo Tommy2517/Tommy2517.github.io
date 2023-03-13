@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+//протокол/  доменное имя/порт  /          промежуточные пути               /ресурс    /после ? идут query params = xxx если параметр не один они перечисляются через &
+    //http://localhost    :63342/Tommy2517.github.io/JavaScript/js_lesson_11/asinc.html ? _ijt = mfmod87uj9r2lobpcbr6q56id&  _ij_reload = RELOAD_ON_SAVE
+
+//для работы с URL есть класс new URL() он разбивает все элементы урлы на объект с параметрами
+let url = new URL("http://localhost:63342/Tommy2517.github.io/JavaScript/js_lesson_11/asinc.html?_ijt=mfmod87uj9r2lobpcbr6q56id&_ij_reload=RELOAD_ON_SAVE");
+//console.log(url)//объект нашей урлы
+
+url.searchParams.set('qqqq',9080);//добавляем новые параметры в урлу
+url.searchParams.get('qqqq');//получает параметры из урлы по ключу
+console.log(url.href);//получили готовую измененную урлу
+
+
+let urlUsers = new URL('https://jsonplaceholder.typicode.com/posts');
+    fetch(urlUsers)
+        .then(value => value.json())
+        .then(posts => {
+            for (const post of posts) {
+                let div = document.createElement('div');
+                div.classList.add('posts-item');
+                let a = document.createElement('a');
+                a.innerText = `${post.id} ${post.title}`;
+                a.href = 'page.html?date=' + JSON.stringify(post);
+                div.append(a);
+                document.body.append(div);
+            }
+        })
+
+
+</script>
+</body>
+</html>

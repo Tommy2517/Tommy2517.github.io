@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    let usersURL = new URL('http://jsonplaceholder.typicode.com/users')
+    fetch(usersURL)
+        .then(value => value.json())
+        .then(users => {
+            for (const user of users) {
+                let div = document.createElement('div');
+                div.innerText = `${user.id}`
+                let a = document.createElement('a');
+                a.innerText = ` ${user.name}`
+                a.href = 'user-details.html?id='+JSON.stringify(user.id)
+                document.body.append(div)
+                div.append(a)
+
+            }
+        })
+
+</script>
+</body>
+</html>
