@@ -31,7 +31,7 @@
 </style>
 
 <script>
-    let usersURL = new URL('http://jsonplaceholder.typicode.com/users')
+    let usersURL = new URL('https://jsonplaceholder.typicode.com/users')
     fetch(usersURL)
         .then(value => value.json())
         .then(users => {
