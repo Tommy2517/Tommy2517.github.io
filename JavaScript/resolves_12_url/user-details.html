@@ -12,11 +12,23 @@
 
 <div class="user-details">
     <header><h2>User info</h2></header>
-    <div class="info" id="info"></div>
-    <div class="adress" id="adress">
-        <div class="geo" id="geo"></div>
+    <div class="info" id="info">
+        <button id="btn_address">Address</button>
+        <button id="btn_company">Company</button>
     </div>
-    <div class="company" id="company"></div>
+    <div class="add">
+        <div class="address hide" id="address">
+            <header><h2>Address</h2></header>
+
+            <button id="btn_geo">Geo</button>
+        </div>
+        <div class="company hide" id="company">
+            <header><h2>Company</h2></header>
+        </div>
+    </div>
+    <div class="geo hide" id="geo">
+        <header><h2>Geo</h2></header>
+    </div>
 
 </div>
 
@@ -71,27 +83,40 @@ let id = +url.search.replace(/\D+/g,"")
 let user = new URL('https://jsonplaceholder.typicode.com/users/'+id)
 fetch(user).then(value => value.json())
     .then(user => {
-            let arr = [];
-        function sort(user) {
+        function sort(user,doc,tag) {
+            let father = document.createElement(doc);
             for (const key in user) {
-                if(typeof user[key] === "object"){
-                    arr.push(sort(user[key]))
-
-                }
-                else if (typeof user[key] !== "object"){
-                    arr.push(`${key} - ${user[key]}`)
+                 if (typeof user[key] !== "object"){
+                     let child = document.createElement(tag)
+                     father.append(child)
+                     child.append(`${key} - ${user[key]}`)
                 }
             }
-            console.log(user.address)
-            return arr
+            return father
         }
-        console.log(sort(user));
+        let info = sort(user,'ul','li');
+        let address = sort(user.address,'ul','li');
+        let geo = sort(user.address.geo,'ul','li');
+        let company = sort(user.company,'ul','li');
 
+document.getElementById('info').prepend(info);
+document.getElementById('address').append(address);
+document.getElementById('geo').append(geo);
+document.getElementById('company').append(company);
     })
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////
+document.getElementById('btn_address').onclick = function (eo) {
+    document.getElementById('address').classList.toggle('hide')
+}
+document.getElementById('btn_geo').onclick = function (eo) {
+    document.getElementById('geo').classList.toggle('hide')
+}
+document.getElementById('btn_company').onclick = function (eo) {
+    document.getElementById('company').classList.toggle('hide')
+}
 
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 </script>
 </body>

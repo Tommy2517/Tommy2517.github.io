@@ -8,7 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-
+<style>
+    body{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        row-gap: 15px;
+    }
+    div{
+        background: #555;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    a{
+        color: gold;
+        text-decoration: none;
+    }
+    a:hover{
+        background: #777;
+    }
+</style>
 
 <script>
     let usersURL = new URL('http://jsonplaceholder.typicode.com/users')
