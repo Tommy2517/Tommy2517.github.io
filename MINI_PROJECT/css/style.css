@@ -1,23 +1,56 @@
 
-body{
+body {
     padding: 0;
     margin: 0;
 }
-html{
+
+html {
     padding: 0;
     margin: 0;
 
 }
-.main{
+
+.main {
     background: #000;
-    width:99vw;
+    width: 99vw;
     height: 100vh;
 
     display: flex;
     justify-content: center;
 }
-section{
 
+section {
     background: #333;
-    min-width: 50%;
+    width: 50%;
+}
+
+.users {
+    background: #555;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    row-gap: 40px;
+
+    box-sizing: border-box;
+    padding: 40px;
+}
+.user{
+    width: 45%;
+    min-width: 276px;
+    border: 1px solid gold;
+
+    display: flex;
+    justify-content: space-between;
+
+    text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 10px 0 10px;
+}
+div{
+    color: white;
+}
+div:hover{
+    color: gold;
 }
