@@ -2,5 +2,11 @@
     section{
         width: 100%;
     }
+    .user_info{
+        flex-direction: column;
 
+    }
+    .info, .details{
+        width: 100%;
+    }
     }
