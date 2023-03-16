@@ -93,7 +93,7 @@ header {
 .post{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 
     width: 150px;
     height: 120px;
@@ -113,11 +113,11 @@ header {
 .post_btn {
     width: 90%;
     height: 20%;
-    background: orange;
+    background: #7387ff;
     transition: .5s;
 }
 .post_btn:hover{
-    background: #777;
+    background: orange;
     color: white;
     transition: .5s;
 }
@@ -128,8 +128,10 @@ ul{
     row-gap: 10px;
 }
 p{
+    max-height: 70%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 
