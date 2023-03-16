@@ -3,10 +3,11 @@
         width: 100%;
     }
     .user_info{
+        width: 100vw;
         flex-direction: column;
+        transition: .3s;
 
     }
-    .info, .details{
-        width: 100vw;
+    .info, .details, .posts{
     }
     }
