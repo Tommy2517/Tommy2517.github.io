@@ -8,5 +8,16 @@
         flex-direction: column;
 
     }
+        .post:hover{
+            width: 150px;
+
+            height: auto;
+            min-height: 120px;
+            max-height: 300px ;
+            transition: .5s;
+        }
+        .divDetail{
+            flex-direction: column;
+        }
 
     }
