@@ -32,6 +32,7 @@ header {
 .user_info {
     width: 95%;
     height: 70%;
+    min-height: 417px;
 
     display: flex;
     column-gap: 20px;
@@ -83,5 +84,9 @@ header {
 }
 
 
-
+ul{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
 
