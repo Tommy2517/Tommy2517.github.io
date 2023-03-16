@@ -1,13 +1,12 @@
     @media screen and (max-width: 600px){
     section{
-        width: 100%;
-    }
-    .user_info{
         width: 100vw;
-        flex-direction: column;
-        transition: .3s;
+        min-width: 0;
 
     }
-    .info, .details, .posts{
+    .user_info{
+        flex-direction: column;
+
     }
+
     }
