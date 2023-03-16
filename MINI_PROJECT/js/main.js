@@ -5,15 +5,18 @@ fetch(users)
     .then(users => users.json())
     .then(users => {
         for (const user of users) {
+
             let div = document.createElement('div');
-            div.append(user.name);
             let a = document.createElement('a');
-            a.append(user.id,div);
-            a.classList.add('user');
+
+            div.classList.add('user');
+            div.append(user.id,' - ',user.name,a);
+
+            a.append('details');
+            a.classList.add('btn_index')
             a.href = `user_details.html?id=${user.id}`;
 
-            document.getElementById('users_s1').append(a)
-            // document.body.append(a);
+            document.getElementById('users_s1').append(div)
         }
     })
 

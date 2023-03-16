@@ -49,10 +49,11 @@ h1{
     border: 1px solid gold;
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
 
     text-decoration: none;
-    color: black;
+    color: silver;
     font-size: 1.5em;
     font-weight: bold;
     padding: 0 10px 0 10px;
@@ -60,6 +61,19 @@ h1{
 div{
     color: #afafaf;
 }
-div:hover{
+
+.btn_index {
+    text-decoration: none;
+    color: silver;
+    border: 1px solid silver;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    font-size: 16px;
+}
+.btn_index:hover{
+    border: 1px solid gold;
+
     color: gold;
 }
