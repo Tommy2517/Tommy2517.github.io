@@ -83,6 +83,7 @@ header {
 .commentHover {
     font-size: 18px;
     width: 90%;
+    height: auto;
     z-index: 1;
 }
 .commentDiv:hover{
@@ -94,6 +95,7 @@ header {
     width: 0;
     height: 0;
     overflow: hidden;
+
 }
 
 .divDetail{

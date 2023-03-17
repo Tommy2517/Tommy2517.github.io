@@ -2,6 +2,8 @@
 body {
     padding: 0;
     margin: 0;
+    background: url("https://www.rgo.ru/sites/default/files/node/32473/yuriy-ufimcev-fioletovyy-zakat-536530.jpg") fixed;
+    background-size: cover;
 }
 
 html {
@@ -10,10 +12,8 @@ html {
 
 }
 
-.main {
-    background: url("https://www.rgo.ru/sites/default/files/node/32473/yuriy-ufimcev-fioletovyy-zakat-536530.jpg") center;
-    background-size: cover;
 
+.main {
     width: 99vw;
     height: 100vh;
 
