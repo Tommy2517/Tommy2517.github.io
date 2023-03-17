@@ -19,6 +19,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/'+id)
         document.querySelector('.post_details').append(divDetail)
         divDetail.append(divKey,divValue)
 
+
     }
 })
 
@@ -30,7 +31,14 @@ fetch('https://jsonplaceholder.typicode.com/posts/'+id+'/comments')
     commentDiv.classList.add('commentDiv');
     let comments = document.querySelector('.comments > .content')
     comments.append(commentDiv)
-    commentDiv.append()
+    commentDiv.append(comment[key].body)
+        console.log()
+
+
+        commentDiv.onclick = function (eo){
+            commentDiv.classList.toggle('commentHover')
+        }
+
 
     }
 
