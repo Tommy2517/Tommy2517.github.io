@@ -31,12 +31,30 @@ fetch('https://jsonplaceholder.typicode.com/posts/'+id+'/comments')
     commentDiv.classList.add('commentDiv');
     let comments = document.querySelector('.comments > .content')
     comments.append(commentDiv)
-    commentDiv.append(comment[key].body)
-        console.log()
+    commentDiv.append(comment[key].body);
+        let postID = document.createElement('div')
+        postID.classList.add('postID');
+        postID.append('postID - ',comment[key].postId)
+        let commentID =  document.createElement('div');
+        commentID.append('commentID - ',comment[key].id)
+        commentID.classList.add('commentID');
+        let name = document.createElement('div');
+        name.classList.add('name');
+        name.append('name - ',comment[key].name)
+        let email = document.createElement('div');
+        email.classList.add('email');
+        email.append('email - ',comment[key].email)
+        let postBody = document.createElement('div');
+        postBody.classList.add('postBody');
 
+        let commentDivInfo = document.createElement('div')
+        commentDivInfo.classList.add('commentDivInfo')
+            commentDivInfo.append(name,email,commentID,postID)
+            commentDiv.append(commentDivInfo)
 
         commentDiv.onclick = function (eo){
             commentDiv.classList.toggle('commentHover')
+            commentDivInfo.classList.toggle('commentDivInfo')
         }
 
 
