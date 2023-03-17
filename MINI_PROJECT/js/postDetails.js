@@ -25,7 +25,13 @@ fetch('https://jsonplaceholder.typicode.com/posts/'+id)
 fetch('https://jsonplaceholder.typicode.com/posts/'+id+'/comments')
 .then(comment => comment.json())
 .then(comment => {
-    for (const commentKey in comment) {
-        console.log(comment[commentKey])
+    for (const key in comment) {
+    let commentDiv = document.createElement('div')
+    commentDiv.classList.add('commentDiv');
+    let comments = document.querySelector('.comments > .content')
+    comments.append(commentDiv)
+    commentDiv.append()
+
     }
+
 })
