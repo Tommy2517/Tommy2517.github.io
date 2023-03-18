@@ -36,6 +36,7 @@ h1{
     margin-block-end: 0;
 }
 .users {
+
     background: rgba(85, 85, 85, 0.70);
     display: flex;
     justify-content: space-around;

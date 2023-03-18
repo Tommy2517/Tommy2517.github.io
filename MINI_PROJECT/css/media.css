@@ -1,23 +1,26 @@
-    @media screen and (max-width: 600px){
-    section{
+@media screen and (max-width: 600px) {
+    .main {
+        height: 100%;
+    }
+    section {
         width: 100vw;
         min-width: 0;
-
     }
-    .user_info{
+
+    .user_info {
         flex-direction: column;
-
     }
-        .post:hover{
-            width: 150px;
 
-            height: auto;
-            min-height: 120px;
-            max-height: 300px ;
-            transition: .5s;
-        }
-        .divDetail{
-            flex-direction: column;
-        }
-
+    .post:hover {
+        width: 150px;
+        height: auto;
+        min-height: 120px;
+        max-height: 300px;
+        transition: .5s;
     }
+
+    .divDetail {
+        flex-direction: column;
+    }
+
+}
