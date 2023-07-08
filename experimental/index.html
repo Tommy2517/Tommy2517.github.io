@@ -32,9 +32,86 @@
     </div>
 </section>
 <script>
-    document.querySelector(".mobile__button").onclick = function () {
-        document.querySelector(".nav__menu").classList.toggle('active');
-    }
+
+    // var is = function(n){
+    //     let s = Math.sqrt(n);
+    //     if (s % 1 === 0){
+    //         return true;
+    //     }else{
+    //         return false;
+    //     }
+    //     // fix me
+    // }
+    //
+    // console.log(is());
+
+
+    // function foo(a, b) {
+    //     let r = a + b;
+    //     let t = [];
+    //     for (; r >= 1; r /= 2) {
+    //         r = parseInt(r)
+    //         t.push(r % 2 + '')
+    //             }
+    //     t.reverse()
+    //     let bin = '';
+    //     for (const tItem of t) {
+    //         bin +=tItem;
+    //     }
+    //     return bin
+    // }
+    //
+    // console.log(foo(6, 4));
+
+    // function addBinary(a,b){
+    //     return (a+b).toString(16)
+    // }
+    //
+    // console.log(addBinary(4, 6));
+
+
+    // function solution(str){
+    //     let equal = [];
+    //     if(str.length % 2 === 1){
+    //         str += '_';
+    //     }
+    //     for (let i = 0; i < str.length; i += 2){
+    //         equal.push(str[i]+str[i+1])
+    //     }
+    //     return equal;
+    // }
+    //
+    // console.log(solution('qweqweweqrrars2'));
+
+    // String.prototype.toJadenCase = function () {
+    //     let transit = this.split(' ')
+    //     let newStr = ''
+    //     for (const item of transit) {
+    //         newStr += item.charAt(0).toUpperCase()+item.slice(1) + ' ';
+    //         // if (transit.indexOf(item) !== transit.length-1){
+    //         //     newStr += ' '
+    //         // }
+    //     }
+    //     return newStr
+    // };
+    String.prototype.toJadenCase = function () {
+        let transit = this.split(' ');
+        let newStr = '';
+        let i = 0;
+        for (const item of transit) {
+            newStr += item.charAt(0).toUpperCase()+item.slice(1);
+            i++
+            if (i !== transit.length){
+                newStr += ' ';
+            }
+            console.log(transit.indexOf(item));
+        }
+        return newStr
+    };
+
+    let q = 'How Can Mirrors Be Real If Our Eyes Aren\'t Real'
+    console.log(q.toJadenCase());
+
 </script>
 </body>
-</html>m ,
+</html>

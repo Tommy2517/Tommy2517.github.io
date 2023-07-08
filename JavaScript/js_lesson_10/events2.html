@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .body{
+        background: #999;
+    }
+</style>
+<body>
+<form>
+    <input type="text" name="username">
+    <button>save</button>
+</form>
+<script>
+    let users='qwerty'
+    let splice = users.split('')
+    splice.map(value => {
+        console.log(value);
+    })
+    let form = document.forms[0];
+    // form.onsubmit = function (eo) {
+    //     eo.preventDefault();
+    //     console.log(form.username.value)
+    // }
+    let usernameInput = form.username;
+    let inputHandler = function (eo) {
+        console.log(this.value[this.value.length-1]);
+        document.body.append(this.value[this.value.length-1]);
+        this.value.innerText =''
+    }
+    usernameInput.addEventListener('click',inputHandler);
+</script>
+</body>
+</html>

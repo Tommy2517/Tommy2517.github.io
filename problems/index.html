@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div class="main">
+    <div>суть проблемы: я отправляю на почту запрос на подтверждение изменения пароля, с ссылкой, переходя по которой
+        мы получаем url с токеном. потом этот токен вставляю в url Postman, пишу новый пароль и ожидаю чтопароль
+        изменится но в итоге получаю такую ошибку...
+        <div><img src="imgs/Postman.jpg" alt=""></div>
+        далее предоставлены скриншоты моего кода из разных мест проэкта.
+    </div>
+    <div>auth.router.ts
+        <div>
+        <img src="imgs/auth.router.ts.jpg" alt="">
+        </div>
+    </div>
+    <div>isBodyValid
+        <div><img src="imgs/common.middleware.ts.jpg" alt=""></div>
+    </div>
+    <div>checkActionToken
+        <div><img src="imgs/auth.middleware.ts.jpg" alt=""></div>
+    </div>
+    <div>setForgotPassword
+    <div><img src="imgs/auth.controller.ts.jpg" alt=""></div></div>
+</div>
+</body>
+</html>

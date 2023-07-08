@@ -104,7 +104,7 @@ header {
     transition: .5s;
 }
 #btn_posts:hover{
-    background: rgba(115, 135, 255, 0.71);
+    background: gold;
     transition: .5s;
 }
 
