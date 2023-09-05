@@ -11,6 +11,7 @@
 </head>
 <body>
 <script src="scripts/elements/snake_body.js"></script>
+<script src="scripts/elements/food.js"></script>
 
 <script>
     // variables
@@ -25,7 +26,9 @@
     block.style.width = "200px";
     block.style.height = "100px";
     // block.style.
+    // block.style.top = '0px'
     block.style.position = 'relative'
+
     document.body.append(block)
 
     let blockChildRight = document.createElement('div');
@@ -107,8 +110,13 @@
         block.style.height = `${btnHeight}px`;
         block.style.transition = ".5s";
     }
+
+
     block.append(btn)
-    block.append(document.getElementById('1'))
+    block.append(body_snake)
+    block.append(food)
+    document.body.append(point_wind)
+
 </script>
 
 

@@ -1,10 +1,42 @@
-.qwe{
-    width: 20px;
-    height: 20px;
+body{
+
+    margin: 0;
+}
+
+.block{
+    position: relative;
+}
+.snake_body{
+    width: 10px;
+    height: 10px;
     background: #000;
     border-radius: 100%;
     z-index: 1;
     /*transition: .1s;*/
 
-    position: relative;
+    position: absolute;
+}
+
+.food{
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 100%;
+    z-index: 1;
+
+    /*transition: .1s;*/
+
+    position: absolute;
+
+}
+.point_wind{
+    width: 50px;
+    height: 50px;
+    border: gold solid 10px;
+    background: #000;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
