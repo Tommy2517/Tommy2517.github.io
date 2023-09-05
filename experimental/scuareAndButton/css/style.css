@@ -1,0 +1,10 @@
+.qwe{
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 100%;
+    z-index: 1;
+    /*transition: .1s;*/
+
+    position: relative;
+}
