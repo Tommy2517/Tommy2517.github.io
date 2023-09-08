@@ -12,8 +12,6 @@ body{
     background: #000;
     border-radius: 100%;
     z-index: 1;
-    /*transition: .1s;*/
-
     position: absolute;
 }
 

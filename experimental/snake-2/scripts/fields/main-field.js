@@ -5,4 +5,4 @@ mainField.style.height = '400px';
 mainField.style.backgroundColor = 'white';
 
 let content = document.querySelector('.content')
-content.append(mainField)
+// content.append(mainField)

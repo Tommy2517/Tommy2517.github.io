@@ -13,6 +13,8 @@ let step = 10;
 let head_position = [0,0];
 
 let interval_eat = null;
+let intervalSpeed = 100;
+let timeoutSpeed = 10;
 
 document.body.onkeydown = function (eo) {
 
@@ -25,12 +27,13 @@ document.body.onkeydown = function (eo) {
 
         intervalID = setInterval(function() {
             if (x_position > 180) {
+                body_snake.style.transition = 'none'
                 x_position = -20;
             }
             x_position += step;
             body_snake.style.left = `${x_position}px`;
             head_position[0] = x_position
-        }, 90)
+        }, intervalSpeed)
     }
 
     if (eo.key === 'a' && left_turn === 0) {
@@ -47,7 +50,7 @@ document.body.onkeydown = function (eo) {
             x_position -= step;
             body_snake.style.left = `${x_position}px`;
             head_position[0] = x_position
-        }, 90)
+        }, intervalSpeed)
     }
 
     if (eo.key === 'w' && top_turn === 0) {
@@ -66,7 +69,7 @@ document.body.onkeydown = function (eo) {
                 body_snake.style.top = `${y_position}px`;
                 head_position[1] = y_position
 
-            }, 90)
+            }, intervalSpeed)
         }
     }
     if (eo.key === 's' && bot_turn === 0) {
@@ -84,7 +87,7 @@ document.body.onkeydown = function (eo) {
                 y_position += step;
                 body_snake.style.top = `${y_position}px`;
                 head_position[1] = y_position
-            }, 90)
+            }, intervalSpeed)
         }
     }
 

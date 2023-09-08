@@ -8,16 +8,58 @@
 </head>
 <body>
     <div class="main">
-        <div class="header"></div>
+        <div class="header">Games</div>
         <div class="container">
-            <div class="menu"></div>
-            <div class="content"></div>
+            <div class="menu">
+                <button class="button-menu-1" id="button-menu-1">change frame 1</button>
+                <button class="button-menu-1" id="button-menu-2">change frame 2</button>
+            </div>
+            <div class="content" id="content">
+                тут будут фреймы
+            </div>
             <div class="sidebar"></div>
         </div>
         <div class="footer"></div>
     </div>
     <script src="scripts/fields/main-field.js"></script>
-    <h2>hello world</h2>
+    <script src="scripts/fields/grid.js"></script>
+<script>
+    let getContent = document.getElementById('content');
 
+    let newIframe1 = document.createElement('iframe');
+    newIframe1.classList.add('newIframe');
+    newIframe1.src = '../snake/index.html';
+
+    let btn1 = document.getElementById('button-menu-1');
+        let countOfClicktn1 = 0;
+    btn1.onclick = (eo)=>{
+        // getContent.innerHTML = '';
+        if (countOfClicktn1<1){
+        getContent.append(newIframe1);
+        }else {
+            newIframe2.style.display = 'none'
+            newIframe1.style.display = 'flex'
+        }
+        countOfClicktn1++
+    }
+
+    let btn2 = document.getElementById('button-menu-2');
+        let countOfClicktn2 = 0;
+    btn2.onclick = (eo)=>{
+        // getContent.innerHTML = '';
+        if (countOfClicktn2<1){
+            getContent.append(newIframe2);
+        }else {
+        newIframe1.style.display = 'none'
+        newIframe2.style.display = 'flex'
+        }
+        countOfClicktn2++
+
+    }
+    let newIframe2 = document.createElement('iframe');
+    newIframe2.classList.add('newIframe');
+    newIframe2.src = 'https://translate.google.com/?hl=ru&tab=TT'
+
+</script>
 </body>
 </html>
