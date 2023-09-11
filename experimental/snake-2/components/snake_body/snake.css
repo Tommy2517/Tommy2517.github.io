@@ -1,0 +1,23 @@
+/*
+column
+square
+main
+body
+*/
+
+
+
+.snake_head{
+    width: 9px;
+    height: 9px;
+
+    background: #000;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+
+    border-radius: 100%;
+}
+

@@ -15,14 +15,11 @@
                 <button class="button-menu-1" id="button-menu-2">change frame 2</button>
             </div>
             <div class="content" id="content">
-                тут будут фреймы
             </div>
             <div class="sidebar"></div>
         </div>
         <div class="footer"></div>
     </div>
-    <script src="scripts/fields/main-field.js"></script>
-    <script src="scripts/fields/grid.js"></script>
 <script>
     let getContent = document.getElementById('content');
 
@@ -33,7 +30,6 @@
     let btn1 = document.getElementById('button-menu-1');
         let countOfClicktn1 = 0;
     btn1.onclick = (eo)=>{
-        // getContent.innerHTML = '';
         if (countOfClicktn1<1){
         getContent.append(newIframe1);
         }else {
@@ -46,7 +42,6 @@
     let btn2 = document.getElementById('button-menu-2');
         let countOfClicktn2 = 0;
     btn2.onclick = (eo)=>{
-        // getContent.innerHTML = '';
         if (countOfClicktn2<1){
             getContent.append(newIframe2);
         }else {
@@ -58,7 +53,7 @@
     }
     let newIframe2 = document.createElement('iframe');
     newIframe2.classList.add('newIframe');
-    newIframe2.src = 'https://translate.google.com/?hl=ru&tab=TT'
+    newIframe2.src = 'components/snake_field/field.html'
 
 </script>
 </body>

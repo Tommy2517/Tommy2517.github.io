@@ -27,7 +27,6 @@ document.body.onkeydown = function (eo) {
 
         intervalID = setInterval(function() {
             if (x_position > 180) {
-                body_snake.style.transition = 'none'
                 x_position = -20;
             }
             x_position += step;
