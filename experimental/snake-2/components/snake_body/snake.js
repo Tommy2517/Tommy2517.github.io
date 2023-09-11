@@ -66,12 +66,15 @@
 
 
 
-
-let left = function( ){
-                snake_body.position.x -= snake_body.speed.step
-            snake_body.head.style.left = `${snake_body.position.x - 1}px`
+let moveHead{
+    left:( )=>{
+        snake_body.position.x -= snake_body.speed.step
+        snake_body.head.style.left = `${snake_body.position.x - 1}px`
+    },
+    right:()=>{},
+    up:()=>{},
+    down:()=>{}
 }
-
 
 
 // TODO: position>>
@@ -85,7 +88,7 @@ let left = function( ){
             }
 
             //move head
-            left()
+            moveHead.left
             // snake_body.position.x -= snake_body.speed.step
             // snake_body.head.style.left = `${snake_body.position.x - 1}px`
 
