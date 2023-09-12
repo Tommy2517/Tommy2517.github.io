@@ -5,10 +5,10 @@
 
 
 
- let generate = function(){
-
-    snake_body.chest.push(newSection)
- }
+ // let generate = function(){
+ //
+ //    // snake_body.chest.push(newSection)
+ // }
 
 
     let newSection = document.createElement('div');
@@ -16,81 +16,83 @@
     newSection.style.background = 'red';
     newSection.style.position = 'absolute'
 
+
+
     let move_interval = null
 
     let snake_body = {
         head: snake_head,
         speed: {move: 100, step: 10,},
-        chest: [],
-        eat: function () {
-            if (this.position.x === food.position.x &&
-                this.position.y === food.position.y) {
-                this.chest.push(snake_body.head)
-            }
-        },
+        chest: [snake_head],
         position: {x: 1, y: 1}
     }
 
 
-// if (snake_body.chest[0]) {
-//     for(let i = 0; i < snake_body.chest.length; i++ ){
-//         console.log(snake_body.chest[i])
-//         snake_body.chest[i].style.left =`${ snake_body.position.x+(10*(i+1))}px`
-//         snake_body.chest[i].style.top =`${ snake_body.position.y}px`
-//     }
+
+
+    let food = document.createElement('div');
+    let foodX = ()=> Math.floor(Math.random()*45)*10;
+    let foodY = ()=> Math.floor(Math.random() * 45) * 10;
+    food.classList.add('snake_head');
+    food.style.background = 'yellow';
+    food.style.top = `${foodY()}px`
+    food.style.left = `${foodX()}px`
+    let foodPosX = parseInt(food.style.left)
+    let foodPosy = parseInt(food.style.top)
+    main.append(food)
+
+
+
+setInterval(()=>{
+    if (parseInt(snake_body.head.style.left) === foodPosX &&
+        parseInt(snake_body.head.style.top) === foodPosy) {
+        snake_body.chest.push(newSection)
+        food.style.top = `${foodY()}px`
+        food.style.left = `${foodX()}px`
+        foodPosX = parseInt(food.style.left)
+        foodPosy = parseInt(food.style.top)
+        console.log(snake_body.chest.length)
+        main.append(snake_body.chest[snake_body.chest.length-1])
+    }
+},100);
+
+// TODO писать ли px делать ли объект
+// if (1+1 === 2){
+//     snake_body.chest[snake_body.chest.length-1].style.left = `${snake_body.chest[snake_body.chest.length-2].style.left}`
+//     snake_body.chest[snake_body.chest.length-1].style.top = `${snake_body.chest[snake_body.chest.length-2]}`
 // }
 
-// if (snake_body.chest[0]) {
-//     for(let i = 0; i < snake_body.chest.length; i++ ){
-//         console.log(snake_body.chest[i])
-//         snake_body.chest[i].style.left =`${ snake_body.position.x+(10*(i+1))}px`
-//         snake_body.chest[i].style.top =`${ snake_body.position.y}px`
-//     }
-// }
-
-// if (snake_body.chest[0]) {
-//     for(let i = 0; i < snake_body.chest.length; i++ ){
-//         console.log(snake_body.chest[i])
-//         snake_body.chest[i].style.left =`${ snake_body.position.x+(10*(i+1))}px`
-//         snake_body.chest[i].style.top =`${ snake_body.position.y}px`
-//     }
-// }
-
-// if (snake_body.chest[0]) {
-//     for(let i = 0; i < snake_body.chest.length; i++ ){
-//         console.log(snake_body.chest[i])
-//         snake_body.chest[i].style.left =`${ snake_body.position.x+(10*(i+1))}px`
-//         snake_body.chest[i].style.top =`${ snake_body.position.y}px`
-//     }
-// }
 
 
-
-let moveHead{
+let moveHead = {
     left:( )=>{
         snake_body.position.x -= snake_body.speed.step
         snake_body.head.style.left = `${snake_body.position.x - 1}px`
     },
-    right:()=>{},
-    up:()=>{},
-    down:()=>{}
+    right:()=>{
+        snake_body.position.x += snake_body.speed.step
+        snake_body.head.style.left = `${snake_body.position.x - 1}px`
+    },
+    up:()=>{
+        snake_body.position.y -= snake_body.speed.step
+        snake_body.head.style.top = `${snake_body.position.y - 1}px`
+    },
+    down:()=>{
+        snake_body.position.y += snake_body.speed.step
+        snake_body.head.style.top = `${snake_body.position.y - 1}px`
+    }
 }
 
 
 // TODO: position>>
-    let draw = {
+    let turn = {
         left: () => {
             if (snake_body.position.x < 10) {
                 snake_body.position.x = 451
-                generate()
-                for(item of snake_body.chest)
-                main.append(item)
             }
 
             //move head
-            moveHead.left
-            // snake_body.position.x -= snake_body.speed.step
-            // snake_body.head.style.left = `${snake_body.position.x - 1}px`
+            moveHead.left()
 
             //move body
             newSection.style.left =`${ snake_body.position.x+10}px`
@@ -103,8 +105,7 @@ let moveHead{
             }
 
             //move head
-            snake_body.position.x += snake_body.speed.step
-            snake_body.head.style.left = `${snake_body.position.x - 1}px`
+            moveHead.right()
 
             //move body
             newSection.style.left =`${ snake_body.position.x-10}px`
@@ -117,8 +118,7 @@ let moveHead{
             }
 
             //move head
-            snake_body.position.y -= snake_body.speed.step
-            snake_body.head.style.top = `${snake_body.position.y - 1}px`
+            moveHead.up()
 
             //move body
             newSection.style.top =`${ snake_body.position.y+10}px`
@@ -131,34 +131,40 @@ let moveHead{
             }
 
             //move head
-            snake_body.position.y += snake_body.speed.step
-            snake_body.head.style.top = `${snake_body.position.y - 1}px`
+            moveHead.down()
             
             //move body
             newSection.style.top =`${ snake_body.position.y-10}px`
             newSection.style.left =`${ snake_body.position.x}px`
         },
     }
+
     document.onkeydown = function (eo) {
         if (move_interval) {
             clearInterval(move_interval)
         }
         if (eo.key === 'a') {
-            move_interval = setInterval(draw.left, snake_body.speed.move)
-            console.log(draw.left)
+            move_interval = setInterval(turn.left, snake_body.speed.move)
         }
         if (eo.key === 's') {
-            move_interval = setInterval(draw.down, snake_body.speed.move)
+            move_interval = setInterval(turn.down, snake_body.speed.move)
         }
         if (eo.key === 'w') {
-            move_interval = setInterval(draw.up, snake_body.speed.move)
+            move_interval = setInterval(turn.up, snake_body.speed.move)
         }
         if (eo.key === 'd') {
-            move_interval = setInterval(draw.right, snake_body.speed.move)
+            move_interval = setInterval(turn.right, snake_body.speed.move)
         }
+
 
     }
 
     // let main = document.querySelector('.main')
     main.append(snake_body.head)
+
+
+
+    console.log(snake_body)
+    console.log(snake_head)
+
 })()

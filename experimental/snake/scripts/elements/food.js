@@ -17,6 +17,5 @@ let position_food_change = function () {
     food.style.top = `${food_y()}px`
     food.style.left = `${food_x()}px`
     position_food = [parseInt(food.style.top), parseInt(food.style.left)];
-    console.log(position_food[0], '|||', position_food[1])
 
 }
