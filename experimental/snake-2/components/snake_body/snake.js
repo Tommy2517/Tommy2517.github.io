@@ -5,16 +5,16 @@
 
 
 
- // let generate = function(){
- //
- //    // snake_body.chest.push(newSection)
- // }
 
 
-    let newSection = document.createElement('div');
-    newSection.classList.add('snake_head');
-    newSection.style.background = 'red';
-    newSection.style.position = 'absolute'
+    let newSection = {
+    section: document.createElement('div')
+
+    }
+
+    newSection.section.classList.add('snake_head');
+    newSection.section.style.background = 'red';
+    newSection.section.style.position = 'absolute'
 
 
 
@@ -46,21 +46,20 @@
 setInterval(()=>{
     if (parseInt(snake_body.head.style.left) === foodPosX &&
         parseInt(snake_body.head.style.top) === foodPosy) {
-        snake_body.chest.push(newSection)
+        snake_body.chest.push(newSection.section)
         food.style.top = `${foodY()}px`
         food.style.left = `${foodX()}px`
         foodPosX = parseInt(food.style.left)
         foodPosy = parseInt(food.style.top)
-        console.log(snake_body.chest.length)
         main.append(snake_body.chest[snake_body.chest.length-1])
+        console.log(snake_body.chest)
+        for (let item of snake_body.chest) {
+            console.log(item.style.background)
+        }
     }
 },100);
 
-// TODO писать ли px делать ли объект
-// if (1+1 === 2){
-//     snake_body.chest[snake_body.chest.length-1].style.left = `${snake_body.chest[snake_body.chest.length-2].style.left}`
-//     snake_body.chest[snake_body.chest.length-1].style.top = `${snake_body.chest[snake_body.chest.length-2]}`
-// }
+
 
 
 
@@ -83,8 +82,6 @@ let moveHead = {
     }
 }
 
-
-// TODO: position>>
     let turn = {
         left: () => {
             if (snake_body.position.x < 10) {
@@ -95,8 +92,13 @@ let moveHead = {
             moveHead.left()
 
             //move body
-            newSection.style.left =`${ snake_body.position.x+10}px`
-            newSection.style.top =`${ snake_body.position.y}px`
+            // item.style.left = `${snake_body.chest[snake_body.chest.length-2].style.left}`
+            // item.style.top = `${snake_body.chest[snake_body.chest.length-2]}`
+            for (let i=0; i < snake_body.chest.length; i++) {
+                if (i > 0){
+                    snake_body.chest[i].style.left = `${parseInt(snake_body.chest[i-1].style.left)+10}px`
+                    snake_body.chest[i].style.top = `${parseInt(snake_body.chest[i-1].style.top)}px`
+                }}
         },
 
         right: () => {
@@ -108,8 +110,13 @@ let moveHead = {
             moveHead.right()
 
             //move body
-            newSection.style.left =`${ snake_body.position.x-10}px`
-            newSection.style.top =`${ snake_body.position.y}px`
+            // newSection.section.style.left =`${ snake_body.position.x-10}px`
+            // newSection.section.style.top =`${ snake_body.position.y}px`
+            for (let i=0; i < snake_body.chest.length; i++) {
+                if (i > 0){
+                    snake_body.chest[i].style.left = `${parseInt(snake_body.chest[i-1].style.left)-10}px`
+                    snake_body.chest[i].style.top = `${parseInt(snake_body.chest[i-1].style.top)}px`
+                }}
         },
 
         up: () => {
@@ -121,8 +128,13 @@ let moveHead = {
             moveHead.up()
 
             //move body
-            newSection.style.top =`${ snake_body.position.y+10}px`
-            newSection.style.left =`${ snake_body.position.x}px`
+            // newSection.section.style.top =`${ snake_body.position.y+10}px`
+            // newSection.section.style.left =`${ snake_body.position.x}px`
+            for (let i=0; i < snake_body.chest.length; i++) {
+                if (i > 0){
+                    snake_body.chest[i].style.left = `${parseInt(snake_body.chest[i-1].style.left)}px`
+                    snake_body.chest[i].style.top = `${parseInt(snake_body.chest[i-1].style.top)+10}px`
+                }}
         },
 
         down: () => {
@@ -134,10 +146,16 @@ let moveHead = {
             moveHead.down()
             
             //move body
-            newSection.style.top =`${ snake_body.position.y-10}px`
-            newSection.style.left =`${ snake_body.position.x}px`
+            // newSection.section.style.top =`${ snake_body.position.y-10}px`
+            // newSection.section.style.left =`${ snake_body.position.x}px`
+            for (let i=0; i < snake_body.chest.length; i++) {
+                if (i > 0){
+                    snake_body.chest[i].style.left = `${parseInt(snake_body.chest[i-1].style.left)}px`
+                    snake_body.chest[i].style.top = `${parseInt(snake_body.chest[i-1].style.top)-10}px`
+                }}
         },
     }
+
 
     document.onkeydown = function (eo) {
         if (move_interval) {
@@ -159,12 +177,8 @@ let moveHead = {
 
     }
 
-    // let main = document.querySelector('.main')
+
     main.append(snake_body.head)
 
-
-
-    console.log(snake_body)
-    console.log(snake_head)
 
 })()
