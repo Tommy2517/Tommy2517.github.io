@@ -11,7 +11,7 @@ body{
     height: 450px;
 
     display: flex;
-    background-color: #2ec96e;
+    background-color: gray;
     opacity: 90%;
 
     position: relative;
