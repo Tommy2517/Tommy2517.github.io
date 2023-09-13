@@ -14,105 +14,19 @@
 <script src="scripts/elements/food.js"></script>
 
 <script>
-    // variables
-    let btnleft = 0;
-    let btnHeight = 100;
-    let btnWidth = 200;
-
     // blocks
     let block = document.createElement('div');
     block.classList.add('block')
-    block.style.background = '#999';
+    block.style.background = 'green';
     block.style.width = "200px";
     block.style.height = "100px";
-    // block.style.
-    // block.style.top = '0px'
     block.style.position = 'relative'
+
+
+
 
     document.body.append(block)
 
-    let blockChildRight = document.createElement('div');
-    // blockChildRight.style
-    blockChildRight.style.transition = ".5s";
-
-    blockChildRight.style.position = "absolute";
-    blockChildRight.style.right = "0px"
-    blockChildRight.style.top = "0px"
-
-    blockChildRight.style.border = "1px solid #000";
-    blockChildRight.style.height = "0px";
-    blockChildRight.style.width = "0px";
-
-    block.append(blockChildRight);
-
-
-    let blockChildBottom = document.createElement('div');
-
-    blockChildBottom.style.transition = ".5s";
-    blockChildBottom.style.position = "absolute";
-    blockChildBottom.style.left = "0px";
-    blockChildBottom.style.bottom = "0px";
-    blockChildBottom.style.height = "0px";
-    blockChildBottom.style.width = "0px";
-
-    blockChildBottom.style.border = "1px solid #000";
-    block.append(blockChildBottom);
-
-    // buttons
-    let btn = document.createElement('button')
-    btn.style.width = '30px';
-    btn.style.height = '20px';
-    // btn.style
-    btn.style.border = '1px solid green'
-    btn.style.position = 'absolute'
-    btn.style.left = `${btnleft}px`
-    btn.style.top = '0px'
-    btn.style.background = 'blue'
-
-    // functions
-    btn.onkeydown = function (eo){
-
-        if (eo.key === 'd'&& btnleft < btnWidth-30){
-            btnleft += 30
-            btn.style.left = `${btnleft}px`
-            console.log(btnleft)
-        }
-        if (eo.key === 'a' && btnleft > 0){
-            btnleft -= 30
-            btn.style.left = `${btnleft}px`
-            console.log(btnleft)
-
-        }
-    }
-
-    btn.onclick = function (eo){
-        if (btnWidth < 300){
-            btnWidth +=100;
-            btn.style.background = 'red'
-        }else{
-            btnWidth -=100;
-            btn.style.background = 'blue'
-        }
-        if (btnHeight < 200){
-            btnHeight +=100;
-            blockChildBottom.style.height = "100px";
-            blockChildBottom.style.width = "100px";
-            blockChildRight.style.height = "100px";
-            blockChildRight.style.width = "100px";
-        }else{
-            btnHeight -=100;
-            blockChildBottom.style.height = "0px";
-            blockChildBottom.style.width = "0px";
-            blockChildRight.style.height = "0px";
-            blockChildRight.style.width = "0px";
-        }
-        block.style.width = `${btnWidth}px`;
-        block.style.height = `${btnHeight}px`;
-        block.style.transition = ".5s";
-    }
-
-
-    block.append(btn)
     block.append(body_snake)
     block.append(food)
     document.body.append(point_wind)

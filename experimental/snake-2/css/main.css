@@ -4,7 +4,7 @@ body{
 }
 .main{
     width: 100vw;
-    height: 110vh;
+    height: 100vh;
     background: #999;
 
     display: flex;
@@ -12,7 +12,7 @@ body{
     justify-content: space-between;
 }
 .header{
-    background: #9cd2ed;
+    background: linear-gradient(to right, #7b00ff, #ffffff);
     width: 100%;
     height: 100px;
 
@@ -21,29 +21,45 @@ body{
     align-items: center;
 
     font-size: 40px;
+    color: #6863e1;
+
 
 }
+.footer{
+    background: #dfd091;
+    width: 100%;
+    height: 200px;
+
+}
+
 .container{
     width: 100%;
-    height: 500px;
-    background: #999;
+    height: 100%;
+    background: #cbc364;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .menu{
     height: 100%;
     width: 300px;
     background: plum;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 50px;
 }
 .content{
-    width: 600px;
-    height: 100%;
-    background: #000;
+    width: 450px;
+    height: 500px;
+    background: #555;
     
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: end;
+
 }
 .sidebar{
     width: 300px;
@@ -52,13 +68,23 @@ body{
 }
 
 
-.footer{
-    background: #dfd091;
-    width: 100%;
-    height: 100px;
 
+.button-menu-1{
+    width: 100px;
+    height: 40px;
+    background: green;
+    font-style: italic;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+.newIframe{
+    display: flex;
+    width: 450px;
+    height: 450px;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    border: 0;
 }
 
-.mainField{
-    width: 350px;
-}
