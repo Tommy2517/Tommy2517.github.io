@@ -81,7 +81,7 @@ body{
 .newIframe{
     display: flex;
     width: 450px;
-    height: 450px;
+    height: 500px;
     color: white;
     font-weight: bold;
     z-index: 1;

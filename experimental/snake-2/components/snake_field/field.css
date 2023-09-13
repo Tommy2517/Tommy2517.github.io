@@ -3,8 +3,9 @@ body{
     height: 100vh;
     margin: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
 }
 .main{
     width: 450px;
@@ -30,4 +31,10 @@ body{
     width: 10px;
     box-sizing: border-box;
 
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
