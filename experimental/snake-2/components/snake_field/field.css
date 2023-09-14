@@ -1,6 +1,7 @@
 
 body{
     height: 100vh;
+    width: 100vw;
     margin: 0;
     display: flex;
     justify-content: space-between;
@@ -37,4 +38,10 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.button_control {
+    width: 40vw;
+    height: 30px;
+    background: limegreen;
+    border-radius: 10px;
 }

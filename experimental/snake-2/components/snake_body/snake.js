@@ -1,3 +1,4 @@
+
 (function createSnake() {
     let move_interval = null;
     let main = document.querySelector('.main');
@@ -14,7 +15,7 @@
         position: {x: 1, y: 1},
     };
 
-    let randomFieldSpot = () => Math.floor(Math.random() * 45) * 10;
+    // let randomFieldSpot = () => Math.floor(Math.random() * 45) * 10;
 
     let food = document.createElement('div');
     food.classList.add('snake_head');
