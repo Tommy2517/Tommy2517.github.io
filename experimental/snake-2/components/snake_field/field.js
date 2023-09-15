@@ -1,7 +1,10 @@
-(function field() {
+let fieldSize = 45;
+let enterWall = 451
+let exitWall = 440
+let randomFieldSpot = () => Math.floor(Math.random() * fieldSize) * 10;
+
+function field() {
     let main = document.querySelector('.main')
-    let fieldSize = 45;
-    function pcPhone() {
         for (let i = 0; i < fieldSize; i++) {
             let y = document.createElement('div');
             y.classList.add('column')
@@ -12,18 +15,6 @@
                 x.classList.add('square')
                 y.append(x)
             }
-
         }
-    }
-
-    document.getElementById('pc_phone').onclick = () => {
-        if (fieldSize === 45){
-            fieldSize = 37
-        }else   {
-            fieldSize = 45
-        }
-        pcPhone()
-    }
-})()
-
-let randomFieldSpot = () => Math.floor(Math.random() * 45) * 10;
+}
+field()

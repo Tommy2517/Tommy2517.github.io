@@ -10,12 +10,12 @@
     main.append(chest[0]);
 
 
+
     let snake_body = {
         speed: {move: 100, step: 10},
         position: {x: 1, y: 1},
     };
 
-    // let randomFieldSpot = () => Math.floor(Math.random() * 45) * 10;
 
     let food = document.createElement('div');
     food.classList.add('snake_head');
@@ -71,18 +71,16 @@
     };
 
     let moveBody = () => {
-        for (let i = chest.length - 1; i > 0; --i) {
+        for (let i = chest.length - 1; i > 0; i--) {
             chest[i].style.left = `${parseInt(chest[i - 1].style.left)}px`
             chest[i].style.top = `${parseInt(chest[i - 1].style.top)}px`
-            console.log(chest[i - 1].style.left, '||',
-                chest[i - 1].style.top)
         }
     }
 
     let turn = {
         left: () => {
             if (snake_body.position.x < 10) {
-                snake_body.position.x = 451
+                snake_body.position.x = enterWall
             }
 
             moveHead.left()
@@ -90,7 +88,7 @@
         },
 
         right: () => {
-            if (snake_body.position.x > 440) {
+            if (snake_body.position.x > exitWall) {
                 snake_body.position.x = -9
             }
             moveHead.right()
@@ -99,14 +97,14 @@
 
         up: () => {
             if (snake_body.position.y < 10) {
-                snake_body.position.y = 451
+                snake_body.position.y = enterWall
             }
             moveHead.up()
             moveBody()
         },
 
         down: () => {
-            if (snake_body.position.y > 440) {
+            if (snake_body.position.y > exitWall) {
                 snake_body.position.y = -9
             }
             moveHead.down()
@@ -138,7 +136,7 @@
     }
     document.getElementById('btn_down').onclick = (eo)=>{
             clearInterval(move_interval);
-        move_interval = setInterval(turn.down, snake_body.speed.move);
+            move_interval = setInterval(turn.down, snake_body.speed.move);
     }
     document.getElementById('btn_left').onclick = (eo)=>{
             clearInterval(move_interval);
@@ -148,5 +146,36 @@
             clearInterval(move_interval);
             move_interval = setInterval(turn.right, snake_body.speed.move);
     }
+//reload field items
+
+    function reset(){
+    clearInterval(move_interval)
+    snake_body.position.y = 1;
+    snake_body.position.x = 1;
+    snake_head.style.left = '1px'
+    snake_head.style.top = '1px'
+    chest=[snake_head];
+    main.append(chest[0]);
+
+    }
+
+
+    document.getElementById('pc_phone').onclick = () => {
+        main.innerHTML = ''
+        reset()
+        if (fieldSize === 45){
+            fieldSize = 37
+            enterWall = 371
+            exitWall = 360
+        }else   {
+            fieldSize = 45
+            enterWall = 451
+            exitWall = 440
+        }
+        main.append(food);
+        foodPosition()
+        field()
+    }
+
 
 })();
