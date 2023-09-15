@@ -4,7 +4,6 @@ body{
     width: 100vw;
     margin: 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
@@ -44,4 +43,11 @@ body{
     height: 30px;
     background: limegreen;
     border-radius: 10px;
+}
+.score{
+    font-size: 30px;
+    color: red;
+    background: #000;
+    border-radius: 10px;
+    padding: 0 10px 0 10px;
 }

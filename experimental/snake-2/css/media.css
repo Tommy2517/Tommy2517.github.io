@@ -1,6 +1,10 @@
 @media screen and (max-width:375px) {
-
-
-body{background-color: #6863e1}
+    .container{flex-direction: column}
+    body{background-color: #6863e1}
+}
+@media screen and (min-width:375px) {
+    .button_control{
+        width: 150px;
+    }
 
 }

@@ -9,7 +9,9 @@
     let chest = [snake_head];
     main.append(chest[0]);
 
-
+    let scoreDiv = document.getElementById('score')
+    let scoreCounter = 0;
+    scoreDiv.innerText = `Score - ${scoreCounter}`;
 
     let snake_body = {
         speed: {move: 100, step: 10},
@@ -45,8 +47,11 @@
             parseInt(snake_head.style.left) === foodPosX &&
             parseInt(snake_head.style.top) === foodPosy
         ) {
+            scoreCounter++
+            scoreDiv.innerText = `Score - ${scoreCounter}`;
             foodPosition()
             newSection()
+
         }
 
     }, 100);
@@ -156,10 +161,11 @@
     snake_head.style.top = '1px'
     chest=[snake_head];
     main.append(chest[0]);
+    scoreCounter = 0;
+    scoreDiv.innerText = `Score - ${scoreCounter}`;
 
     }
-
-
+//
     document.getElementById('pc_phone').onclick = () => {
         main.innerHTML = ''
         reset()
@@ -167,15 +173,20 @@
             fieldSize = 37
             enterWall = 371
             exitWall = 360
+            main.style.width = '370px'
+            main.style.height = '370px'
         }else   {
             fieldSize = 45
             enterWall = 451
             exitWall = 440
+            main.style.width = '450px'
+            main.style.height = '450px'
         }
         main.append(food);
         foodPosition()
         field()
     }
+
 
 
 })();
