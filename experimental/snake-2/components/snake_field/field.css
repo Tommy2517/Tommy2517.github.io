@@ -39,8 +39,8 @@ body{
     flex-direction: column;
 }
 .button_control {
-    width: 40vw;
-    height: 30px;
+    width: 60px;
+    height: 60px;
     background: limegreen;
     border-radius: 10px;
 }
