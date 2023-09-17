@@ -153,18 +153,20 @@
     }
 //SWIPES CONTROL
     let startX, startY, endX, endY;
-    document.addEventListener('touchstart', function(event) {
-        startX = event.touches[0].clientX;
-        startY = event.touches[0].clientY;
+    document.addEventListener('touchstart', function(eo) {
+        startX = eo.touches[0].clientX;
+        startY = eo.touches[0].clientY;
+        eo.preventDefault()
     });
 
-    document.addEventListener('touchmove', function(event) {
+    document.addEventListener('touchmove', function(eo) {
         // Если нужно обработать движение пальца во время свайпа, это можно сделать здесь
+        eo.preventDefault();
     });
 
-    document.addEventListener('touchend', function(event) {
-        endX = event.changedTouches[0].clientX;
-        endY = event.changedTouches[0].clientY;
+    document.addEventListener('touchend', function(eo) {
+        endX = eo.changedTouches[0].clientX;
+        endY = eo.changedTouches[0].clientY;
 
         // Вычислите направление свайпа и выполните нужные действия
         let deltaX = startX - endX;
