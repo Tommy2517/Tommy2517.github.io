@@ -1,10 +1,8 @@
 html{
-    touch-action: none;
 
 }
 body{
     margin: 0;
-    touch-action: none;
 }
 .main{
     width: 100vw;
@@ -14,7 +12,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    touch-action: none;
 
 }
 .header{
