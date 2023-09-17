@@ -195,7 +195,9 @@
         // eo.preventDefault();
 
     });
-
+addEventListener('click', (eo)=>{
+    clearInterval(move_interval)
+})
 
 
 
