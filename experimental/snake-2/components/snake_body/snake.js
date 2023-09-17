@@ -135,22 +135,22 @@
         }
     };
 //BUTTONS CONTROL
-    document.getElementById('btn_up').onclick = (eo)=>{
-            clearInterval(move_interval);
-            move_interval = setInterval(turn.up, snake_body.speed.move);
-    }
-    document.getElementById('btn_down').onclick = (eo)=>{
-            clearInterval(move_interval);
-            move_interval = setInterval(turn.down, snake_body.speed.move);
-    }
-    document.getElementById('btn_left').onclick = (eo)=>{
-            clearInterval(move_interval);
-            move_interval = setInterval(turn.left, snake_body.speed.move);
-    }
-    document.getElementById('btn_right').onclick = (eo)=>{
-            clearInterval(move_interval);
-            move_interval = setInterval(turn.right, snake_body.speed.move);
-    }
+//     document.getElementById('btn_up').onclick = (eo)=>{
+//             clearInterval(move_interval);
+//             move_interval = setInterval(turn.up, snake_body.speed.move);
+//     }
+//     document.getElementById('btn_down').onclick = (eo)=>{
+//             clearInterval(move_interval);
+//             move_interval = setInterval(turn.down, snake_body.speed.move);
+//     }
+//     document.getElementById('btn_left').onclick = (eo)=>{
+//             clearInterval(move_interval);
+//             move_interval = setInterval(turn.left, snake_body.speed.move);
+//     }
+//     document.getElementById('btn_right').onclick = (eo)=>{
+//             clearInterval(move_interval);
+//             move_interval = setInterval(turn.right, snake_body.speed.move);
+//     }
 //SWIPES CONTROL
     let startX, startY, endX, endY;
     document.addEventListener('touchstart', function(eo) {
