@@ -87,7 +87,6 @@
             if (snake_body.position.x < 10) {
                 snake_body.position.x = enterWall
             }
-
             moveHead.left()
             moveBody()
         },
@@ -239,5 +238,11 @@
     }
 
 
+    document.documentElement.addEventListener('touchstart', function(eo) {
+        eo.preventDefault();
+    });
 
+    document.documentElement.addEventListener('touchmove', function(eo) {
+        eo.preventDefault();
+    });
 })();
