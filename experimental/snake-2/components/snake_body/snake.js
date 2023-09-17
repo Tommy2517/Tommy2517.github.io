@@ -7,7 +7,7 @@
     snake_head.classList.add('snake_head');
 
     let chest = [snake_head];
-    main.append(chest[0]);
+    main.append(snake_head);
 
     let scoreDiv = document.getElementById('score')
     let scoreCounter = 0;
@@ -116,7 +116,7 @@
             moveBody()
         },
     }
-
+//KEYBOARD CONTROLS
     document.onkeydown = function (eo) {
         if (move_interval) {
             clearInterval(move_interval);
@@ -134,7 +134,7 @@
             move_interval = setInterval(turn.right, snake_body.speed.move);
         }
     };
-
+//BUTTONS CONTROL
     document.getElementById('btn_up').onclick = (eo)=>{
             clearInterval(move_interval);
             move_interval = setInterval(turn.up, snake_body.speed.move);
@@ -151,8 +151,55 @@
             clearInterval(move_interval);
             move_interval = setInterval(turn.right, snake_body.speed.move);
     }
-//reload field items
+//SWIPES CONTROL
+    let startX, startY, endX, endY;
+    document.addEventListener('touchstart', function(event) {
+        startX = event.touches[0].clientX;
+        startY = event.touches[0].clientY;
+    });
 
+    document.addEventListener('touchmove', function(event) {
+        // Если нужно обработать движение пальца во время свайпа, это можно сделать здесь
+    });
+
+    document.addEventListener('touchend', function(event) {
+        endX = event.changedTouches[0].clientX;
+        endY = event.changedTouches[0].clientY;
+
+        // Вычислите направление свайпа и выполните нужные действия
+        let deltaX = startX - endX;
+        let deltaY = startY - endY;
+
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+                // Свайп влево
+                clearInterval(move_interval);
+                move_interval = setInterval(turn.left, snake_body.speed.move);
+            } else {
+                // Свайп вправо
+                clearInterval(move_interval);
+                move_interval = setInterval(turn.right, snake_body.speed.move);
+            }
+        } else {
+            if (deltaY > 0) {
+                // Свайп вверх
+                clearInterval(move_interval);
+                move_interval = setInterval(turn.up, snake_body.speed.move);
+            } else {
+                // Свайп вниз
+                clearInterval(move_interval);
+                move_interval = setInterval(turn.down, snake_body.speed.move);
+            }
+        }
+    });
+
+
+
+
+
+
+
+//reload field items
     function reset(){
     clearInterval(move_interval)
     snake_body.position.y = 1;
