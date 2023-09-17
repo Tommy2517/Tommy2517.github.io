@@ -1,6 +1,6 @@
-let fieldSize = 45;
-let enterWall = 451
-let exitWall = 440
+let fieldSize = 37;
+let enterWall = 371
+let exitWall = 360
 let randomFieldSpot = () => Math.floor(Math.random() * fieldSize) * 10;
 
 function field() {
