@@ -155,12 +155,12 @@
     document.addEventListener('touchstart', function(eo) {
         startX = eo.touches[0].clientX;
         startY = eo.touches[0].clientY;
-        eo.preventDefault()
+        // eo.preventDefault()
     });
 
     document.addEventListener('touchmove', function(eo) {
         // Если нужно обработать движение пальца во время свайпа, это можно сделать здесь
-        eo.preventDefault();
+        // eo.preventDefault();
     });
 
     document.addEventListener('touchend', function(eo) {
@@ -192,7 +192,7 @@
                 move_interval = setInterval(turn.down, snake_body.speed.move);
             }
         }
-        eo.preventDefault();
+        // eo.preventDefault();
 
     });
 
@@ -238,11 +238,12 @@
     }
 
 
-    document.documentElement.addEventListener('touchstart', function(eo) {
-        eo.preventDefault();
-    });
 
-    document.documentElement.addEventListener('touchmove', function(eo) {
-        eo.preventDefault();
-    });
 })();
+// document.documentElement.addEventListener('touchstart', function(eo) {
+//     eo.preventDefault();
+// });
+//
+// document.documentElement.addEventListener('touchmove', function(eo) {
+//     eo.preventDefault();
+// });
