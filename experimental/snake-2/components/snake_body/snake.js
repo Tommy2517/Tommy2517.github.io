@@ -193,6 +193,8 @@
                 move_interval = setInterval(turn.down, snake_body.speed.move);
             }
         }
+        eo.preventDefault();
+
     });
 
 
