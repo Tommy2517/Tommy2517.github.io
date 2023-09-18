@@ -11,8 +11,7 @@ body{
     flex-direction: column;
 }
 .main{
-    transform: scale(1);
-    zoom: 0;
+
     width: 370px;
     height: 370px;
 
@@ -22,6 +21,9 @@ body{
 
     position: relative;
     tab-index: 0;
+}
+.main div{
+    touch-action: none;
 }
 
 .square{
