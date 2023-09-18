@@ -22,7 +22,7 @@
     let food = document.createElement('i');
     food.classList.add('snake_head',);
     // food.classList.add('fa-solid',' fa-apple-whole',);
-    // <i className="fa-solid fa-apple-whole"></i>
+
     food.style.background = 'yellow';
 
     let foodPosX = 0;
@@ -197,7 +197,7 @@
         // eo.preventDefault();
 
     });
-addEventListener('click', (eo)=>{
+addEventListener('click', ()=>{
     clearInterval(move_interval)
 })
 
