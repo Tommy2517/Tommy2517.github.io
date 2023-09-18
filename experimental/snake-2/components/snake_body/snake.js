@@ -19,8 +19,10 @@
     };
 
 
-    let food = document.createElement('div');
-    food.classList.add('snake_head');
+    let food = document.createElement('i');
+    food.classList.add('snake_head',);
+    // food.classList.add('fa-solid',' fa-apple-whole',);
+    // <i className="fa-solid fa-apple-whole"></i>
     food.style.background = 'yellow';
 
     let foodPosX = 0;
