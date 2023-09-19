@@ -83,9 +83,13 @@
             chest[i].style.top = `${parseInt(chest[i - 1].style.top)}px`
         }
     }
-
+    // if (parseInt(chest[i].style.left) < 20){
+    //         chest[i].style.transition = 'none'
+    //         setTimeout(()=>{chest[i].style.transition = '0.1s'},100)
+    // }
     let turn = {
         left: () => {
+
             if (snake_body.position.x < 10) {
                 snake_body.position.x = enterWall
             }
@@ -96,6 +100,7 @@
         right: () => {
             if (snake_body.position.x > exitWall) {
                 snake_body.position.x = -9
+
             }
             moveHead.right()
             moveBody()
