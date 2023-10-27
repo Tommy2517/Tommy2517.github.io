@@ -27,6 +27,22 @@
     document.querySelector(".mobile__button").onclick = function () {
         document.querySelector(".nav__menu").classList.toggle('active');
     }
+    function myFunction() {
+        console.log("Начало функции1");
+
+        Promise.resolve().then(() => {
+            console.log("Микрозадача внутри функции2");
+        });
+
+        setTimeout(() => {
+            console.log("Макрозадача внутри функции3");
+        }, 0);
+
+        console.log("Завершение функции4");
+    }
+
+    myFunction();
+    console.log("Завершение выполнения5");
 </script>
 </body>
 </html>

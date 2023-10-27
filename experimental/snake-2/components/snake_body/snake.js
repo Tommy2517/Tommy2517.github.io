@@ -2,6 +2,7 @@
 (function createSnake() {
     let move_interval = null;
     let main = document.querySelector('.main');
+    // let food_apple = document.getElementById('food_apple');
 
     let snake_head = document.createElement('div');
     snake_head.classList.add('snake_head');
@@ -20,10 +21,11 @@
 
 
     let food = document.createElement('i');
+    // let food = food_apple
     food.classList.add('snake_head',);
     // food.classList.add('fa-solid',' fa-apple-whole',);
-
     food.style.background = 'yellow';
+    food.style.transition = 'none';
 
     let foodPosX = 0;
     let foodPosy = 0;
@@ -33,8 +35,8 @@
     function foodPosition (){
         food.style.top = `${randomFieldSpot()}px`;
         food.style.left = `${randomFieldSpot()}px`;
-        foodPosX = parseInt(food.style.left);
-        foodPosy = parseInt(food.style.top);
+        foodPosX = parseInt(food.style.left)//+3;
+        foodPosy = parseInt(food.style.top)//+5;
     }
     let newSection = ()=>{
         let newSection = document.createElement('div');
@@ -81,17 +83,22 @@
         for (let i = chest.length - 1; i > 0; i--) {
             chest[i].style.left = `${parseInt(chest[i - 1].style.left)}px`
             chest[i].style.top = `${parseInt(chest[i - 1].style.top)}px`
+
         }
     }
-    // if (parseInt(chest[i].style.left) < 20){
-    //         chest[i].style.transition = 'none'
-    //         setTimeout(()=>{chest[i].style.transition = '0.1s'},100)
-    // }
+
+
     let turn = {
         left: () => {
 
             if (snake_body.position.x < 10) {
                 snake_body.position.x = enterWall
+            }
+            for (let i = 0; i < chest.length; i++) {
+                if (parseInt(chest[i].style.left) < 10){
+                    chest[i].style.transition = 'none'
+                    setTimeout(()=>{chest[i].style.transition = '0.1s'},50)
+                }
             }
             moveHead.left()
             moveBody()
@@ -100,7 +107,12 @@
         right: () => {
             if (snake_body.position.x > exitWall) {
                 snake_body.position.x = -9
-
+            }
+            for (let i = 0; i < chest.length; i++) {
+                if (parseInt(chest[i].style.left) > exitWall-10){
+                    chest[i].style.transition = 'none'
+                    setTimeout(()=>{chest[i].style.transition = '0.1s'},100)
+                }
             }
             moveHead.right()
             moveBody()
@@ -110,6 +122,12 @@
             if (snake_body.position.y < 10) {
                 snake_body.position.y = enterWall
             }
+            for (let i = 0; i < chest.length; i++) {
+                if (parseInt(chest[i].style.top) < 10){
+                    chest[i].style.transition = 'none'
+                    setTimeout(()=>{chest[i].style.transition = '0.1s'},50)
+                }
+            }
             moveHead.up()
             moveBody()
         },
@@ -117,6 +135,12 @@
         down: () => {
             if (snake_body.position.y > exitWall) {
                 snake_body.position.y = -9
+            }
+            for (let i = 0; i < chest.length; i++) {
+                if (parseInt(chest[i].style.top) > enterWall-20){
+                    chest[i].style.transition = 'none'
+                    setTimeout(()=>{chest[i].style.transition = '0.1s'},50)
+                }
             }
             moveHead.down()
             moveBody()
@@ -245,8 +269,6 @@ addEventListener('click', ()=>{
         foodPosition()
         field()
     }
-
-
 
 })();
 // document.documentElement.addEventListener('touchstart', function(eo) {
