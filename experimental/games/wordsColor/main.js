@@ -96,12 +96,9 @@ btnYes.onclick = () => {
 }
 
 setTimeout(()=>{
-if (timer === 0){
     main.style.display = 'none'
     document.body.append(`SCORE - ${score}`)
 
-
-}
 },45000)
 
 
