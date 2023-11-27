@@ -1,15 +1,16 @@
 const colorValues = [{name: 'yellow', color:'gold'}, {name: 'red', color:'red'}, {name: 'blue', color:'cornflowerblue'}, {name: 'black', color:'black'}];
 let score = 0;
 let info_time = document.getElementById('info_time')
-    let timer = 5
-let intervalTimer = setInterval(()=>{
-    if (timer > 0) {
-        timer--
-        info_time.textContent = `TIME 0:${timer}`
-    } else {
-        clearInterval(intervalTimer)
-    }
-},1000)
+let timer = 5
+
+let rand1 = null;
+let rand2 = null;
+let rand3 = null;
+
+
+const main = document.getElementById('main')
+const answer = document.getElementById('answer')
+
 
 const div = document.createElement('div')
 div.classList.add('block')
@@ -21,13 +22,13 @@ btnYes.textContent = 'Yes'
 const btnNo = document.createElement('button')
 btnNo.textContent = 'No'
 
-const divScore = document.createElement('div')
-divScore.classList.add('block')
+const divScore = document.getElementById('info_score')
 divScore.textContent = `${score}`
 
-let rand1 = null;
-let rand2 = null;
-let rand3 = null;
+
+
+
+
 const change = () => {
     rand1 = Math.floor(Math.random() * 4);
     rand2 = Math.floor(Math.random() * 4);
@@ -41,20 +42,70 @@ const change = () => {
 }
 change()
 
+
+
+
+let intervalTimer = setInterval(()=>{
+    if (timer > 0) {
+        timer--
+        info_time.textContent = `TIME 0:${timer}`
+    } else {
+        clearInterval(intervalTimer)
+    }
+},1000)
+
+
+let multiplier = 1;
+let stackCounter = 0;
+
 btnNo.onclick = () => {
+    let inspector = score
     if (rand1 !== rand2){
-        score++
+        score += 50 * multiplier
+    } else {
+        multiplier = 1;
+    }
+    if (score > inspector){
+        stackCounter++
+    } else {
+        stackCounter = 0;
+    }
+    if (stackCounter === 4) {
+        multiplier += 1;
+        stackCounter = 0;
     }
     change()
 }
 btnYes.onclick = () => {
+    let inspector = score
     if (rand1 === rand2){
-        score++
+        score += 50 * multiplier
+    } else {
+        multiplier = 1;
+    }
+    if (score > inspector){
+        stackCounter ++;
+    } else {
+        stackCounter = 0;
+    }
+    if (stackCounter === 4) {
+        multiplier += 1;
+        stackCounter = 0;
     }
     change()
 }
-const main = document.getElementById('main')
-const answer = document.getElementById('answer')
+
+setTimeout(()=>{
+if (timer === 0){
+    main.style.display = 'none'
+    document.body.append(`SCORE - ${score}`)
+
+
+}
+},6000)
+
+
+
 answer.append(btnYes,btnNo)
-main.append(div, div2, answer, divScore)
+main.append(div, div2, answer)
 document.body.append(main)
