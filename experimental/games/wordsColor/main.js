@@ -1,4 +1,4 @@
-const colorValues = [{name: 'yellow'}, {name: 'red'}, {name: 'blue'}, {name: 'black'}];
+const colorValues = [{name: 'yellow', color:'gold'}, {name: 'red', color:'red'}, {name: 'blue', color:'cornflowerblue'}, {name: 'black', color:'black'}];
 let score = 0;
 
 const div = document.createElement('div')
@@ -24,7 +24,7 @@ const change = () => {
     rand3 = Math.floor(Math.random() * 4);
 
     div.textContent = colorValues[rand1].name
-    div2.style.color = colorValues[rand2].name
+    div2.style.color = colorValues[rand2].color
     div2.textContent = colorValues[rand3].name
 
     divScore.textContent = `${score}`
