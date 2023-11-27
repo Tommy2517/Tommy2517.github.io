@@ -1,11 +1,45 @@
-.block {
-    width: 100px;
-    height: 50px;
-    background: #999;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 200px;
+    height: 250px;
+    background: gray;
+    flex-direction: column;
+}
+
+.block, button{
+    width: 150px;
+    height: 75px;
+    background: white;
+
+    margin: 10px;
+    border-radius: 5px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    color: black;
+    color: blu;
+    font-size: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+#answer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    margin: 0;
 }
