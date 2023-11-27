@@ -1,7 +1,7 @@
 const colorValues = [{name: 'yellow', color:'gold'}, {name: 'red', color:'red'}, {name: 'blue', color:'cornflowerblue'}, {name: 'black', color:'black'}];
 let score = 0;
 let info_time = document.getElementById('info_time')
-let timer = 5
+let timer = 45
 
 let rand1 = null;
 let rand2 = null;
@@ -102,7 +102,7 @@ if (timer === 0){
 
 
 }
-},6000)
+},45000)
 
 
 
