@@ -1,0 +1,11 @@
+.block {
+    width: 100px;
+    height: 50px;
+    background: #999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: black;
+}

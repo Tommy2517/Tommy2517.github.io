@@ -1,0 +1,20 @@
+.main{
+    /*display: flex;*/
+    width: 450px;
+    /*height: 450px;*/
+}
+.box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    opacity: 40%;
+    font-family:  'Niconne', cursive;
+    font-size: 45px;
+}
+.image{
+    width: 500px;
+}
