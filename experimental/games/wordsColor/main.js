@@ -1,5 +1,15 @@
 const colorValues = [{name: 'yellow', color:'gold'}, {name: 'red', color:'red'}, {name: 'blue', color:'cornflowerblue'}, {name: 'black', color:'black'}];
 let score = 0;
+let info_time = document.getElementById('info_time')
+    let timer = 5
+let intervalTimer = setInterval(()=>{
+    if (timer > 0) {
+        timer--
+        info_time.textContent = `TIME 0:${timer}`
+    } else {
+        clearInterval(intervalTimer)
+    }
+},1000)
 
 const div = document.createElement('div')
 div.classList.add('block')
