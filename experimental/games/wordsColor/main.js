@@ -65,13 +65,13 @@ btnNo.onclick = () => {
     let inspector = score
     if (rand1 !== rand2){
         score += 50 * multiplier
-        okBad.style.width = "20px"
-        okBad.style.height = "20px"
-        okBad.style.background = "green"
+        okBad.style.width = "50px"
+        okBad.style.height = "50px"
+        okBad.style.background = "yellowgreen"
         okBad.style.textContent = "Y"
         setTimeout(()=>{
         okBad.style.width = "0"
-        okBad.style.height = "0"},100)
+        okBad.style.height = "0"},700)
     } else {
         multiplier = 1;
     }
@@ -90,6 +90,13 @@ btnYes.onclick = () => {
     let inspector = score
     if (rand1 === rand2){
         score += 50 * multiplier
+        okBad.style.width = "50px"
+        okBad.style.height = "50px"
+        okBad.style.background = "red"
+        okBad.style.textContent = "X"
+        setTimeout(()=>{
+        okBad.style.width = "0"
+        okBad.style.height = "0"},700)
     } else {
         multiplier = 1;
     }
