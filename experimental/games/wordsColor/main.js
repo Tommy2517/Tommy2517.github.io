@@ -1,6 +1,9 @@
 const colorValues = [{name: 'yellow', color:'gold'}, {name: 'red', color:'red'}, {name: 'blue', color:'cornflowerblue'}, {name: 'black', color:'black'}];
 let score = 0;
 let info_time = document.getElementById('info_time')
+
+const okBad = document.getElementById('okBad')
+
 let timer = 45
 
 let rand1 = null;
@@ -62,6 +65,13 @@ btnNo.onclick = () => {
     let inspector = score
     if (rand1 !== rand2){
         score += 50 * multiplier
+        okBad.style.width = "20px"
+        okBad.style.height = "20px"
+        okBad.style.background = "green"
+        okBad.style.textContent = "Y"
+        setTimeout(()=>{
+        okBad.style.width = "0"
+        okBad.style.height = "0"},100)
     } else {
         multiplier = 1;
     }
