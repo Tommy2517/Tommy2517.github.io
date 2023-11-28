@@ -74,6 +74,13 @@ btnNo.onclick = () => {
         okBad.style.height = "0"},700)
     } else {
         multiplier = 1;
+        okBad.style.width = "50px"
+        okBad.style.height = "50px"
+        okBad.style.background = "red"
+        okBad.style.textContent = "X"
+        setTimeout(()=>{
+        okBad.style.width = "0"
+        okBad.style.height = "0"},700)
     }
     if (score > inspector){
         stackCounter++
@@ -92,13 +99,20 @@ btnYes.onclick = () => {
         score += 50 * multiplier
         okBad.style.width = "50px"
         okBad.style.height = "50px"
-        okBad.style.background = "red"
-        okBad.style.textContent = "X"
+        okBad.style.background = "yellowgreen"
+        okBad.style.textContent = "Y"
         setTimeout(()=>{
         okBad.style.width = "0"
         okBad.style.height = "0"},700)
     } else {
         multiplier = 1;
+        okBad.style.width = "50px"
+        okBad.style.height = "50px"
+        okBad.style.background = "red"
+        okBad.style.textContent = "X"
+        setTimeout(()=>{
+        okBad.style.width = "0"
+        okBad.style.height = "0"},700)
     }
     if (score > inspector){
         stackCounter ++;
