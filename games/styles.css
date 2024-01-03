@@ -1,0 +1,9 @@
+.myDiv {
+    display: flex;
+    flex-direction: column;
+}
+.btnStyle{
+    background-color: #ffaa49;
+    width: 90px;
+    height: 50px;
+}
