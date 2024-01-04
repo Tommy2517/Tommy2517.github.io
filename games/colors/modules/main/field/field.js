@@ -1,18 +1,14 @@
-
 import {menu} from "/games/colors/modules/main/menu/menu.js";
 
-import {azz, fieldStyle} from "../../styles/styles.js";
+import {fieldStyle} from "../../styles/styles.js";
+import {styleWriter} from "../../styles/styleWriter.js";
 
 class Field {
     fieldGenerate = () => {
         const field = document.createElement('div')
-        const generate = () => {
-            for (let prop in fieldStyle) {
-                field.style[prop] = fieldStyle[prop];
-            }
-        }
+
+        styleWriter.write([field], fieldStyle)
         menu.menuGenerate(field)
-        generate()
     }
 }
 export const field = new Field()

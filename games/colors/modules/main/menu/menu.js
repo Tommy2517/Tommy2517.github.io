@@ -1,23 +1,32 @@
 import {btnStyle} from "../../styles/styles.js";
-
+import {styleWriter} from "../../styles/styleWriter.js";
+import {newGame} from "../game/game.js";
 
 class Menu {
     menuGenerate = (field) => {
         const menu = `
-            <div class="myDiv">
-                <button class="btnStyle" id="btnStyle1">Start</button>
-                <button class="btnStyle" id="btnStyle2">Options</button>
-                <button class="btnStyle" id="btnStyle3">Score</button>
-                <button class="btnStyle" id="btnStyle4">Other</button>
-            </div>
+                <button class="btnStyle" id="btnStart">Start</button>
+                <button class="btnStyle" id="btnOptions">Options</button>
+                <button class="btnStyle" id="btnScore">Score</button>
+                <button class="btnStyle" id="btnOther">Other</button>
         `;
         field.innerHTML = menu
+
         document.body.append(field)
-        for (const item of document.getElementsByClassName('btnStyle')) {
-            for (let key in btnStyle) {
-                item.style[key] = btnStyle[key]
-            }
+
+        styleWriter.write(
+            document.getElementsByClassName('btnStyle'),
+            btnStyle
+        )
+        const btnStart = document.getElementById('btnStart')
+        btnStart.onclick = () => {
+            console.log('click btn')
+            document.getElementById('btnStart').style.background = 'gold'
+            field.innerHTML = ''
+            field.append(newGame.startGame())
         }
+
+
     }
 }
 export const menu = new Menu()

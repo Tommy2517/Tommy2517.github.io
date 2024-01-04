@@ -9,16 +9,15 @@ const fieldStyle = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
+    rowGap:'20px',
 
-    backgroundColor: '#6863e1',
+    backgroundColor: '#999999',
     borderRadius: '20px'
 }
 
 const btnStyle = {
-    // maxWidth: '300px',
-    // minWidth: '200px',
-    width: '90px',
-    height: '50px',
+    width: '100px',
+    height: '40px',
 
     display: 'flex',
     position: 'relative',
@@ -26,8 +25,20 @@ const btnStyle = {
     alignItems: 'center',
     justifyContent: 'center',
 
-    backgroundColor: '#63dde1',
-    borderRadius: '20px'
+    backgroundColor: '#a94bff',
+    borderRadius: '20px',
 }
-const azz ='azz'
-export {fieldStyle, azz, btnStyle}
+const gameStyle = {
+    width: '100%',
+    height: '100%',
+
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    backgroundColor: '#a94bff',
+    borderRadius: '20px',
+}
+export {fieldStyle, btnStyle,gameStyle}
