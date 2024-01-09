@@ -5,10 +5,7 @@ import {styleWriter} from "../../styles/styleWriter.js";
 
 class Field {
     fieldGenerate = () => {
-        const field = document.createElement('div')
-
-        styleWriter.write([field], fieldStyle)
-        menu.menuGenerate(field)
+        return document.createElement('div')
     }
 }
 export const field = new Field()

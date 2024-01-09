@@ -38,7 +38,8 @@ const gameStyle = {
     alignItems: 'center',
     justifyContent: 'center',
 
-    backgroundColor: '#a94bff',
+    backgroundColor: 'blue',
     borderRadius: '20px',
 }
+
 export {fieldStyle, btnStyle,gameStyle}

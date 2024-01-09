@@ -1,17 +1,27 @@
 import {styleWriter} from "../../styles/styleWriter.js";
-import {gameStyle} from "../../styles/styles.js";
+import {gameStyle, btnStyle, fieldStyle} from "../../styles/styles.js";
+import {menu} from "/games/colors/modules/main/menu/menu.js";
 
 class Game {
     startGame = () => {
-        const game = document.createElement('div')
-        game.style
+        const game = this.div()
+        styleWriter.write([game], fieldStyle)
+        document.body.append(game)
 
-        styleWriter.write(
-            [game],
-            gameStyle
-        )
+        const btnMenu = this.div()
+        styleWriter.write([btnMenu], btnStyle)
+        game.append(btnMenu)
 
-        return game
+
+        btnMenu.addEventListener('click',(eo) => {
+            document.body.innerHTML = ''
+            menu.menuGenerate()
+        })
+
+    }
+
+    div = () => {
+        return document.createElement('div')
     }
 }
 
