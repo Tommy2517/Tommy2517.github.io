@@ -21,7 +21,6 @@ class Menu {
             btnStyle
         )
         const btnStart = document.getElementById('btnStart')
-        field1.append(btnStart)
         btnStart.addEventListener('click', () => {
             console.log('click btn')
             document.body.innerHTML = ''

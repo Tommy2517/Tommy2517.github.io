@@ -9,6 +9,8 @@ class Game {
         document.body.append(game)
 
         const btnMenu = this.div()
+        // btnMenu.tagName = 'button'
+        btnMenu.innerText='Menu'
         styleWriter.write([btnMenu], btnStyle)
         game.append(btnMenu)
 
