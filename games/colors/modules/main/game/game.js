@@ -9,7 +9,6 @@ class Game {
         document.body.append(game)
 
         const btnMenu = this.div()
-        // btnMenu.tagName = 'button'
         btnMenu.innerText='Menu'
         styleWriter.write([btnMenu], btnStyle)
         game.append(btnMenu)
@@ -18,6 +17,10 @@ class Game {
         btnMenu.addEventListener('click',(eo) => {
             document.body.innerHTML = ''
             menu.menuGenerate()
+
+            let score = localStorage.getItem('score')
+            score++
+            localStorage.setItem('score', `${score}`)
         })
 
     }
