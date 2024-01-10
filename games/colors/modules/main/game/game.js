@@ -1,12 +1,13 @@
 import {styleWriter} from "../../styles/styleWriter.js";
 import {gameStyle, btnStyle, fieldStyle} from "../../styles/styles.js";
 import {menu} from "/games/colors/modules/main/menu/menu.js";
+import {field} from '../field/field.js'
 
 class Game {
     startGame = () => {
         const game = this.div()
         styleWriter.write([game], fieldStyle)
-        document.body.append(game)
+        document.body.append(field)
 
         const btnMenu = this.div()
         btnMenu.innerText='Menu'

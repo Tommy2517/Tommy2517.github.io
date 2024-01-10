@@ -5,16 +5,15 @@ import {newGame} from "../game/game.js";
 
 class Menu {
     menuGenerate = () => {
-        const field1 = field.fieldGenerate()
         const menu = `
                 <button class="btnStyle" id="btnStart">Start</button>
                 <button class="btnStyle" id="btnOptions">Options</button>
                 <button class="btnStyle" id="btnScore">Score</button>
                 <button class="btnStyle" id="btnOther">Other</button>
         `;
-        field1.innerHTML = menu
-        styleWriter.write([field1], fieldStyle)
-        document.body.append(field1)
+        field.innerHTML = menu
+        styleWriter.write([field], fieldStyle)
+        document.body.append(field)
 
         styleWriter.write(
             document.getElementsByClassName('btnStyle'),
@@ -27,7 +26,7 @@ class Menu {
             newGame.startGame()
         })
 
-        return field1
+        return field
 
     }
 }
