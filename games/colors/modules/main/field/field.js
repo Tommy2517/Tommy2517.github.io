@@ -1,6 +1,6 @@
 import {menu} from "/games/colors/modules/main/menu/menu.js";
-import {styleWriter} from "../../styles/styleWriter";
-import {fieldStyle} from "../../styles/styles";
+import {styleWriter} from "../../styles/styleWriter.js";
+import {fieldStyle} from "../../styles/styles.js";
 
 // class Field {
 //     fieldGenerate = () => {

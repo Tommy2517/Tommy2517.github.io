@@ -1,5 +1,11 @@
 const gameTime = 45
-let score = 0
+const colors = {
+    name:'',
+    score: 0,
+    bestScore: 0,
+    results: [],
+    connections: 0,
+}
 const reward = 50
 const correctAnswerCount = 0
 
@@ -8,4 +14,4 @@ const colorValues = [{name: 'yellow', color: 'gold'}, {name: 'red', color: 'red'
     color: 'cornflowerblue'
 }, {name: 'black', color: 'black'}];
 
-export {score}
+export {colors}

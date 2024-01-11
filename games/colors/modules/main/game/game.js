@@ -1,13 +1,13 @@
 import {styleWriter} from "../../styles/styleWriter.js";
 import {gameStyle, btnStyle, fieldStyle} from "../../styles/styles.js";
-import {menu} from "/games/colors/modules/main/menu/menu.js";
+import {menu} from "../menu/menu.js";
 import {field} from '../field/field.js'
 
 class Game {
     startGame = () => {
         const game = this.div()
         styleWriter.write([game], fieldStyle)
-        document.body.append(field)
+            document.body.append(game)
 
         const btnMenu = this.div()
         btnMenu.innerText='Menu'
@@ -16,12 +16,16 @@ class Game {
 
 
         btnMenu.addEventListener('click',(eo) => {
-            document.body.innerHTML = ''
-            menu.menuGenerate()
+            let colors = JSON.parse(localStorage.getItem('colors'))
+            colors.score++
+            document.body.innerHTML = colors.score
+            document.body.append(menu.menuGenerate())
 
-            let score = localStorage.getItem('score')
-            score++
-            localStorage.setItem('score', `${score}`)
+
+
+
+            localStorage.setItem('colors', JSON.stringify(colors))
+            console.log(colors);
         })
 
     }
