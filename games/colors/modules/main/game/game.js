@@ -1,38 +1,17 @@
-import {styleWriter} from "../../styles/styleWriter.js";
-import {gameStyle, btnStyle, fieldStyle} from "../../styles/styles.js";
-import {menu} from "../menu/menu.js";
 import {field} from '../field/field.js'
+import {gameButton} from "./btns/gameBtns.js";
+import {tools} from "../../tools/tools.js";
 
 class Game {
     startGame = () => {
-        const game = this.div()
-        styleWriter.write([game], fieldStyle)
-            document.body.append(game)
-
-        const btnMenu = this.div()
-        btnMenu.innerText='Menu'
-        styleWriter.write([btnMenu], btnStyle)
-        game.append(btnMenu)
-
-
-        btnMenu.addEventListener('click',(eo) => {
-            let colors = JSON.parse(localStorage.getItem('colors'))
-            colors.score++
-            document.body.innerHTML = colors.score
-            document.body.append(menu.menuGenerate())
-
-
-
-
-            localStorage.setItem('colors', JSON.stringify(colors))
-            console.log(colors);
-        })
-
-    }
-
-    div = () => {
-        return document.createElement('div')
+        document.body.append(field)
+        const toolbar = tools.div()
+        const cards = tools.div()
+        const controls = tools.div()
+        toolbar.append(gameButton.menu())
+        field.append(toolbar, cards, controls)
     }
 }
-
 export const newGame = new Game()
+const startGame = () => {
+}
