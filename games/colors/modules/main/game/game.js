@@ -1,17 +1,14 @@
 import {field} from '../field/field.js'
 import {gameButton} from "./btns/gameBtns.js";
 import {tools} from "../../tools/tools.js";
+import {btnStyle, gameSection} from "../../styles/styles.js";
+import {sections} from "./sections/sections.js";
 
 class Game {
     startGame = () => {
         document.body.append(field)
-        const toolbar = tools.div()
-        const cards = tools.div()
-        const controls = tools.div()
-        toolbar.append(gameButton.menu())
-        field.append(toolbar, cards, controls)
+
+        field.append(sections.toolbar(), sections.cards(), sections.controls())
     }
 }
 export const newGame = new Game()
-const startGame = () => {
-}

@@ -9,9 +9,10 @@ const colors = {
 const reward = 50
 const correctAnswerCount = 0
 
-const colorValues = [{name: 'yellow', color: 'gold'}, {name: 'red', color: 'red'}, {
-    name: 'blue',
-    color: 'cornflowerblue'
-}, {name: 'black', color: 'black'}];
+const colorValues = [
+    {name: 'yellow', color: 'gold'},
+    {name: 'red', color: 'red'},
+    {name: 'blue', color: 'cornflowerblue'},
+    {name: 'black', color: 'black'}];
 
-export {colors}
+export {colors, reward, colorValues}

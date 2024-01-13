@@ -1,3 +1,10 @@
+const gameSection = {
+    height:'33%',
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+}
+
 const fieldStyle = {
     maxWidth: '300px',
     minWidth: '200px',
@@ -12,7 +19,8 @@ const fieldStyle = {
     rowGap:'20px',
 
     backgroundColor: '#999999',
-    borderRadius: '20px'
+    borderRadius: '20px',
+    border:'5px solid'+'#444444'
 }
 
 const btnStyle = {
@@ -25,7 +33,7 @@ const btnStyle = {
     alignItems: 'center',
     justifyContent: 'center',
 
-    backgroundColor: '#a94bff',
+    backgroundColor: '#444444',
     borderRadius: '20px',
 }
 const gameStyle = {
@@ -42,4 +50,10 @@ const gameStyle = {
     borderRadius: '20px',
 }
 
-export {fieldStyle, btnStyle,gameStyle}
+
+export {
+    fieldStyle,
+    btnStyle,
+    gameStyle,
+    gameSection,
+}

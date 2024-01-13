@@ -1,7 +1,10 @@
-import {menu} from "/games/colors/modules/main/menu/menu.js";
-import {styleWriter} from "../../styles/styleWriter.js";
+import {mainMenu} from "/games/colors/modules/main/menu/mainMenu.js";
 import {fieldStyle} from "../../styles/styles.js";
+import {tools} from "../../tools/tools.js";
+import {sections} from "/games/colors/modules/main/game/sections/sections.js";
 
-const field = document.createElement('div')
-styleWriter.write([field], fieldStyle)
+
+
+const field = tools.div('',fieldStyle)
+
 export {field}
