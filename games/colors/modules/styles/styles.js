@@ -50,8 +50,16 @@ const gameStyle = {
     borderRadius: '20px',
 }
 
+///////////////////card styles////////////////
+const card1 = {
+
+}
+const card2 = {
+}
 
 export {
+    card1,
+    card2,
     fieldStyle,
     btnStyle,
     gameStyle,

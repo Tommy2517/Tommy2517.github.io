@@ -11,8 +11,7 @@ let info_time = document.getElementById('info_time')
 
 const okBad = document.getElementById('okBad')
 const yes = document.getElementById('yes')
-const no
-    = document.getElementById('no')
+const no = document.getElementById('no')
 
 let timer = 45
 
@@ -80,9 +79,11 @@ document.addEventListener('keydown', (e) => {
     }
 );
 btnYes.onclick = (e) => {
-
+btnYesFunc()
 }
-btnNo.onclick = (e) => {}
+btnNo.onclick = (e) => {
+    btnNoFunc()
+}
 
 function btnNoFunc () {
 
