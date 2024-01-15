@@ -53,26 +53,42 @@ class GameButton {
     btnYes = () => {
         const btnYes = tools.div('yes', btnStyle)
         btnYes.onclick = () => {
-            const card1 = document.getElementById('card1')
-            const card2 = document.getElementById('card2')
+            const cards = document.getElementById('cards')
+            cards.innerHTML = ''
+            cards.append(this.card1(),this.card2())
+
+            // const card1 = document.getElementById('card1')
+            // const card2 = document.getElementById('card2')
             let colors = JSON.parse(localStorage.getItem('colors'))
             // colors.score -= reward
             // localStorage.setItem('colors', JSON.stringify(colors))
 
-            if (card1.innerText === card2.style.color) {
-                console.log(card1.innerText, card2.style.color);
+            if (card1.innerText === card2.style.name) {
                 let colors = JSON.parse(localStorage.getItem('colors'))
                 colors.score += reward
                 localStorage.setItem('colors', JSON.stringify(colors))
             }
 
-            styleWriter.write(
-                [card2],
-                this.changerStyle()
-            )
+            // styleWriter.write(
+            //     [card2],
+            //     this.changerStyle()
+            // )
+
+
+
 
             card1.innerText = `${this.changerStyle().name}`
             card2.innerText = `${card2.style.name}`
+            card2.style.color = `${this.changerStyle().color}`
+                console.log(card1.innerText, card2.style.name);
+
+            // console.log(card1.innerText,'--card1 inner text')
+            // console.log(card1.style.name,'--card1  stylenaame (color)')
+            // console.log(card1.textContent,'--textContent1')
+            // console.log('====================================')
+            // console.log(card2.innerText,'--card2 inner text')
+            // console.log(card2.style.name,'--card2 stylenaame (color)')
+            // console.log(card2.textContent,'--textContent2')
 
             const score = document.getElementById('score')
             score.innerText = `${colors.score}`;
