@@ -26,7 +26,7 @@ class GameButton {
         return btnMenu
     }
     score = () => {
-        const score = tools.div('Menu', btnStyle)
+        const score = tools.div('Menu', btnStyle,'score')
         score.style.width = '75px'
         score.style.height = '25px'
         score.style.margin = '2px'
@@ -41,74 +41,84 @@ class GameButton {
             localStorage.setItem('colors', JSON.stringify(colors))
 
             document.getElementById('toolbar').innerHTML = ''
+            document.getElementById('toolbar').append(this.menu(), this.score())
             const toolbar = sections.toolbar()
-            toolbar.append(gameButton.menu(), gameButton.score())
-            console.log(toolbar)
+            toolbar.append(this.menu(), this.score())
         })
         return score
     }
+
+
     /////////////////section cards////////////////////
     card1 = () => {
-        const card1 = tools.div('red', btnStyle, 'card1')
-        styleWriter.write([card1], this.changerStyle())
+        const cardStyle = this.changerStyle()
+        const card1 = tools.div(cardStyle.name, btnStyle, 'card1')
+        styleWriter.write([card1], cardStyle)
         card1.style.color = ''
         return card1
     }
     card2 = () => {
-        const card2 = tools.div('blue', btnStyle, 'card2')
+        const cardStyle = this.changerStyle()
+        const card2 = tools.div(cardStyle.name, btnStyle, 'card2')
         styleWriter.write([card2], this.changerStyle())
         return card2
     }
+
+
     /////////////////section controls////////////////////
     btnYes = () => {
         const btnYes = tools.div('yes', btnStyle)
         btnYes.onclick = () => {
             const card1 = document.getElementById('card1')
             const card2 = document.getElementById('card2')
-            let colors = JSON.parse(localStorage.getItem('colors'))
-            // colors.score -= reward
-            // localStorage.setItem('colors', JSON.stringify(colors))
 
             if (card1.innerText === card2.style.name) {
                 let colors = JSON.parse(localStorage.getItem('colors'))
                 colors.score += reward
                 localStorage.setItem('colors', JSON.stringify(colors))
+
+                const score = document.getElementById('score')
+                score.innerText = `${colors.score}`
             }
-
-            console.log(card1.innerText, card2.style.name, JSON.parse(localStorage.getItem('colors')).score);
-
-            const score = document.getElementById('score')
-            score.innerText = `${colors.score}`;
 
             const cards = document.getElementById('cards')
             cards.innerHTML = ''
             cards.append(this.card1(), this.card2())
-
-            // console.log(card1.innerText,'--card1 inner text')
-            // console.log(card1.style.name,'--card1  styleName (color)')
-            // console.log(card1.textContent,'--textContent1')
-            // console.log('====================================')
-            // console.log(card2.innerText,'--card2 inner text')
-            // console.log(card2.style.name,'--card2 styleName (color)')
-            // console.log(card2.textContent,'--textContent2')
         }
         return btnYes
     }
+
     btnNo = () => {
         const btnNo = tools.div('no', btnStyle)
         btnNo.onclick = () => {
+
+            const card1 = document.getElementById('card1')
+            const card2 = document.getElementById('card2')
+//todo исправить дублирование
+            if (card1.innerText === card2.style.name) {
+                let colors = JSON.parse(localStorage.getItem('colors'))
+                colors.score += reward
+                localStorage.setItem('colors', JSON.stringify(colors))
+
+                const score = document.getElementById('score')
+                score.innerText = `${colors.score}`
+            }
 
             let colors = JSON.parse(localStorage.getItem('colors'))
             colors.score += reward
             localStorage.setItem('colors', JSON.stringify(colors))
 
             const score = document.getElementById('score')
-            score.innerText = `${colors.score}`;
+            score.innerText = colors.score;
 
+            const cards = document.getElementById('cards')
+            cards.innerHTML = ''
+            cards.append(this.card1(), this.card2())
         }
         return btnNo
-
     }
+
+
     changerStyle = () => {
         return constants.colorValues[Math.floor(Math.random() * 4)]
     }
