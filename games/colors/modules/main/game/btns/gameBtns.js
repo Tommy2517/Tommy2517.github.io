@@ -1,9 +1,10 @@
 import {styleWriter} from "../../../styles/styleWriter.js";
-import {btnStyle, gameSection} from "../../../styles/styles.js";
+import {btnStyle} from "../../../styles/styles.js";
 import {tools} from "../../../tools/tools.js";
 import {field} from "../../field/field.js";
 import {mainMenu} from "../../menu/mainMenu.js";
 import {constants, reward} from "../../../constants/const.js";
+import {sections} from "../sections/sections.js";
 
 class GameButton {
     /////////////////section toolbar////////////////////
@@ -34,14 +35,23 @@ class GameButton {
         score.id = 'score'
 
         score.innerText = `${JSON.parse(localStorage.getItem('colors')).score}`
+        score.addEventListener('click',()=>{
+            let colors = JSON.parse(localStorage.getItem('colors'))
+            colors.score -= reward
+            localStorage.setItem('colors', JSON.stringify(colors))
 
+            document.getElementById('toolbar').innerHTML = ''
+            const toolbar = sections.toolbar()
+            toolbar.append(gameButton.menu(), gameButton.score())
+            console.log(toolbar)
+        })
         return score
     }
     /////////////////section cards////////////////////
     card1 = () => {
         const card1 = tools.div('red', btnStyle, 'card1')
         styleWriter.write([card1], this.changerStyle())
-
+        card1.style.color = ''
         return card1
     }
     card2 = () => {
@@ -53,12 +63,8 @@ class GameButton {
     btnYes = () => {
         const btnYes = tools.div('yes', btnStyle)
         btnYes.onclick = () => {
-            const cards = document.getElementById('cards')
-            cards.innerHTML = ''
-            cards.append(this.card1(),this.card2())
-
-            // const card1 = document.getElementById('card1')
-            // const card2 = document.getElementById('card2')
+            const card1 = document.getElementById('card1')
+            const card2 = document.getElementById('card2')
             let colors = JSON.parse(localStorage.getItem('colors'))
             // colors.score -= reward
             // localStorage.setItem('colors', JSON.stringify(colors))
@@ -69,29 +75,22 @@ class GameButton {
                 localStorage.setItem('colors', JSON.stringify(colors))
             }
 
-            // styleWriter.write(
-            //     [card2],
-            //     this.changerStyle()
-            // )
-
-
-
-
-            card1.innerText = `${this.changerStyle().name}`
-            card2.innerText = `${card2.style.name}`
-            card2.style.color = `${this.changerStyle().color}`
-                console.log(card1.innerText, card2.style.name);
-
-            // console.log(card1.innerText,'--card1 inner text')
-            // console.log(card1.style.name,'--card1  stylenaame (color)')
-            // console.log(card1.textContent,'--textContent1')
-            // console.log('====================================')
-            // console.log(card2.innerText,'--card2 inner text')
-            // console.log(card2.style.name,'--card2 stylenaame (color)')
-            // console.log(card2.textContent,'--textContent2')
+            console.log(card1.innerText, card2.style.name, JSON.parse(localStorage.getItem('colors')).score);
 
             const score = document.getElementById('score')
             score.innerText = `${colors.score}`;
+
+            const cards = document.getElementById('cards')
+            cards.innerHTML = ''
+            cards.append(this.card1(), this.card2())
+
+            // console.log(card1.innerText,'--card1 inner text')
+            // console.log(card1.style.name,'--card1  styleName (color)')
+            // console.log(card1.textContent,'--textContent1')
+            // console.log('====================================')
+            // console.log(card2.innerText,'--card2 inner text')
+            // console.log(card2.style.name,'--card2 styleName (color)')
+            // console.log(card2.textContent,'--textContent2')
         }
         return btnYes
     }

@@ -5,7 +5,7 @@ import {reward} from "../../../constants/const.js";
 
 class Sections {
     toolbar = () => {
-        const toolbar = tools.div('', gameSection)
+        const toolbar = tools.div('', gameSection,'toolbar')
         toolbar.append(gameButton.menu(), gameButton.score())
 
         return toolbar
