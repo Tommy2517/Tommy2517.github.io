@@ -12,7 +12,9 @@ const correctAnswerCount = 0
 export {colors, reward}
 
 class Constants {
-    reward = 50
+    reward = 50;
+    multiplier = 1;
+    stackCounter = 0;
     colorValues = [
         {name: 'yellow', color: 'gold'},
         {name: 'red', color: 'red'},

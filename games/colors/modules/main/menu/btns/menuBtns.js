@@ -3,7 +3,7 @@ import {btnStyle} from "../../../styles/styles.js";
 import {tools} from "../../../tools/tools.js";
 import {newGame} from "../../game/game.js";
 
-class MenuButton {
+class MenuButtons {
     startGame = () =>{
         const btnStart = tools.div('Start',btnStyle)
 
@@ -15,4 +15,4 @@ class MenuButton {
         return btnStart
     }
 }
-export const menuButton = new MenuButton()
+export const menuButton = new MenuButtons()

@@ -49,7 +49,7 @@ class GameButton {
     }
 
 
-    /////////////////section cards////////////////////
+    /////////////////section cards////////////////////!BTN
     card1 = () => {
         const cardStyle = this.changerStyle()
         const card1 = tools.div(cardStyle.name, btnStyle, 'card1')
@@ -74,11 +74,13 @@ class GameButton {
 
             if (card1.innerText === card2.style.name) {
                 let colors = JSON.parse(localStorage.getItem('colors'))
-                colors.score += reward
+                colors.score += reward * constants.multiplier
                 localStorage.setItem('colors', JSON.stringify(colors))
 
                 const score = document.getElementById('score')
                 score.innerText = `${colors.score}`
+
+
             }
 
             const cards = document.getElementById('cards')
@@ -91,11 +93,10 @@ class GameButton {
     btnNo = () => {
         const btnNo = tools.div('no', btnStyle)
         btnNo.onclick = () => {
-
             const card1 = document.getElementById('card1')
             const card2 = document.getElementById('card2')
-//todo исправить дублирование
-            if (card1.innerText === card2.style.name) {
+
+            if (card1.innerText !== card2.style.name) {
                 let colors = JSON.parse(localStorage.getItem('colors'))
                 colors.score += reward
                 localStorage.setItem('colors', JSON.stringify(colors))
@@ -103,13 +104,6 @@ class GameButton {
                 const score = document.getElementById('score')
                 score.innerText = `${colors.score}`
             }
-
-            let colors = JSON.parse(localStorage.getItem('colors'))
-            colors.score += reward
-            localStorage.setItem('colors', JSON.stringify(colors))
-
-            const score = document.getElementById('score')
-            score.innerText = colors.score;
 
             const cards = document.getElementById('cards')
             cards.innerHTML = ''
