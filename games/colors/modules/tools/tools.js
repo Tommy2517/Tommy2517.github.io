@@ -1,5 +1,5 @@
 import {styleWriter} from "../styles/styleWriter.js";
-import {reward} from "../constants/const.js";
+import {constants} from "../constants/const.js";
 
 class Tools {
     //create div element args-innerText,Style,id
@@ -15,26 +15,29 @@ class Tools {
             div.id =`${btnId}`
         }
         return div
+
     }
 
-    //onClick Function
-    // cardInspector = () => {
-    //     const card1 = document.getElementById('card1')
-    //     const card2 = document.getElementById('card2')
-    //
-    //     if (card1.innerText === card2.style.name) {
-    //         let colors = JSON.parse(localStorage.getItem('colors'))
-    //         colors.score += reward
-    //         localStorage.setItem('colors', JSON.stringify(colors))
-    //
-    //         const score = document.getElementById('score')
-    //         score.innerText = `${colors.score}`
-    //     }
-    //
-    //     const cards = document.getElementById('cards')
-    //     cards.innerHTML = ''
-    //     cards.append(this.card1(), this.card2())
-    // }
+answerCorrect = () => {
+    constants.stackCounter++
+
+    if (constants.stackCounter === 4) {
+        constants.stackCounter = 0
+        constants.multiplier++
+    }
+
+    let colors = JSON.parse(localStorage.getItem('colors'))
+    colors.score += constants.reward
+        // * constants.multiplier
+    localStorage.setItem('colors', JSON.stringify(colors))
+
+    const score = document.getElementById('score')
+    score.innerText = `${colors.score}`
+    }
+    answerInCorrect = () => {
+        constants.stackCounter = 0
+        constants.multiplier = 1
+    }
 
 }
 export const tools = new Tools

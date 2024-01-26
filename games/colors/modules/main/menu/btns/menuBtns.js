@@ -5,7 +5,7 @@ import {newGame} from "../../game/game.js";
 
 class MenuButtons {
     startGame = () =>{
-        const btnStart = tools.div('Start',btnStyle)
+        const btnStart = tools.div('New Game',btnStyle)
 
         btnStart.addEventListener('click', () => {
             document.body.innerHTML = ''

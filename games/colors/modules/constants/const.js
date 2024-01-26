@@ -6,20 +6,24 @@ const colors = {
     results: [],
     connections: 0,
 }
-const reward = 50
-const correctAnswerCount = 0
 
-export {colors, reward}
+export {colors}
 
 class Constants {
+    correctAnswerCount = 0
+    incorrectAnswerCount = 0
     reward = 50;
     multiplier = 1;
     stackCounter = 0;
     colorValues = [
-        {name: 'yellow', color: 'gold'},
-        {name: 'red', color: 'red'},
-        {name: 'blue', color: 'cornflowerblue'},
-        {name: 'black', color: 'black'}
+        [
+            {name: 'yellow', color: 'gold'},
+            {name: 'red', color: 'red'},
+        ],
+        [
+            {name: 'blue', color: 'cornflowerblue'},
+            {name: 'black', color: 'black'}
+        ]
     ];
 }
 

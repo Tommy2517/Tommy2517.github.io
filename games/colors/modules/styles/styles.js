@@ -35,6 +35,9 @@ const btnStyle = {
 
     backgroundColor: '#444444',
     borderRadius: '20px',
+    fontWeight: 'bold',
+
+    fontSize: '1.3em'
 }
 const gameStyle = {
     width: '100%',

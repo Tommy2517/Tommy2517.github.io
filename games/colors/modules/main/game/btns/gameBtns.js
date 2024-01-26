@@ -1,10 +1,10 @@
 import {styleWriter} from "../../../styles/styleWriter.js";
+import {constants} from "../../../constants/const.js";
 import {btnStyle} from "../../../styles/styles.js";
+import {sections} from "../sections/sections.js";
+import {mainMenu} from "../../menu/mainMenu.js";
 import {tools} from "../../../tools/tools.js";
 import {field} from "../../field/field.js";
-import {mainMenu} from "../../menu/mainMenu.js";
-import {constants, reward} from "../../../constants/const.js";
-import {sections} from "../sections/sections.js";
 
 class GameButton {
     /////////////////section toolbar////////////////////
@@ -14,11 +14,7 @@ class GameButton {
         btnMenu.style.height = '25px'
         btnMenu.style.margin = '2px'
 
-        btnMenu.addEventListener('click', (eo) => {
-            let colors = JSON.parse(localStorage.getItem('colors'))
-            colors.score++
-            localStorage.setItem('colors', JSON.stringify(colors))
-
+        btnMenu.addEventListener('click', () => {
             field.innerHTML = ''
             document.body.innerHTML = ''
             mainMenu.menuGenerate()
@@ -26,7 +22,7 @@ class GameButton {
         return btnMenu
     }
     score = () => {
-        const score = tools.div('Menu', btnStyle,'score')
+        const score = tools.div('Menu', btnStyle, 'score')
         score.style.width = '75px'
         score.style.height = '25px'
         score.style.margin = '2px'
@@ -35,9 +31,9 @@ class GameButton {
         score.id = 'score'
 
         score.innerText = `${JSON.parse(localStorage.getItem('colors')).score}`
-        score.addEventListener('click',()=>{
+        score.addEventListener('click', () => {
             let colors = JSON.parse(localStorage.getItem('colors'))
-            colors.score -= reward
+            colors.score = 0
             localStorage.setItem('colors', JSON.stringify(colors))
 
             document.getElementById('toolbar').innerHTML = ''
@@ -50,17 +46,22 @@ class GameButton {
 
 
     /////////////////section cards////////////////////!BTN
+
     card1 = () => {
         const cardStyle = this.changerStyle()
         const card1 = tools.div(cardStyle.name, btnStyle, 'card1')
         styleWriter.write([card1], cardStyle)
         card1.style.color = ''
+        card1.style.fontSize = '1.7em'
+        card1.style.fontWeight = 'bold'
         return card1
     }
     card2 = () => {
         const cardStyle = this.changerStyle()
         const card2 = tools.div(cardStyle.name, btnStyle, 'card2')
         styleWriter.write([card2], this.changerStyle())
+        card2.style.fontSize = '1.7em'
+        card2.style.fontWeight = 'bold'
         return card2
     }
 
@@ -73,14 +74,11 @@ class GameButton {
             const card2 = document.getElementById('card2')
 
             if (card1.innerText === card2.style.name) {
-                let colors = JSON.parse(localStorage.getItem('colors'))
-                colors.score += reward * constants.multiplier
-                localStorage.setItem('colors', JSON.stringify(colors))
+                tools.answerCorrect()
 
-                const score = document.getElementById('score')
-                score.innerText = `${colors.score}`
-
-
+            }
+            else {
+                tools.answerInCorrect()
             }
 
             const cards = document.getElementById('cards')
@@ -97,12 +95,10 @@ class GameButton {
             const card2 = document.getElementById('card2')
 
             if (card1.innerText !== card2.style.name) {
-                let colors = JSON.parse(localStorage.getItem('colors'))
-                colors.score += reward
-                localStorage.setItem('colors', JSON.stringify(colors))
-
-                const score = document.getElementById('score')
-                score.innerText = `${colors.score}`
+                tools.answerCorrect()
+            }
+            else {
+                tools.answerInCorrect()
             }
 
             const cards = document.getElementById('cards')
@@ -114,7 +110,7 @@ class GameButton {
 
 
     changerStyle = () => {
-        return constants.colorValues[Math.floor(Math.random() * 4)]
+        return constants.colorValues[Math.floor(Math.random() * 2)][Math.floor(Math.random() * 2)]
     }
 }
 
