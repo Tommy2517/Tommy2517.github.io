@@ -29,9 +29,12 @@ class GameButton {
         score.style.border = '2px solid #444444'
         score.style.background = ''
         score.id = 'score'
-
+        score.contentEditable = 'true'
         score.innerText = `${JSON.parse(localStorage.getItem('colors')).score}`
-        score.addEventListener('click', () => {
+        score.addEventListener('keydown', (eo) => {
+            if (eo.key === 'e'){
+                console.log(123)
+            }
             let colors = JSON.parse(localStorage.getItem('colors'))
             colors.score = 0
             localStorage.setItem('colors', JSON.stringify(colors))
@@ -82,44 +85,85 @@ class GameButton {
     btnYes = () => {
         const btnYes = tools.div('yes', btnStyle)
         btnYes.onclick = () => {
-            const card1 = document.getElementById('card1')
-            const card2 = document.getElementById('card2')
-
-            if (card1.innerText === card2.style.name) {
-                tools.answerCorrect()
-
-            }
-            else {
-                tools.answerInCorrect()
-            }
-
-            const cards = document.getElementById('cards')
-            cards.innerHTML = ''
-            cards.append(this.card1(), this.card2())
-            this.getterStyle()
+            // const card1 = document.getElementById('card1')
+            // const card2 = document.getElementById('card2')
+            //
+            // if (card1.innerText === card2.style.name) {
+            //     tools.answerCorrect()
+            //
+            // }
+            // else {
+            //     tools.answerInCorrect()
+            // }
+            //
+            // const cards = document.getElementById('cards')
+            // cards.innerHTML = ''
+            // cards.append(this.card1(), this.card2())
+            // this.getterStyle()
+            this.q()
         }
+        document.addEventListener('keydown',(eo) => {
+            if (eo.key === 'q') this.q()
+        })
         return btnYes
     }
+    q=()=>{
+        const card1 = document.getElementById('card1')
+        const card2 = document.getElementById('card2')
 
+        if (card1.innerText === card2.style.name) {
+            tools.answerCorrect()
+
+        }
+        else {
+            tools.answerInCorrect()
+        }
+
+        const cards = document.getElementById('cards')
+        cards.innerHTML = ''
+        cards.append(this.card1(), this.card2())
+        this.getterStyle()
+    }
     btnNo = () => {
         const btnNo = tools.div('no', btnStyle)
         btnNo.onclick = () => {
-            const card1 = document.getElementById('card1')
-            const card2 = document.getElementById('card2')
-
-            if (card1.innerText !== card2.style.name) {
-                tools.answerCorrect()
-            }
-            else {
-                tools.answerInCorrect()
-            }
-
-            const cards = document.getElementById('cards')
-            cards.innerHTML = ''
-            cards.append(this.card1(), this.card2())
-            this.getterStyle()
+            // const card1 = document.getElementById('card1')
+            // const card2 = document.getElementById('card2')
+            //
+            // if (card1.innerText !== card2.style.name) {
+            //     tools.answerCorrect()
+            // }
+            // else {
+            //     tools.answerInCorrect()
+            // }
+            //
+            // const cards = document.getElementById('cards')
+            // cards.innerHTML = ''
+            // cards.append(this.card1(), this.card2())
+            // this.getterStyle()
+            this.w()
         }
+        document.addEventListener('keydown',(eo) => {
+            if (eo.key === 'w') this.w()
+        })
         return btnNo
+    }
+
+    w=()=>{
+        const card1 = document.getElementById('card1')
+        const card2 = document.getElementById('card2')
+
+        if (card1.innerText !== card2.style.name) {
+            tools.answerCorrect()
+        }
+        else {
+            tools.answerInCorrect()
+        }
+
+        const cards = document.getElementById('cards')
+        cards.innerHTML = ''
+        cards.append(this.card1(), this.card2())
+        this.getterStyle()
     }
 
 

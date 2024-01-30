@@ -28,7 +28,7 @@ answerCorrect = () => {
 
     let colors = JSON.parse(localStorage.getItem('colors'))
     colors.score += constants.reward
-        // * constants.multiplier
+        * constants.multiplier
     localStorage.setItem('colors', JSON.stringify(colors))
 
     const score = document.getElementById('score')
