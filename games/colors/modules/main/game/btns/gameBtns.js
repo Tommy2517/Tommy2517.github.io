@@ -49,7 +49,7 @@ class GameButton {
     /////////////////section cards////////////////////!BTN
 
     card1 = () => {
-        const cardStyle = this.changerStyle()
+        const cardStyle = this.bar[Math.floor(Math.random() * 2)]
         const card1 = tools.div(cardStyle.name, btnStyle, 'card1')
         styleWriter.write([card1], cardStyle)
         card1.style.color = ''
@@ -60,10 +60,10 @@ class GameButton {
     card2 = () => {
         // const cardStyle = this.changerStyle()
         const card2 = tools.div(
-            constants.colorValues[Math.floor(Math.random() * 4)].name,
+            constants.colorValues[Math.floor(Math.random() * 2)][Math.floor(Math.random() * 2)].name,
             btnStyle,
             'card2')
-        styleWriter.write([card2], this.getterStyle())//yyyyy
+        styleWriter.write([card2], this.bar[Math.floor(Math.random() * 2)])//yyyyy
         card2.style.fontSize = '1.7em'
         card2.style.fontWeight = 'bold'
         return card2
