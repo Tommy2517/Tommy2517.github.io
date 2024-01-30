@@ -27,4 +27,6 @@ class Game {
 const game = new Game()
 
 game.start()
+let arr = [[1, 2], [3, 4]]
 
+console.log(arr[Math.floor(Math.random() * 2)][Math.floor(Math.random() * 2)]);

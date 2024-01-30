@@ -41,6 +41,7 @@ class GameButton {
             const toolbar = sections.toolbar()
             toolbar.append(this.menu(), this.score())
         })
+        this.getterStyle()
         return score
     }
 
@@ -57,12 +58,23 @@ class GameButton {
         return card1
     }
     card2 = () => {
-        const cardStyle = this.changerStyle()
-        const card2 = tools.div(cardStyle.name, btnStyle, 'card2')
-        styleWriter.write([card2], this.changerStyle())
+        // const cardStyle = this.changerStyle()
+        const card2 = tools.div(
+            constants.colorValues[Math.floor(Math.random() * 4)].name,
+            btnStyle,
+            'card2')
+        styleWriter.write([card2], this.getterStyle())//yyyyy
         card2.style.fontSize = '1.7em'
         card2.style.fontWeight = 'bold'
         return card2
+    }
+    bar = {}
+    getterStyle = () =>{
+        this.bar =  constants.colorValues[Math.floor(Math.random() * 2)]
+
+    }
+    changerStyle = () => {
+        return  this.bar[Math.floor(Math.random() * 2)]
     }
 
 
@@ -84,6 +96,7 @@ class GameButton {
             const cards = document.getElementById('cards')
             cards.innerHTML = ''
             cards.append(this.card1(), this.card2())
+            this.getterStyle()
         }
         return btnYes
     }
@@ -104,14 +117,13 @@ class GameButton {
             const cards = document.getElementById('cards')
             cards.innerHTML = ''
             cards.append(this.card1(), this.card2())
+            this.getterStyle()
         }
         return btnNo
     }
 
 
-    changerStyle = () => {
-        return constants.colorValues[Math.floor(Math.random() * 2)][Math.floor(Math.random() * 2)]
-    }
+
 }
 
 export const gameButton = new GameButton()

@@ -5,11 +5,11 @@ class Tools {
     //create div element args-innerText,Style,id
     div = (btnName,btnStyle,btnId) => {
         const div = document.createElement('div')
-        if (btnStyle){
-            styleWriter.write([div],btnStyle)
-        }
         if (btnName){
             div.innerText =`${btnName}`
+        }
+        if (btnStyle){
+            styleWriter.write([div],btnStyle)
         }
         if (btnId){
             div.id =`${btnId}`
