@@ -1,4 +1,3 @@
-const gameTime = 45
 const colors = {
     name:'',
     score: 0,
@@ -10,6 +9,7 @@ const colors = {
 export {colors}
 
 class Constants {
+    gameTime = 30
     correctAnswerCount = 0
     incorrectAnswerCount = 0
     reward = 50;

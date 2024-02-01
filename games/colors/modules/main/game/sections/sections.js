@@ -24,7 +24,7 @@ class Sections {
     }
 
     controls = () => {
-        const controls = tools.div('', gameSection)
+        const controls = tools.div('', gameSection,'controls')
 
         controls.style.alignItems = 'flex-end'
         controls.append(gameButton.btnYes(), gameButton.btnNo())

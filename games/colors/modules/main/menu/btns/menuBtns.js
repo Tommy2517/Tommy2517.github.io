@@ -1,4 +1,3 @@
-import {styleWriter} from "../../../styles/styleWriter.js";
 import {btnStyle} from "../../../styles/styles.js";
 import {tools} from "../../../tools/tools.js";
 import {newGame} from "../../game/game.js";

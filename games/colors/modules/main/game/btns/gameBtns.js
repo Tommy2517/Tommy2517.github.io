@@ -76,38 +76,26 @@ class GameButton {
         this.bar =  constants.colorValues[Math.floor(Math.random() * 2)]
 
     }
-    changerStyle = () => {
-        return  this.bar[Math.floor(Math.random() * 2)]
-    }
-
 
     /////////////////section controls////////////////////
     btnYes = () => {
-        const btnYes = tools.div('yes', btnStyle)
+        const btnYes = tools.div('yes', btnStyle,'btnYes')
         btnYes.onclick = () => {
-            // const card1 = document.getElementById('card1')
-            // const card2 = document.getElementById('card2')
-            //
-            // if (card1.innerText === card2.style.name) {
-            //     tools.answerCorrect()
-            //
-            // }
-            // else {
-            //     tools.answerInCorrect()
-            // }
-            //
-            // const cards = document.getElementById('cards')
-            // cards.innerHTML = ''
-            // cards.append(this.card1(), this.card2())
-            // this.getterStyle()
-            this.q()
+
+            this.fooYes()
         }
-        document.addEventListener('keydown',(eo) => {
-            if (eo.key === 'q') this.q()
-        })
+        document.addEventListener('keydown',this.foo,false)
         return btnYes
     }
-    q=()=>{
+    foo = (eo) => {
+        if (eo.key === 'q') this.fooYes()
+        else if (eo.key === 'w') this.fooNo()
+    }
+    remover = ()=>{
+        document.removeEventListener('keydown',this.foo,false)
+        console.log('remove Listener q')
+    }
+    fooYes=()=>{
         const card1 = document.getElementById('card1')
         const card2 = document.getElementById('card2')
 
@@ -127,29 +115,12 @@ class GameButton {
     btnNo = () => {
         const btnNo = tools.div('no', btnStyle)
         btnNo.onclick = () => {
-            // const card1 = document.getElementById('card1')
-            // const card2 = document.getElementById('card2')
-            //
-            // if (card1.innerText !== card2.style.name) {
-            //     tools.answerCorrect()
-            // }
-            // else {
-            //     tools.answerInCorrect()
-            // }
-            //
-            // const cards = document.getElementById('cards')
-            // cards.innerHTML = ''
-            // cards.append(this.card1(), this.card2())
-            // this.getterStyle()
-            this.w()
+            this.fooNo()
         }
-        document.addEventListener('keydown',(eo) => {
-            if (eo.key === 'w') this.w()
-        })
         return btnNo
     }
 
-    w=()=>{
+    fooNo=()=>{
         const card1 = document.getElementById('card1')
         const card2 = document.getElementById('card2')
 

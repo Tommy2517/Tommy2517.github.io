@@ -3,41 +3,49 @@ import {constants} from "../constants/const.js";
 
 class Tools {
     //create div element args-innerText,Style,id
-    div = (btnName,btnStyle,btnId) => {
+    div = (btnName, btnStyle, btnId) => {
         const div = document.createElement('div')
-        if (btnName){
-            div.innerText =`${btnName}`
+        if (btnName) {
+            div.innerText = `${btnName}`
         }
-        if (btnStyle){
-            styleWriter.write([div],btnStyle)
+        if (btnStyle) {
+            styleWriter.write([div], btnStyle)
         }
-        if (btnId){
-            div.id =`${btnId}`
+        if (btnId) {
+            div.id = `${btnId}`
         }
         return div
 
     }
 
-answerCorrect = () => {
-    constants.stackCounter++
+    timer = () => {
+        const
+            timer = setTimeout(() => {
 
-    if (constants.stackCounter === 4) {
-        constants.stackCounter = 0
-        constants.multiplier++
+        }, constants.gameTime * 1000)
     }
+    answerCorrect = () => {
+        constants.stackCounter++
 
-    let colors = JSON.parse(localStorage.getItem('colors'))
-    colors.score += constants.reward
-        * constants.multiplier
-    localStorage.setItem('colors', JSON.stringify(colors))
+        if (constants.stackCounter === 4) {
+            constants.stackCounter = 0
+            constants.multiplier++
+        }
 
-    const score = document.getElementById('score')
-    score.innerText = `${colors.score}`
+        let colors = JSON.parse(localStorage.getItem('colors'))
+        colors.score += constants.reward
+            * constants.multiplier
+        localStorage.setItem('colors', JSON.stringify(colors))
+
+        const score = document.getElementById('score')
+        score.innerText = `${colors.score}`
     }
     answerInCorrect = () => {
         constants.stackCounter = 0
         constants.multiplier = 1
     }
+
+
 
 }
 export const tools = new Tools
