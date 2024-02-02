@@ -9,7 +9,7 @@ const colors = {
 export {colors}
 
 class Constants {
-    gameTime = 30
+    gameTime = 3
     correctAnswerCount = 0
     incorrectAnswerCount = 0
     reward = 50;

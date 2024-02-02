@@ -60,7 +60,21 @@ const card1 = {
 const card2 = {
 }
 
+const styleTotalScore = {
+    width: '90%',
+    height: '90%',
+    backgroundColor: 'gold',
+    opacity:'50',
+
+    display: 'flex',
+    position: 'relative',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+}
 export {
+    styleTotalScore,
     card1,
     card2,
     fieldStyle,
