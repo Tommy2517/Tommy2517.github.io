@@ -24,8 +24,11 @@ const fieldStyle = {
 }
 
 const btnStyle = {
-    width: '100px',
+    minWidth: '100px',
     height: '40px',
+    margin:'10px',
+    paddingLeft:'10px',
+    paddingRight:'10px',
 
     display: 'flex',
     position: 'relative',

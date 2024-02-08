@@ -1,5 +1,5 @@
 import {styleWriter} from "../../../styles/styleWriter.js";
-import {constants} from "../../../constants/const.js";
+import {colors, constants} from "../../../constants/const.js";
 import {btnStyle} from "../../../styles/styles.js";
 import {sections} from "../sections/sections.js";
 import {mainMenu} from "../../menu/mainMenu.js";
@@ -30,7 +30,8 @@ class GameButton {
         score.style.background = ''
         score.id = 'score'
         score.contentEditable = 'true'
-        score.innerText = `${JSON.parse(localStorage.getItem('colors')).score}`
+        score.innerText = `${colors.score}`
+        // score.innerText = `${JSON.parse(localStorage.getItem('colors')).score}`
         score.addEventListener('keydown', (eo) => {
             if (eo.key === 'e'){
                 console.log(123)

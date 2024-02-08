@@ -5,6 +5,13 @@ const colors = {
     results: [],
     connections: 0,
 }
+const session = {
+    name: '',
+    score: 0,
+    correctAnswerCount: 0,
+    incorrectAnswerCount: 0,
+    bestScore: 0,
+}
 
 export {colors}
 

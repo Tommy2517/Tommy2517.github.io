@@ -15,7 +15,7 @@ class Game {
         this.timer = setTimeout(() => {
             this.totalScore()
             // document.getElementById('controls').style.pointerEvents = "none"
-            gameButton.remover()
+            // gameButton.remover()
             // mainMenu.menuGenerate();
         }, constants.gameTime * 1000);
     }
