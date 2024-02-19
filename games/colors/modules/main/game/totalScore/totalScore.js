@@ -12,4 +12,4 @@ class TotalScore {
         return total
     }
 }
-export const totalScore = new TotalScore();
+export const totalScore = new TotalScore();11
