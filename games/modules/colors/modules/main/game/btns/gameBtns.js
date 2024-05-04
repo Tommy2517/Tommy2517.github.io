@@ -28,7 +28,7 @@ class GameButton {
             console.log(newGame.timer)
             clearTimeout(newGame.timer)
             field.innerHTML = ''
-            document.body.innerHTML = ''
+            // document.body.innerHTML = ''
             mainMenu.menuGenerate()
         })
         return btnMenu

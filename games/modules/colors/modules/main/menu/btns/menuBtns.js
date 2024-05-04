@@ -7,7 +7,7 @@ class MenuButtons {
         const btnStart = tools.div('Start',btnStyle)
 
         btnStart.addEventListener('click', () => {
-            document.body.innerHTML = ''
+            // document.body.innerHTML = ''
             newGame.startGame()
         })
 
