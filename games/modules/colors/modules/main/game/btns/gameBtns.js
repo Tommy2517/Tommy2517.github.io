@@ -5,9 +5,19 @@ import {sections} from "../sections/sections.js";
 import {mainMenu} from "../../menu/mainMenu.js";
 import {tools} from "../../../tools/tools.js";
 import {field} from "../../field/field.js";
+import {newGame} from "../game.js";
 
 class GameButton {
     /////////////////section toolbar////////////////////
+
+    mainMenu = () => {
+        const mainMenuBtn = tools.div('Main Menu', btnStyle)
+        mainMenuBtn.onclick = () => {
+            mainMenu.menuGenerate()
+        }
+        return mainMenuBtn
+    }
+
     menu = () => {
         const btnMenu = tools.div('Menu', btnStyle)
         btnMenu.style.width = '75px'
@@ -15,6 +25,8 @@ class GameButton {
         btnMenu.style.margin = '2px'
 
         btnMenu.addEventListener('click', () => {
+            console.log(newGame.timer)
+            clearTimeout(newGame.timer)
             field.innerHTML = ''
             document.body.innerHTML = ''
             mainMenu.menuGenerate()

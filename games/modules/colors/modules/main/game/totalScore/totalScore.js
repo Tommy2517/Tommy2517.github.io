@@ -8,8 +8,8 @@ class TotalScore {
 
     total = () => {
         const total = tools.div('',styleTotalScore,'total')
-        total.append(gameButton.score(),menuButton.startGame(),totalInfo.correct(),totalInfo.inCorrect())
+        total.append(gameButton.mainMenu(), gameButton.score(),menuButton.startGame(),totalInfo.correct(),totalInfo.inCorrect())
         return total
     }
 }
-export const totalScore = new TotalScore();11
+export const totalScore = new TotalScore();

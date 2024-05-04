@@ -16,7 +16,7 @@ const session = {
 export {colors}
 
 class Constants {
-    gameTime = 3
+    gameTime = 30
     correctAnswerCount = 0
     incorrectAnswerCount = 0
     reward = 50;

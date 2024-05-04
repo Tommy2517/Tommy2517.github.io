@@ -12,7 +12,7 @@ const fieldStyle = {
     height: '500px',
 
     display: 'flex',
-    position: 'relative',
+    position: 'absolute',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',

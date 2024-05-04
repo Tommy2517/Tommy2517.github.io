@@ -19,8 +19,7 @@ class Tools {
     }
 
     timer = () => {
-        const
-            timer = setTimeout(() => {
+        const timer = setTimeout(() => {
 
             }, constants.gameTime * 1000)
     }

@@ -22,6 +22,7 @@ class Game {
     totalScore = () => {
         field.innerHTML = ''
         field.append(totalScore.total())
+
         // field.append(menuButton.continue)
     }
 }
