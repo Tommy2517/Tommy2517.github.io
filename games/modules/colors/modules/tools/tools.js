@@ -25,7 +25,8 @@ class Tools {
     }
     answerCorrect = () => {
         constants.correctAnswerCount++
-        constants.stackCounter++
+        const correct = constants.correctAnswerCount
+        console.log(correct);
 
         if (constants.stackCounter === 4) {
             constants.stackCounter = 0
@@ -37,7 +38,7 @@ class Tools {
         // localStorage.setItem('colors', JSON.stringify(colors))
 
         const score = document.getElementById('score')
-        score.innerText = `${colors.score++}`
+        score.innerText = `${correct}`
     }
     answerInCorrect = () => {
         constants.incorrectAnswerCount++

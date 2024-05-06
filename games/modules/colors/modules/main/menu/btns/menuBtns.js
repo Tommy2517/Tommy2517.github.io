@@ -19,6 +19,7 @@ class MenuButtons {
         btnExit.addEventListener('click', () => {
             // document.body.innerHTML = ''
             // const mainDiv = document.getElementById('mainDiv')
+            // document.getElementById('tagColors').remove()
             document.getElementById('field').remove()
         })
 
