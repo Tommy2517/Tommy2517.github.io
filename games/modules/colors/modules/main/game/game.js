@@ -22,7 +22,7 @@ class Game {
     totalScore = () => {
         field.innerHTML = ''
         field.append(totalScore.total())
-
+clearTimeout(this.timer)
         // field.append(menuButton.continue)
     }
 }

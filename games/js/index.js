@@ -5,7 +5,6 @@ const colorsBtn = document.getElementById('colors')
 const rpgBtn = document.getElementById('rpg')
 
 colorsBtn.onclick = () => {
-    console.log('123')
     // const colors = document.createElement('script')
     // colors.type = 'module'
     // colors.src = 'modules/colors/index.js'
