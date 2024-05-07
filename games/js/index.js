@@ -1,4 +1,4 @@
-import {gameColors} from "../modules/colors";
+import {gameColors} from "../modules/colors/index.js";
 import {gameRpg} from "../modules/roleplaygame/components/map/map.js";
 
 const snakeBtn = document.getElementById('snake')
