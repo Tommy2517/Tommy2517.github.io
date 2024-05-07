@@ -26,7 +26,6 @@ class Tools {
     answerCorrect = () => {
         constants.correctAnswerCount++
         const correct = constants.correctAnswerCount
-        console.log(correct);
 
         if (constants.stackCounter === 4) {
             constants.stackCounter = 0

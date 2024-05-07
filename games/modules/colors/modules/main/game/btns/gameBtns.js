@@ -42,7 +42,7 @@ class GameButton {
         score.style.background = ''
         score.id = 'score'
         score.contentEditable = 'true'
-        score.innerText = `${colors.score}`
+        score.innerText = `${constants.correctAnswerCount}`
         // score.innerText = `${JSON.parse(localStorage.getItem('colors')).score}`
         score.addEventListener('keydown', (eo) => {
             if (eo.key === 'e'){

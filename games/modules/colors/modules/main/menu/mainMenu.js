@@ -5,7 +5,7 @@ class Menu {
     menuGenerate = () => {
         field.innerHTML = ''
         field.append(menuButton.startGame(),menuButton.exitGame())
-        // return field
+        return field
     }
 }
 export const mainMenu = new Menu()
