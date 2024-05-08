@@ -1,5 +1,5 @@
 import {gameColors} from "../modules/colors/index.js";
-import {gameRpg} from "../modules/roleplaygame/components/map/map.js";
+import {App} from "../modules/roleplaygame";
 
 const snakeBtn = document.getElementById('snake')
 const colorsBtn = document.getElementById('colors')
@@ -15,5 +15,6 @@ colorsBtn.onclick = () => {
 }
 
 rpgBtn.onclick = () => {
-    gameRpg.start()
+    console.log('111')
+    App()
 }

@@ -1,13 +1,10 @@
-const field = document.getElementById('field')
-const exit = document.createElement('button')
-exit.innerText = 'exit'
-exit.id = 'exit'
-exit.onclick = () =>{
-    // document.getElementById('tap').innerHTML = ''
-    document.getElementById('tap').remove()
-    document.getElementById('exit').remove()
+import {newMap} from "./components/map/map.js";
+import {playerModule} from "./components/player/playerModule.js";
+
+const App = () => {
+    const game = document.createElement('div')
+    game.style.position = 'absolute'
+    game.append(newMap.mapGenerate(playerModule.player()))
+    document.body.append(game)
 }
-const funk = () => {
-    field.append(exit)
-}
-export {funk}
+export {App}
