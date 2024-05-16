@@ -7,6 +7,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4abb9f81-10f6-48ea-9d28-070585cfc032/dhaxm19-331466dd-286f-4522-9a22-45fa7a87d378.png/v1/fill/w_1280,h_720,q_80,strp/dwarven_bridge_by_gcstd_dhaxm19-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NzIwIiwicGF0aCI6IlwvZlwvNGFiYjlmODEtMTBmNi00OGVhLTlkMjgtMDcwNTg1Y2ZjMDMyXC9kaGF4bTE5LTMzMTQ2NmRkLTI4NmYtNDUyMi05YTIyLTQ1ZmE3YTg3ZDM3OC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.qnvHEyKQWA-2otXByjnkghyHW0UMKIpxBrkdHuc96z0");
     background-size: 100% 100%; /* Масштабирует изображение так, чтобы оно полностью покрывало задний фон */
