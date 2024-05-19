@@ -14,7 +14,7 @@ map.id = 'map'
 class Map {
     mapGenerate = () => {
         map.append(playerModule.player, object2.object22())
-        console.log(object2.object2);
+
         return map
     }
 }

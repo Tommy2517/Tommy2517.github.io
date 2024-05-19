@@ -1,3 +1,5 @@
+import {object2} from "../objects/objects.js";
+
 let posX = 0
 let posY = 0
 // class PlayerModule {
@@ -160,12 +162,16 @@ class PlayerModule {
         document.addEventListener('mousedown', this.shootBullet);
         requestAnimationFrame(this.updateBullets.bind(this));
     }
-
+//TODO добавить пушку
     createPlayer() {
         const player = document.createElement('div');
-        player.style.width = '20px';
-        player.style.height = '20px';
-        player.style.backgroundColor = 'yellow';
+        player.style.width = '200px';
+        player.style.height = '200px';
+        // player.style.backgroundColor = 'yellow';
+        player.style.backgroundImage = 'url("/games/modules/roleplaygame/components/images/tt.png")';
+        player.style.backgroundSize= '100% 100%';
+        player.style.backgroundPosition= 'center';
+        player.style.backgroundRepeat= 'no-repeat';
         player.style.zIndex = '222';
         player.style.position = 'absolute';
         console.log(this.player)
@@ -194,15 +200,19 @@ class PlayerModule {
     }
 
     rotatePlayer(e) {
-        const mouseX = e.clientX - 110;
-        const mouseY = e.clientY - 88;
+        const map = document.getElementById('map');
+        const rect = map.getBoundingClientRect();
+
+        const mouseX = e.clientX -  rect.left;
+        const mouseY = e.clientY -  rect.top;
+
         const playerX = this.positionX + this.player.offsetWidth / 2;
         const playerY = this.positionY + this.player.offsetHeight / 2;
-        // console.log(mouseX,'x', mouseY,'y')
+
         const angle = Math.atan2(mouseY - playerY, mouseX - playerX);
         const angleDeg = angle * (180 / Math.PI);
 
-        this.player.style.transform = `rotate(${angleDeg}deg)`;
+        this.player.style.transform = `rotate(${angleDeg-45}deg)`;
         this.shootAngle = angle;
     }
 
@@ -213,6 +223,7 @@ class PlayerModule {
         bullet.style.backgroundColor = 'gold';
         bullet.style.zIndex = '221';
         bullet.style.position = 'absolute';
+        // bullet.style.transition = '.5s';
         document.getElementById('gameId').append(bullet);
         const bulletPositionX = this.positionX + this.player.offsetWidth / 2;
         const bulletPositionY = this.positionY + this.player.offsetHeight / 2;
@@ -244,7 +255,7 @@ class PlayerModule {
                 this.bullets.splice(this.bullets.indexOf(bullet), 1);
             }
 
-            if (bullet.distance >= 500) {
+            if (bullet.distance >= 1000) {
                 bullet.element.remove();
                 this.bullets.splice(this.bullets.indexOf(bullet), 1);
             }
@@ -256,7 +267,14 @@ class PlayerModule {
     checkCollision(bulletElement) {
         const objectElement = document.getElementById('object2'); // Замените 'object' на id вашего объекта
         const bulletRect = bulletElement.getBoundingClientRect();
-        const objectRect = objectElement.getBoundingClientRect();
+        let objectRect = '';
+        const dispetcher = (obj) =>{
+            if (obj) {
+                objectRect = objectElement.getBoundingClientRect();
+
+            }
+        }
+        dispetcher(objectElement)
 
         return (
             bulletRect.left < objectRect.right &&
@@ -270,6 +288,8 @@ class PlayerModule {
     trigger() {
         this.score++; // Увеличение счетчика очков
         console.log('Попадание! Очки: ', this.score);
+        document.getElementById('object2').remove()
+        clearInterval(object2.interval)
     }
 }
 

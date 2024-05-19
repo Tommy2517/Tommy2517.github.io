@@ -5,6 +5,15 @@ const App = () => {
     game.id = 'gameId'
     game.style.position = 'absolute'
     game.append(newMap.mapGenerate())
-    document.body.append(game)
+    // document.body.append(game)
+
+    const qqq = document.createElement('div')
+    qqq.style.width = '578px'
+    qqq.style.height = '364px'
+    qqq.style.background = 'red'
+    qqq.style.position = 'absolute'
+    qqq.style.top = '0px'
+    qqq.style.left = '0px'
+    document.body.append(game, qqq)
 }
 export {App}
