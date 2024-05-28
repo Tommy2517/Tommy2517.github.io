@@ -14,6 +14,6 @@ const App = () => {
     qqq.style.position = 'absolute'
     qqq.style.top = '0px'
     qqq.style.left = '0px'
-    document.body.append(game, qqq)
+    document.body.append(game)
 }
 export {App}
