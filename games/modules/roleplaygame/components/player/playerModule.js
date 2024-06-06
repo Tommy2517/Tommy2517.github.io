@@ -15,9 +15,14 @@ class PlayerModule {
         this.movePlayer = this.movePlayer.bind(this);
         this.rotatePlayer = this.rotatePlayer.bind(this);
         this.shootBullet = this.shootBullet.bind(this);
+        this.megaShot = () => {
+            for (let i = 0; i < 50; i += 10){
+                this.shootBullet(i)
+            }
+        }
         document.addEventListener('keydown', this.movePlayer);
         document.addEventListener('mousemove', this.rotatePlayer);
-        document.addEventListener('mousedown', this.shootBullet);
+        document.addEventListener('mousedown', this.megaShot);
         requestAnimationFrame(this.updateBullets.bind(this));
     }
 //TODO добавить пушку
@@ -36,6 +41,7 @@ class PlayerModule {
         player.style.right = '0px';
         player.style.left = '0px';
         console.log(this.player)
+        console.log(player)
         return player;
     }
 
@@ -62,7 +68,7 @@ class PlayerModule {
         this.shootAngle = angle;
     }
 
-    shootBullet() {
+    shootBullet(add) {
         const bullet = document.createElement('div');
         bullet.style.width = '50px';
         bullet.style.height = '50px';
@@ -90,16 +96,15 @@ class PlayerModule {
 
     updateBullets() {
         this.bullets.forEach(bullet => {
-        const bulletSpeed = 5;
+        const bulletSpeed = 50;
             const dx = Math.cos(bullet.angle) * bulletSpeed;
             const dy = Math.sin(bullet.angle) * bulletSpeed;
-            console.log('dx - ',dx,'; dy - ')
+            // console.log('dx - ',dx,'; dy - ')
 
             bullet.element.style.left = parseFloat(bullet.element.style.left) + dx + 'px';
             bullet.element.style.top = parseFloat(bullet.element.style.top) + dy + 'px';
 
             bullet.distance += Math.sqrt(dx * dx + dy * dy);
-            console.log(bullet.distance)
 
             // Проверка столкновения с объектом
             if (this.checkCollision(bullet.element)) {
@@ -142,8 +147,9 @@ class PlayerModule {
         this.score++; // Увеличение счетчика очков
         console.log('Попадание! Очки: ', this.score);
         document.getElementById('object2').remove()
+        // object2.object22()
+        console.log(object2.interval)
         clearInterval(object2.interval)
-        object2.object22()
     }
 }
 

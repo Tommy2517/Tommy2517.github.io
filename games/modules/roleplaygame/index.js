@@ -1,10 +1,11 @@
 import {newMap} from "./components/map/map.js";
+import {spawner} from "./components/other/spawner.js";
 
 const App = () => {
     const game = document.createElement('div')
     game.id = 'gameId'
     game.style.position = 'absolute'
-    game.append(newMap.mapGenerate())
+    game.append(newMap.mapGenerate(), spawner.btnSpawn())
     // document.body.append(game)
 
     const qqq = document.createElement('div')

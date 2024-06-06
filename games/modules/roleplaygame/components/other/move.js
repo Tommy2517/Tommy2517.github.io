@@ -5,7 +5,8 @@ class Move {
     }
 
     moveObject = (obj, step, e) => {
-        switch(e.key) {
+        console.log(e)
+        switch(e) {
             case 'w':
                 this.positionY = parseInt(obj.style.top);
                 this.positionY -= step;
