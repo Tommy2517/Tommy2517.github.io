@@ -1,5 +1,6 @@
 import {newMap} from "./components/map/map.js";
 import {spawner} from "./components/other/spawner.js";
+import {} from "./components/player/stats.js";
 
 const App = () => {
     const game = document.createElement('div')
