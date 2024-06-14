@@ -8,7 +8,7 @@ let foo = function () {  //function expression   не работает с hoisti
     //saddsa
     //saddsa
 }*/
-//let calculator = (a,b) => {return a + b;} //Arrow function Стрелочная функция.
+let calculator = (a,b) => {return a + b;} //Arrow function Стрелочная функция.
 //let calculator = (a,b) => a + b; //Arrow function Стрелочная функция. идентично^^
 /*let calculator = (a,b,action) => {
     let result;
@@ -20,13 +20,23 @@ let foo = function () {  //function expression   не работает с hoisti
     return result;
 };
 console.log(calculator(10, 20, '*'));*/
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
 
+let counter = createCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
 /*
 let user = {
     name: 'art',
     age: 21,
     greeting() {  //функцию внутри обьекта можно указывать без "function"
-        console.log(`hello my name is ${this.name}`)//this. обращается к близайшему корневому объекту
+        console.log(`hello my name is ${this.name}`)//this. обращается к ближайшему корневому объекту
     },
     wife: {
         hello: () =>{

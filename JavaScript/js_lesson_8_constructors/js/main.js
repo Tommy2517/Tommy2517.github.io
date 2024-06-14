@@ -1,16 +1,17 @@
 ///////////Функция конструктор. Название принято начинать с большой буквы
 
 function User(name, age, status) {//шаблон для объекта. Аргументы принимают значения для характеристик
-    this.name = name;//поле нейм заполняется первым аргументом
+    this.name = name;//характеристика нейм заполняется первым аргументом
     this.age = age//второй аргумент
     this.status = status;//третий аргумент
     this.gender = 'female';//характеристика для всех объектов будет определена одинакова
-    this.greeting = function (msg) {//если будет вызвана функция объекта как аргумент в нее вставляется сообщение
+    this.greeting = function (msg) {//если вызвать функцию объекта с аргументом в нее вставляется сообщение
         console.log(`${msg} my name is ${this.name}`);//выводит сообщение, текст и нейм
     };
 }
+
 let user1 = new User('artem',29,true)//new помогает понять что функция является конструктором
-console.log(user1);//задаем аргументы и конструктор создает новый объект в новой ячейке памяти.
+console.log(user1); //указываем аргументы и конструктор создает новый объект в новой ячейке памяти.
 user1.greeting('hi')
 user1.name = 'kokos';//изменяем значение характеристики
 console.log(user1.name);
@@ -19,18 +20,22 @@ function Dev(name,age,skills) {
     this.name=name;
     this.age = age;
     this.skills = skills;
+
+        // функция внутри конструктора позволит добавлять параменты более простым способом
     this.addSkill = function (skill){
-        skills.push(skill);//сделали функцию внутри конструктора которая позволит
-        // добавлять параменты более простым способом
+        skills.push(skill);
     }
 }
 
 let dev = new Dev('sneg',99,[{title: 'java',exp:3,},{title: 'js',exp:3,}]);
 console.log(dev.skills);
-dev.skills.push({title: 'c++',exp:3,})
-console.log(dev.skills);//добавили новый элемент в массив со скилами
-dev.addSkill({title: 'python',exp:3,})
+//добавили новый элемент в массив со скилами:
+dev.skills.push({title: 'c++',exp:3,}) //4 действия
 console.log(dev.skills);
+dev.addSkill({title: 'python',exp:3,})//3 действия
+console.log(dev.skills);
+dev.__proto__ = user1
+console.log(dev.greeting('2024'));
 
 ///////prototype - это функция конструктора которая позволяет расширять наш конструктор
 //добавляет конкретно в конструктор новую функцию. так же можно добавить другие поля
@@ -43,9 +48,9 @@ let array = new Array(11,22,33); //объявление массива под к
 let arr = [22,33];//обычное объявление массива.
 console.log(arr);
 
-Array.prototype.print = function () {//здесь мы добавили к глобальному конструктору массива объект функцию
+Array.prototype.print = function () {//здесь мы добавили к глобальному конструктору массива функцию
     console.log(this)//которая при вызове будет выводить массив в консоль
-    for (const item of this) {//проитерируем массива что бы выводил каждый элемент отдельно
+    for (const item of this) {//проитерируем массив что бы выводил каждый элемент отдельно
         console.log(item)
     }
 }
@@ -158,3 +163,7 @@ function SuperCar(model,power,turbo) {
 }
 let superCar = new SuperCar('y',123,true);
 console.log(superCar);
+
+
+////////////////2024///////////////
+
