@@ -15,14 +15,11 @@ class PlayerModule {
         this.movePlayer = this.movePlayer.bind(this);
         this.rotatePlayer = this.rotatePlayer.bind(this);
         this.shootBullet = this.shootBullet.bind(this);
-        this.megaShot = () => {
-            for (let i = 0; i < 50; i += 10){
-                this.shootBullet(i)
-            }
-        }
+        this.step = move.moveObject.bind(this);
+
         document.addEventListener('keydown', this.movePlayer);
         document.addEventListener('mousemove', this.rotatePlayer);
-        document.addEventListener('mousedown', this.megaShot);
+        document.addEventListener('mousedown', this.shootBullet);
         requestAnimationFrame(this.updateBullets.bind(this));
     }
 //TODO добавить пушку
@@ -40,13 +37,11 @@ class PlayerModule {
         player.style.position = 'absolute';
         player.style.right = '0px';
         player.style.left = '0px';
-        console.log(this.player)
-        console.log(player)
         return player;
     }
 
     movePlayer(e) {
-        move.moveObject(this.player,this.stepSize,e)
+        this.step(this.player,this.stepSize,e.key)
         this.positionX = parseInt(this.player.style.left)
         this.positionY = parseInt(this.player.style.top)
     }
@@ -129,7 +124,7 @@ class PlayerModule {
         const dispetcher = (obj) =>{
             if (obj) {
                 objectRect = objectElement.getBoundingClientRect();
-
+                console.log(objectRect)
             }
         }
         dispetcher(objectElement)
@@ -147,9 +142,7 @@ class PlayerModule {
         this.score++; // Увеличение счетчика очков
         console.log('Попадание! Очки: ', this.score);
         document.getElementById('object2').remove()
-        // object2.object22()
-        console.log(object2.interval)
-        clearInterval(object2.interval)
+        object2.clearInter()
     }
 }
 

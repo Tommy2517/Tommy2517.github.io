@@ -206,7 +206,7 @@ for (const cinerella of cinderellas) {
     }
 }
 
-
+console.log(prince)
 
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 console.log(cinderellas.find(cin => cin.footSize === prince.slipper));

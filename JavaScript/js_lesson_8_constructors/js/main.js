@@ -26,7 +26,6 @@ function Dev(name,age,skills) {
         skills.push(skill);
     }
 }
-
 let dev = new Dev('sneg',99,[{title: 'java',exp:3,},{title: 'js',exp:3,}]);
 console.log(dev.skills);
 //добавили новый элемент в массив со скилами:
@@ -34,27 +33,30 @@ dev.skills.push({title: 'c++',exp:3,}) //4 действия
 console.log(dev.skills);
 dev.addSkill({title: 'python',exp:3,})//3 действия
 console.log(dev.skills);
-dev.__proto__ = user1
-console.log(dev.greeting('2024'));
+// dev.__proto__ = user1
+// console.log(dev.greeting('2024')); //неправильное расширение или наследование
 
 ///////prototype - это функция конструктора которая позволяет расширять наш конструктор
-//добавляет конкретно в конструктор новую функцию. так же можно добавить другие поля
+//добавляет конкретно в конструктор новую функцию. Так же можно добавить другие поля
 Dev.prototype.addSkills = function (skill){
-    this.skills.push(skill);}
+    this.skills.push(skill);
+}
 dev.addSkills({title: 'Ruby',exp:3,})
-console.log(dev.skills);
+console.log(dev);
 
 let array = new Array(11,22,33); //объявление массива под капотом
 let arr = [22,33];//обычное объявление массива.
 console.log(arr);
 
+
+
 Array.prototype.print = function () {//здесь мы добавили к глобальному конструктору массива функцию
     console.log(this)//которая при вызове будет выводить массив в консоль
-    for (const item of this) {//проитерируем массив что бы выводил каждый элемент отдельно
+    for (const item of this) {//про итерируем массив, что бы выводил каждый элемент отдельно
         console.log(item)
     }
 }
-array.print()//теперь у нас есть новый метод для масивов который выводит их в консоль.
+array.print()//теперь у нас есть новый метод для массивов который выводит их в консоль.
 
 
 
@@ -148,7 +150,7 @@ class superUser extends User9 {
 }
 superUser = new superUser('bara',22,true)
 console.log(superUser);
-superUser.bar()
+superUser.foo()
 
 
 //наследование
@@ -166,4 +168,16 @@ console.log(superCar);
 
 
 ////////////////2024///////////////
+
+
+function createCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+let counter = createCounter();
+console.log(counter); // 1
 
