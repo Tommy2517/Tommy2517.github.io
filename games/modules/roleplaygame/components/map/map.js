@@ -13,7 +13,9 @@ map.id = 'map'
 
 class Map {
     mapGenerate = () => {
-        map.append(playerModule.player, object2.object22())
+        map.append(
+            // playerModule.player,
+            object2.object22())
 
         return map
     }

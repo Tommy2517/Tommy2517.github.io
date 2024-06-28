@@ -22,7 +22,7 @@ class Object2 {
         object.style.width = '40px'
         object.style.height = '50px'
         object.style.backgroundColor = 'white'
-        object.id = `object2`
+        object.id = `${this.countObj}`
         object.style.position = 'absolute'
         object.style.transition = '.5s'
         object.style.left = '10px'
