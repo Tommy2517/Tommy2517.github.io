@@ -127,13 +127,13 @@ for (let i = 0; i < 7; i++) {
     const slide = dom.div()
     slide.classList.add('slide')
     slide.style.left = `${i*200 -550}px`
-    slide.innerText = `${arrwords[i].en}`
+    slide.obj = arrwords[i+1]
+    slide.innerText = `${slide.obj.en}`
     let toggle = 0
-    slide.obj = arrwords[i]
+    console.log(slide.obj);
+    
     slide.addEventListener('click',()=>{
         console.log(slide.obj);
-        console.log('123');
-        
         
         if (toggle) {
             slide.textContent = ''
@@ -149,10 +149,7 @@ for (let i = 0; i < 7; i++) {
 
 
     sliderBody.append(slide)
-
-
     
-
 }
 
 dom.addToBody(sliderBody)
