@@ -128,8 +128,24 @@ for (let i = 0; i < 7; i++) {
     slide.classList.add('slide')
     slide.style.left = `${i*200 -550}px`
     slide.innerText = `${arrwords[i].en}`
-
-
+    let toggle = 0
+    slide.obj = arrwords[i]
+    slide.addEventListener('click',()=>{
+        console.log(slide.obj);
+        console.log('123');
+        
+        
+        if (toggle) {
+            slide.textContent = ''
+            slide.append(slide.obj.en)
+            toggle = 0
+        }
+        else {
+            slide.textContent = ''
+            slide.append(slide.obj.ru)
+            toggle = 1
+        }
+    })
 
 
     sliderBody.append(slide)
