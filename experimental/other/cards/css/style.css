@@ -1,0 +1,56 @@
+.words{
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+    color: blueviolet;
+
+    width: 200px;
+    height: 200px;
+    border: solid 2px black;
+}
+
+button{
+    width: 250px;
+    height: 50px;
+    background-color: blueviolet;
+    border-radius: 15px;
+    color: white;
+
+}
+
+
+.sliderBody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    position: relative;
+
+    border: 20px solid black;
+    gap: 10px;
+    overflow: hidden;
+
+}
+
+.slide {
+    display: flex;
+justify-content: center;
+align-items: center;
+    position: absolute;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    border: solid 2px red;
+    flex-shrink: 0;
+    transition: .5s;
+}
+
+
+
+
+
