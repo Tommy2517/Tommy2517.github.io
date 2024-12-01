@@ -255,19 +255,29 @@ document.addEventListener('keydown', (e) =>{
 
 let startX = 0; // Начальная позиция касания
 let endX = 0;   // Конечная позиция касания
+let isSwipe = false; // Флаг, указывающий, был ли это свайп
 
 // Контейнер слайдера
 const slider = document.querySelector('.sliderBody');
 
 slider.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX; // Сохраняем начальную позицию X
+    isSwipe = false; // Сбрасываем флаг свайпа
 });
 
 slider.addEventListener('touchmove', (e) => {
     endX = e.touches[0].clientX; // Обновляем позицию X во время движения
+    const deltaX = Math.abs(endX - startX); // Вычисляем длину движения
+
+    // Если движение больше минимального порога, устанавливаем флаг свайпа
+    if (deltaX > 10) { // Минимальный порог, чтобы считать это свайпом
+        isSwipe = true;
+    }
 });
 
 slider.addEventListener('touchend', () => {
+    if (!isSwipe) return; // Если это не свайп, ничего не делаем
+
     const deltaX = endX - startX; // Разница между начальной и конечной позицией
 
     if (Math.abs(deltaX) > 50) { // Минимальная длина свайпа
@@ -283,6 +293,7 @@ slider.addEventListener('touchend', () => {
     // Сброс значений
     startX = 0;
     endX = 0;
+    isSwipe = false;
 });
 
 
