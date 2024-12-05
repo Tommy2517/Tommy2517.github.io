@@ -175,7 +175,7 @@ input.addEventListener('focus', ()=>{
     .style.height = '0vh'
     document.getElementById('pair-list')
     .style.height = '30vh'
-    document.getElementById('main')
+    document.getElementsByTagName('body')[0]
     .style.height = '50vw'
 })
 input.addEventListener('blur', ()=>{
@@ -183,7 +183,7 @@ input.addEventListener('blur', ()=>{
     .style.height = ''
     document.getElementById('control-btns-block')
     .style.height = '20vh'
-    document.getElementById('main')
+    document.getElementById('body')[0]
     .style.height = ''
 })
 
