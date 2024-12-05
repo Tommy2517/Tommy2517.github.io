@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100vw;
+    height: 100vh;
+
+    margin: 0;
+}
+#main{
+    width: 650px;
+    height: 600px;
+    border: gray, 2px solid;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form{
+    margin-bottom: 40px;
+    /* order: 1; */
+}
+
+input{
+    width: 70%;
+    margin-right: 40px;
+    padding: 0;
+}
+label{
+    display: block;
+    color: gray;
+}
+
+p{
+    margin: 0;
+    color: gray;
+    font-size: 14px;
+}
+
+#command-block{
+    /* width: 800px; */
+    display: flex;
+    gap: 40px;
+    /* order: 2; */
+}
+
+#pair-list{
+    height: 300px;
+    width: 70%;
+    border: gray 1px solid;
+    margin: 0;
+    padding: 0;
+    /* overflow: scroll; */
+}
+
+#control-btns-block > button{
+    display: block;
+    margin-bottom: 10px;
+}
+#btn-delete{
+    margin-top: 40px;
+}
+li{
+    list-style: none;
+    user-select: none;
+}
