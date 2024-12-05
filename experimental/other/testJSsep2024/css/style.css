@@ -19,7 +19,6 @@ body{
 
 form{
     margin-bottom: 40px;
-    /* order: 1; */
 }
 
 input{
@@ -39,10 +38,8 @@ p{
 }
 
 #command-block{
-    /* width: 800px; */
     display: flex;
     gap: 40px;
-    /* order: 2; */
 }
 
 #pair-list{

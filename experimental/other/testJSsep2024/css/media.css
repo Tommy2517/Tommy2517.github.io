@@ -16,21 +16,29 @@
     form{
         order: 2;
 
-        margin-top: 40px;
         margin-bottom: 0;
     }
 
     #command-block{
         display: block;
+        transition: .5s;
 
         order: 1;
     }
+    #control-btns-block{
+        overflow: hidden;
+    }
+
     #pair-list{
         width:auto;
         height: 50vh;
+        transition: .5s;
 
         padding: 5px;
 
+        border-radius: 20px;
+    }
+    li{
         border-radius: 20px;
     }
     
@@ -48,6 +56,10 @@
         background: white;
         
     }
+    #btn-delete{
+        margin-top: 0;
+    }
+
     input{
         width: 78vw;
         height: 40px;

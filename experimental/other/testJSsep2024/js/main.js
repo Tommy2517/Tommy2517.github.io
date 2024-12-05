@@ -9,6 +9,7 @@ const form = document.forms['input-item']
 const input = document.getElementById('input');
 input.attributes.pattern.value = regex.source
 
+
 // get block with list and pairs
 const pair_list = document.getElementById('pair-list')
 
@@ -167,3 +168,18 @@ function filter(params) {
 
 // copy
 // navigator.clipboard.writeText(`${array_of_pairs[pair.id].name}=${array_of_pairs[pair.id].value}`)
+
+// sizing on focus
+input.addEventListener('focus', ()=>{
+    document.getElementById('control-btns-block')
+    .style.height = '0vh'
+    document.getElementById('pair-list')
+    .style.height = '30vh'
+})
+input.addEventListener('blur', ()=>{
+    document.getElementById('pair-list')
+    .style.height = ''
+    document.getElementById('control-btns-block')
+    .style.height = '20vh'
+})
+
