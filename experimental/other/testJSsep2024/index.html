@@ -5,30 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
-    <title>Test for JS from Okten school</title>
+    <title>Test for OKTEN </title>
 </head>
 <body>
     <div id="main">
-        <h2 id="title">Test</h2>
 
-        <form action="#" name="input-item">
+        <h2 id="title">Test</h2>
+        <form action="#" name="form-pair">
             <label for="input"><p>Name/Value Pair</p></label>
-            <input type="text" pattern="" title="name=value" id="input">
-            <button id="btn-add-item">Add</button>
+            <input type="text" pattern="" required title="name=value" id="input">
+            <button id="btn-add-pair">Add</button>
         </form>
 
         <p>Name/Value Pair List</p>
-        <div id="command-block">
-            <ul id="pair-list"></ul>
+        <div id="control-panel">
+            <ul id="list-of-pairs"></ul>
 
-            <div id="control-btns-block">
+            <div id="control-btns">
                 <button id="btn-sort-by-name">Sort by Name</button>
                 <button id="btn-sort-by-value">Sort by Value</button>
-                <button id="btn-delete">Delete</button>
+                <button id="btn-delete-pairs">Delete</button>
             </div>
         </div>
 
     </div>
+
+<!-- addition functional -->
+    <div id="addon"> <!-- addons -->
+        <div id="saver">
+            <div class="addon-btns">
+                <button id="btn-save" class="btn-mini">save</button>
+                <button id="btn-load" class="btn-mini">load</button>
+                <button id="btn-del" class="btn-mini">del</button>
+            </div>
+            <input type="text" id="input-save">
+            <span id="warning"></span>
+            <ul id="array-lists"></ul>  <!-- list-lists-->
+        </div>
+    </div>
+
+
     <script src="js/main.js"></script>
 </body>
 </html>

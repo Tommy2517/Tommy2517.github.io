@@ -1,45 +1,39 @@
-/* little display styles */
-@media (max-width: 480px) {
-
-    #main{
-        width: 100vw;
-        height: 100vh;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
+/* for phones & tablets*/
+@media (max-width: 1024px) {
+    body{
+        height: auto;
     }
-    #title{
-        margin: 0;
-    }
+
     form{
         order: 2;
-
+        height: 20vh;
         margin-bottom: 0;
-    }
-
-    #command-block{
-        display: block;
-        transition: .5s;
-
-        order: 1;
-    }
-    #control-btns-block{
-        overflow: hidden;
-    }
-
-    #pair-list{
-        width:auto;
-        height: 50vh;
-        transition: .5s;
-
-        padding: 5px;
-
-        border-radius: 20px;
     }
     li{
         border-radius: 20px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    li:hover{
+        background: inherit;
+    }
+
+    input{
+        width: 79vw;
+        height: 40px;
+
+        margin: 0;
+
+        border-radius: 20px;
+        border: 1px solid black;
+    }
+    form > button{
+        margin: 10px 0;
+    }
+
+    label{
+        display: flex;
+        justify-content: center;
     }
     
     button {
@@ -49,40 +43,74 @@
         justify-content: center;
         display: block;
 
-        margin-top: 10px;
-
         border-radius: 20px;
         border: 1px solid black;
         background: white;
         
     }
-    #btn-delete{
-        margin-top: 0;
-    }
 
-    input{
-        width: 78vw;
-        height: 40px;
+    #main{
+        width: 100vw;
+        height: 100vh;
 
-        margin: 0;
-
-        border-radius: 20px;
-        border: 1px solid black;
-    }
-    label{
         display: flex;
         justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        border: none;
+        padding: 0;
+    }
+    #title{
+        margin: 0;
+    }
+    #control-panel{
+        flex-direction: column;
+        transition: .5s;
+        order: 1;
+        gap: 10px;
+    }
+
+    #control-btns{
+        height: 20vh;
+        overflow: hidden;
+        transition: .5s;
+    }
+
+    #list-of-pairs{
+        width:auto;
+        height: 50vh;
+        transition: .5s;
+
+        padding: 5px;
+
+        border-radius: 20px;
     }
 
 
-  }
+    #btn-delete-pairs{
+        margin: 0;
+    }
+
+
+
+    /* addon styles ----------------------------*/
+    #addon{
+        width: 100vw;
+    }
+    #saver{
+        width: 50%;
+    }
+
+    .btn-mini{
+        height: 20px;
+     }
+     #input-save{    
+        width: 30vw;
+        height: 30px;
+    }
+    #warning{
+        bottom: 47%;
+    }
   
-  /* middle phones */
-  @media (min-width: 481px) and (max-width: 768px) {
-    /* Стили для средних экранов */
-  }
-  
-  /* tablet */
-  @media (min-width: 769px) and (max-width: 1024px) {
-    /* Стили для планшетов */
-  }
+}
